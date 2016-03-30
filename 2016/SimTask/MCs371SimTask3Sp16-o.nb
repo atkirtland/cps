@@ -1,0 +1,161 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 7.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[      6785,        152]
+NotebookOptionsPosition[      6207,        131]
+NotebookOutlinePosition[      6755,        150]
+CellTagsIndexPosition[      6712,        147]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[TextData[StyleBox["CsMath 371 Ernst/Wang\t                       Simple \
+Task 3\t                         \tSpring 2016\n\nDue at the beginning of \
+class Fiday, February 12.\nSubmit a hard copy in class.\nDo the work on your \
+own.",
+ FontFamily->"Times New Roman",
+ FontSize->16,
+ FontWeight->"Bold"]], "Subsubsection",
+ CellChangeTimes->{{3.5046163277327614`*^9, 3.5046163394201117`*^9}, {
+   3.504616378482112*^9, 3.504616384482035*^9}, {3.536067365942828*^9, 
+   3.536067388151664*^9}, {3.5360678972902517`*^9, 3.536067920703896*^9}, {
+   3.5678100234188623`*^9, 3.5678100234788623`*^9}, {3.567810057068909*^9, 
+   3.567810058938912*^9}, {3.599588912573512*^9, 3.5995889335455117`*^9}, 
+   3.5998483007182493`*^9, {3.5998575298156967`*^9, 3.5998575440318213`*^9}, 
+   3.631379483885089*^9, {3.66298531403369*^9, 3.662985326097272*^9}, {
+   3.663434131586136*^9, 3.6634341726878004`*^9}, {3.663439647606559*^9, 
+   3.6634396530217934`*^9}, {3.664065969869999*^9, 3.664065999419076*^9}, {
+   3.6641000453006196`*^9, 3.664100054894681*^9}},
+ TextAlignment->Left,
+ TextJustification->1.],
+
+Cell[TextData[{
+ "Problem 1: Write a function ",
+ StyleBox[" oddPowerSum[upper]",
+  FontWeight->"Bold"],
+ " which has one positive integer parameter. The function computes the sum of \
+all the odd powers of 2 which are less than upper, that is the sum of ",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["2", "x"], TraditionalForm]]],
+ " where x is odd and x < upper. The function returns the value of the \
+computed sum.\n\nYou printout must contain the following tests for your \
+function \n",
+ StyleBox["oddPowerSum[8192]\noddPowerSum[8193]\noddPowerSum[262145]",
+  FontWeight->"Bold"],
+ "\n"
+}], "Text",
+ CellChangeTimes->{{3.5046163879819903`*^9, 3.504616932612613*^9}, {
+   3.504616984893863*^9, 3.5046170075969315`*^9}, {3.536017609015625*^9, 
+   3.536017747328125*^9}, {3.536017783703125*^9, 3.536017910328125*^9}, {
+   3.536017958625*^9, 3.536018026703125*^9}, {3.536018058125*^9, 
+   3.536018103734375*^9}, {3.53601816271875*^9, 3.53601822134375*^9}, {
+   3.5360182988125*^9, 3.536018518984375*^9}, {3.536018923671875*^9, 
+   3.536018937265625*^9}, {3.53601922734375*^9, 3.53601925609375*^9}, {
+   3.536019375828125*^9, 3.53601940440625*^9}, {3.536019436890625*^9, 
+   3.53601944828125*^9}, {3.53601948328125*^9, 3.5360196623125*^9}, {
+   3.536067469960688*^9, 3.536067475608775*^9}, {3.53606752833766*^9, 
+   3.536067604010838*^9}, {3.5360676346914883`*^9, 3.5360676497518*^9}, {
+   3.536067724173401*^9, 3.536067824438497*^9}, {3.536772742046875*^9, 
+   3.536772752359375*^9}, {3.536772790953125*^9, 3.5367728601875*^9}, 
+   3.536772901703125*^9, {3.567810108888982*^9, 3.5678101191889963`*^9}, {
+   3.5678101766490765`*^9, 3.567810190919097*^9}, {3.567810381929364*^9, 
+   3.5678104194394164`*^9}, 3.56781050775954*^9, {3.5678105541696053`*^9, 
+   3.567810658319751*^9}, {3.5678106893997946`*^9, 3.567810689629795*^9}, 
+   3.5678108351167545`*^9, {3.5678108859568253`*^9, 3.567810890326832*^9}, {
+   3.5678112871856017`*^9, 3.5678113960057535`*^9}, {3.599588959342512*^9, 
+   3.599588979660512*^9}, {3.599589048872512*^9, 3.599589108281512*^9}, {
+   3.599589139139512*^9, 3.599589142868512*^9}, {3.599857548674926*^9, 
+   3.599857716253962*^9}, {3.599857752016551*^9, 3.5998579259665318`*^9}, {
+   3.599866952293369*^9, 3.5998669704153943`*^9}, {3.599867182666732*^9, 
+   3.599867197709753*^9}, {3.599867514608962*^9, 3.5998676415414624`*^9}, {
+   3.6312398425214405`*^9, 3.6312398439114428`*^9}, {3.63123987723549*^9, 
+   3.63123991346154*^9}, {3.6312399719106226`*^9, 3.631240097017799*^9}, {
+   3.631371599376522*^9, 3.6313716420889874`*^9}, {3.6313721483264303`*^9, 
+   3.631372221276237*^9}, {3.631379215157363*^9, 3.631379220753502*^9}, {
+   3.6313792540150948`*^9, 3.631379329469242*^9}, {3.6313793719137297`*^9, 
+   3.63137947818187*^9}, {3.662985339413652*^9, 3.66298541781979*^9}, {
+   3.66298546710682*^9, 3.662985469784771*^9}, {3.6629855062553473`*^9, 
+   3.66298550846233*^9}, {3.662985556643182*^9, 3.662985558691038*^9}, {
+   3.662986301900272*^9, 3.662986323969974*^9}, {3.663434203477618*^9, 
+   3.663434245112686*^9}, {3.6634344735107646`*^9, 3.663434474852373*^9}, {
+   3.663435209414749*^9, 3.663435226924062*^9}, {3.664066108858159*^9, 
+   3.664066243380617*^9}}],
+
+Cell[TextData[{
+ "Problem 2: \nWrite a function ",
+ StyleBox["coord[start,stop,inrement] ",
+  FontWeight->"Bold"],
+ "which creates and returns the {x, y} cooridnates of points on the function \
+f ",
+ StyleBox["above",
+  FontWeight->"Bold"],
+ " the x-axis for the function f(x) = sin(3x) -10 cos(x) + 1/4 ",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["x", "2"], TraditionalForm]]],
+ " for values of x ",
+ StyleBox["start",
+  FontSlant->"Italic"],
+ " and ",
+ StyleBox["stop",
+  FontSlant->"Italic"],
+ " in  ",
+ StyleBox["increments",
+  FontSlant->"Italic"],
+ " (that is for start = -2.3, stop = 2.3 and increment 0.05, the x values of \
+the points are -2.3, -2.25, -2.2, -2.15 .... 2.3). \n\nYou printout must \
+contain the following tests for your function \n",
+ StyleBox["coord[2, 4, .1]\ncoord[1, 3, .05]\ncoord[4, 8, .05]",
+  FontWeight->"Bold"]
+}], "Text",
+ CellChangeTimes->{{3.6634352558766503`*^9, 3.6634352606844816`*^9}, {
+   3.663438406578283*^9, 3.663438524317197*^9}, {3.663438602216505*^9, 
+   3.6634386787573986`*^9}, {3.663439050497489*^9, 3.6634390608589554`*^9}, {
+   3.6634395811117277`*^9, 3.6634395836233435`*^9}, {3.6634396596538363`*^9, 
+   3.663439663210659*^9}, 3.664066278751135*^9, {3.66406637474504*^9, 
+   3.664066486803501*^9}, {3.664066542317402*^9, 3.664066597255413*^9}, 
+   3.66410000021233*^9}]
+}, Open  ]]
+},
+WindowToolbars->"EditBar",
+WindowSize->{1280, 718},
+WindowMargins->{{-8, Automatic}, {Automatic, -8}},
+PrivateNotebookOptions->{"VersionedStylesheet"->{"Default.nb"[8.] -> False}},
+Magnification:>FEPrivate`If[
+  FEPrivate`Equal[FEPrivate`$VersionNumber, 6.], 1.5, 1.5 Inherited],
+FrontEndVersion->"10.1 for Microsoft Windows (64-bit) (March 23, 2015)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[567, 22, 1094, 18, 154, "Subsubsection"],
+Cell[1664, 42, 3196, 51, 273, "Text"],
+Cell[4863, 95, 1328, 33, 275, "Text"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

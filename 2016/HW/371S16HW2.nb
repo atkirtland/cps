@@ -1,0 +1,558 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 6.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[     21615,        549]
+NotebookOptionsPosition[     20339,        505]
+NotebookOutlinePosition[     20827,        526]
+CellTagsIndexPosition[     20784,        523]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[TextData[StyleBox["Mathematica Hw I1",
+ FontSlant->"Italic"]], "Subsection",
+ CellChangeTimes->{{3.504038332241448*^9, 3.504038335556608*^9}, 
+   3.600554681087484*^9},
+ TextAlignment->Center,
+ TextJustification->0.],
+
+Cell[TextData[{
+ "Claus Ernst/Huanjing Wang\t\tMath/Cs 371 Spring 2016\n",
+ StyleBox["Due: Wednesday, February 10 before class.  \nThis assignment must \
+be turned in electronically AND as a hard copy.  ",
+  FontWeight->"Bold"],
+ "The electronic copy must be submitted through blackboard ",
+ StyleBox["prior",
+  FontWeight->"Bold"],
+ " to your class. "
+}], "Text",
+ CellChangeTimes->{{3.396307463532086*^9, 3.3963074935485563`*^9}, {
+   3.4731641043982286`*^9, 3.473164105183354*^9}, {3.4732629763552847`*^9, 
+   3.473262983315359*^9}, {3.504038346234837*^9, 3.504038351220984*^9}, {
+   3.504038387910781*^9, 3.504038388085926*^9}, {3.504038436962585*^9, 
+   3.504038450040007*^9}, {3.5040384824502697`*^9, 3.504038490601551*^9}, 
+   3.5044519632271605`*^9, {3.5044570373867207`*^9, 3.504457059558312*^9}, {
+   3.50445769212834*^9, 3.504457692753332*^9}, {3.5044579026725197`*^9, 
+   3.5044579326252613`*^9}, {3.599697701118517*^9, 3.599697709707015*^9}, 
+   3.599699734698741*^9, {3.5998581752573137`*^9, 3.599858184619651*^9}, {
+   3.600554711776409*^9, 3.6005547183170033`*^9}, {3.6005568231351633`*^9, 
+   3.600556839230084*^9}, {3.6632377303756495`*^9, 3.66323773068565*^9}, {
+   3.663237763064907*^9, 3.6632377743233256`*^9}, {3.6633304625758724`*^9, 
+   3.6633304629971914`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["General Requirements - read before you start working", "Subsubsection",
+ CellChangeTimes->{{3.6005568947642603`*^9, 3.600556923210887*^9}}],
+
+Cell[TextData[{
+ "Form groups of two. Each member of the group must understand and be able to \
+explain (in detail) all of the code turned in. We allow you to work in groups \
+so that you have someone with whom you can talk about your work in detail. \
+This is ",
+ StyleBox["not ",
+  FontWeight->"Bold"],
+ "meant for group members to only do half of the work. \n\nEach group turns \
+in one (stapled) printout at the beginning of class and submits an electronic \
+copy (one file) ",
+ StyleBox["prior",
+  FontWeight->"Bold"],
+ " to class. "
+}], "Text",
+ CellChangeTimes->{{3.396480117972228*^9, 3.396480213211784*^9}, {
+   3.396481628330934*^9, 3.396481640932308*^9}, {3.397247800613196*^9, 
+   3.397247807531184*^9}, {3.397247840005795*^9, 3.397247853566327*^9}, 
+   3.3972553681909*^9, {3.473262642118073*^9, 3.47326267102844*^9}, {
+   3.473262755690686*^9, 3.473262781328745*^9}, {3.473263003835178*^9, 
+   3.473263035137011*^9}, {3.473263086745429*^9, 3.4732630975755157`*^9}, {
+   3.504038469859208*^9, 3.5040384784188643`*^9}, {3.504038537476225*^9, 
+   3.504038538164055*^9}, {3.5044576595037575`*^9, 3.5044576830190816`*^9}, {
+   3.505520329671875*^9, 3.50552035315625*^9}, {3.505520405328125*^9, 
+   3.505520693015625*^9}, {3.505520726296875*^9, 3.50552093034375*^9}, {
+   3.505521849265625*^9, 3.50552185034375*^9}, {3.505523400421875*^9, 
+   3.505523415984375*^9}, {3.50552409528125*^9, 3.505524127328125*^9}, {
+   3.505524163546875*^9, 3.505524166015625*^9}, {3.505524332828125*^9, 
+   3.505524353015625*^9}, 3.5055601388344927`*^9}],
+
+Cell[TextData[{
+ "Your electronic and hard copy must include: \na) The names of both group \
+members on the print out (printed from the file, not added by hand). The name \
+of both group members must be included in the name of the electronic file. \
+For example if we (Claus and Huanjing) are a team then the file name should \
+be ",
+ StyleBox["ErnstWang371Hw2.nb",
+  FontWeight->"Bold"],
+ ". This will help to identify whose file we are looking at and it will also \
+avoid having several different files with the same name.\nb) A solution to \
+each problem, which includes the code, as well as a couple of executions of \
+your code which demonstrate that the code is (most likely) correct. Select \
+different types of input for your example runs, to show that different parts \
+of your code work correctly.   \nYour solutions must be well-documented ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " code, that is, you must use comments, meaningful variable names, proper \
+indentations, hide local variables (if any are needed), etc.  The comments in \
+the code should be such that taken by themselves they describe the algorithm \
+you used."
+}], "Text",
+ CellChangeTimes->{{3.396480117972228*^9, 3.396480213211784*^9}, {
+   3.396481628330934*^9, 3.396481640932308*^9}, {3.397247800613196*^9, 
+   3.397247807531184*^9}, {3.397247840005795*^9, 3.397247853566327*^9}, 
+   3.3972553681909*^9, {3.473262642118073*^9, 3.47326267102844*^9}, {
+   3.473262755690686*^9, 3.473262781328745*^9}, {3.473263003835178*^9, 
+   3.473263035137011*^9}, {3.473263086745429*^9, 3.4732630975755157`*^9}, {
+   3.504038469859208*^9, 3.5040384784188643`*^9}, {3.504038537476225*^9, 
+   3.504038538164055*^9}, {3.5044576595037575`*^9, 3.5044576830190816`*^9}, {
+   3.505520329671875*^9, 3.50552035315625*^9}, {3.505520405328125*^9, 
+   3.505520693015625*^9}, {3.505520726296875*^9, 3.50552093034375*^9}, {
+   3.505521849265625*^9, 3.50552185034375*^9}, {3.505523400421875*^9, 
+   3.505523415984375*^9}, {3.50552409528125*^9, 3.505524127328125*^9}, {
+   3.50552417040625*^9, 3.50552419490625*^9}, 3.50552429053125*^9, {
+   3.53693057117202*^9, 3.5369306050623493`*^9}, {3.568677130625534*^9, 
+   3.568677436152071*^9}, {3.568684000553052*^9, 3.568684134999381*^9}, {
+   3.56868497815792*^9, 3.5686849939607472`*^9}, {3.6005615396809344`*^9, 
+   3.600561541301027*^9}, {3.6632378486312523`*^9, 3.6632378498624544`*^9}, 
+   3.663245656094844*^9, {3.663263998278078*^9, 3.66326399913608*^9}}]
+}, Open  ]],
+
+Cell["\<\
+Note: Throughout this assignment, the lists of arguments for functions are \
+given to clarify the order and meaning of the arguments; they do not follow \
+Mathematica syntax. However, your solutions must follow the given \
+order/structure of arguments as specified by the assignment. If you do \
+deviate from this our test programs will not run. \
+\>", "Text",
+ CellChangeTimes->{{3.50552166965625*^9, 3.505521684875*^9}, 
+   3.505560143201847*^9, {3.536773027921875*^9, 3.53677304225*^9}, {
+   3.5369308228002567`*^9, 3.5369308248759613`*^9}, {3.600600482265436*^9, 
+   3.600600507301941*^9}, 3.66323968169524*^9},
+ FontWeight->"Bold"],
+
+Cell["Problem 1: How old?", "Subsection",
+ CellChangeTimes->{{3.6632396411791706`*^9, 3.6632396480743823`*^9}}],
+
+Cell[TextData[{
+ "Write a function ",
+ StyleBox["uHowOld",
+  FontWeight->"Bold"],
+ " ",
+ StyleBox["[year, month, day] ",
+  FontWeight->"Bold"],
+ "which is given the date of birth of a person as parameters and which \
+returns the age of the person (an integer). For example,  ",
+ StyleBox["uHowOld",
+  FontWeight->"Bold"],
+ "[1994, 1, 18] returns 22  and ",
+ StyleBox["uHowOld",
+  FontWeight->"Bold"],
+ "[ 1994, 2, 3] returns 21 - if executed prior to February 3rd, 2016.  \
+Mathematica has a function called Date which returns the current date in an \
+array."
+}], "Text",
+ CellChangeTimes->{{3.6632386424270344`*^9, 3.6632386964457293`*^9}, {
+   3.663238795894906*^9, 3.663238797439309*^9}, {3.6632388404001837`*^9, 
+   3.6632388540034075`*^9}, {3.663239655765196*^9, 3.6632396590412016`*^9}, 
+   3.663264011311224*^9}],
+
+Cell["Problem 2: Reverse an integer", "Subsection",
+ CellChangeTimes->{{3.663239667594016*^9, 3.663239670252421*^9}, {
+  3.663239703701078*^9, 3.6632397092702875`*^9}, {3.6632449427990227`*^9, 
+  3.663244943213023*^9}}],
+
+Cell[TextData[{
+ "Write a function ",
+ StyleBox["reverseInteger [x]",
+  FontWeight->"Bold"],
+ " which takes an integer value and returns the number with its digits \
+reversed. For example, given the number 76543, the function should return \
+34567. \n\nWarning: Do not use existing ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " ",
+ StyleBox["Reverse",
+  FontWeight->"Bold"],
+ " function. Use a loop inside the function ",
+ StyleBox["reverseInteger [x]",
+  FontWeight->"Bold"],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.6632418639012365`*^9, 3.663242024917516*^9}, 
+   3.66324212626009*^9, 3.663244962668657*^9, 3.663244999039918*^9, 
+   3.6632640548472013`*^9, {3.6633514114419003`*^9, 3.6633514854501977`*^9}, 
+   3.6633515337490363`*^9, 3.66342961785843*^9}],
+
+Cell["Problem 3: Locker doors", "Subsection",
+ CellChangeTimes->{{3.663244904071157*^9, 3.663244921347985*^9}}],
+
+Cell[TextData[{
+ "There are n lockers in a hallway, number sequentially from 1 to n. \
+Initially all the locker doors are closed. You make n passes by the lockers, \
+each time starting with locker #1. On the ith pass, i = 1, 2, ..., n, you \
+toggle the door of every ith locker: if the door is closed, you open it; if \
+it is open, you close it. For example, after the first pass every door is \
+open; on the second pass, you only toggle the even-number lockers (#2, #4, \
+...) so that after the second pass the even doors are closed and the odd ones \
+are open; the third time through, you close the door of locker #3 (opened \
+from the first pass), open the door of locker #6 (closed from the second \
+pass), and so on. After the last pass, which locker doos are open and which \
+are closed?\n\nWrite a function",
+ StyleBox[" lockerDoor [n]",
+  FontWeight->"Bold"],
+ " which takes an integer value n and returns a list of n pairs (i,j) after \
+the last pass where i represents ith door and j has value 0 (closed) or 1 \
+(open)."
+}], "Text",
+ CellChangeTimes->{{3.6632449574582477`*^9, 3.663245023018359*^9}, {
+   3.663245060721824*^9, 3.663245547608055*^9}, {3.663245580492111*^9, 
+   3.6632456098845634`*^9}, {3.663245737020585*^9, 3.6632457600180244`*^9}, {
+   3.6632457965308886`*^9, 3.6632457981376915`*^9}, {3.663248350117097*^9, 
+   3.6632483852649593`*^9}, {3.6632484300886364`*^9, 3.6632484583626847`*^9}, 
+   3.6632641119477015`*^9}],
+
+Cell[CellGroupData[{
+
+Cell["Problem 4: RandomWalk", "Subsection",
+ CellChangeTimes->{{3.568633944881626*^9, 3.568633949527841*^9}, {
+  3.568634194492713*^9, 3.5686342091882133`*^9}, {3.56863991463376*^9, 
+  3.568639921951421*^9}, {3.568640225342486*^9, 3.5686402260447598`*^9}, {
+  3.663242087541624*^9, 3.6632420904900293`*^9}, {3.6632456194941797`*^9, 
+  3.663245619868581*^9}}],
+
+Cell[TextData[{
+ "Given an interval ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"I", "=", 
+    RowBox[{"[", 
+     RowBox[{"lower", ",", "upper"}], "]"}]}], TraditionalForm]]],
+ " where ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"0", "\[LessEqual]", "lower", "<", "upper"}], TraditionalForm]]],
+ " are integers.\nChoose an integer ",
+ Cell[BoxData[
+  FormBox["start", TraditionalForm]]],
+ " in ",
+ Cell[BoxData[
+  FormBox["I", TraditionalForm]]],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.568640235127554*^9, 3.5686406424362087`*^9}, {
+  3.568679334280405*^9, 3.568679345075624*^9}}],
+
+Cell[TextData[{
+ "a) Write a function",
+ StyleBox[" randomwalk[lower, upper, start, n] ",
+  FontWeight->"Bold"],
+ "that creates and returns a list of ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"n", "+", "1"}], TraditionalForm]]],
+ " points with integer coordinates in the plane, that resemble a random walk. \
+\nStarting at ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"{", 
+    RowBox[{"0", ",", "start"}], "}"}], TraditionalForm]]],
+ " we walk either one step up or one step down with equal probability (up or \
+down affects the y-coordinate; the x-coordinate is increased by 1). That is \
+our next point is with equal probability either  ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"{", 
+    RowBox[{"1", ",", 
+     RowBox[{"start", "+", "1"}]}], "}"}], TraditionalForm]]],
+ " or ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"{", 
+    RowBox[{"1", ",", 
+     RowBox[{"start", "-", "1"}]}], "}"}], TraditionalForm]]],
+ ". Now repeat the process ",
+ Cell[BoxData[
+  FormBox["n", TraditionalForm]]],
+ "-1 times - to get a total of n steps (and n+1 points). The walk my never \
+leave the given interval. That means if the walk reaches upper (on the \
+y-coordinate) the next step ",
+ StyleBox["is forced",
+  FontWeight->"Bold"],
+ " to be a down step - there is no random decision here. If the walk reaches \
+lower (on the y-coordinate), the next step is ",
+ StyleBox["forced",
+  FontWeight->"Bold"],
+ " to be an up step - again without random decision. \nFor example if ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"I", "=", 
+    RowBox[{"[", 
+     RowBox[{"0", ",", "10"}], "]"}]}], TraditionalForm]]],
+ ", ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"start", "=", "7"}], TraditionalForm]]],
+ " and ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"n", "=", "4"}], TraditionalForm]]],
+ ", then one possible output of ",
+ StyleBox["randomwalk[lower, upper, start, n]",
+  FontWeight->"Bold"],
+ " could be the list of pairs\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"0", ",", "7"}], "}"}], ","}]}], TraditionalForm]]],
+ "{1,8},{2,9},{3,8},{4,9}}. ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"0", ",", "7"}], "}"}], ","}]}], TraditionalForm]]],
+ "{1,8},{2,9},{3,10},{4,11}} is not a valid walk."
+}], "Text",
+ CellChangeTimes->{{3.568640235127554*^9, 3.5686406464317427`*^9}, {
+  3.568679356416844*^9, 3.568679436039384*^9}, {3.5686794690188417`*^9, 
+  3.568679704984856*^9}, {3.5686798627479334`*^9, 3.5686798958043914`*^9}, {
+  3.5686800568842745`*^9, 3.5686800723283014`*^9}, {3.568681621220022*^9, 
+  3.568681629597237*^9}}],
+
+Cell[TextData[{
+ "b) Write a function",
+ StyleBox[" plotrandomwalk[lower, upper, start, n] ",
+  FontWeight->"Bold"],
+ "that creates a nice graphical output corresponding to the random walk \
+generated in part a). plotrandomwalk must call ",
+ StyleBox["randomWalk",
+  FontWeight->"Bold"],
+ ". The graphical output should as a minimum contain the connected points of \
+the walk. It might look like this:"
+}], "Text",
+ CellChangeTimes->{{3.568640235127554*^9, 3.5686406983569736`*^9}, 
+   3.5686797218796864`*^9, {3.568679784092595*^9, 3.5686797923762093`*^9}, {
+   3.5686799146648245`*^9, 3.568679953175292*^9}, {3.5686806289836793`*^9, 
+   3.5686806474073114`*^9}, {3.6633306771433744`*^9, 3.6633306776583195`*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[GraphicsComplexBox[CompressedData["
+1:eJxTTMoPSmViYGCQA2IQjQpkHCD0B3sILQHlMzigynM4oMoLoMmLQGkFNHVK
+aOpU0NQpodEKaOpg+tTQzNVAs1cLzV06aO7WQ5M3QNNviGa+EZr9xmjyJmj6
+TdHkzdD0m0NpmP8soLQSlLZEk7dCk7eG0rBwsUGTt4XrBwCbCRk8
+   "], {{{}, {}, 
+     {Hue[0.67, 0.6, 0.6], 
+      LineBox[{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 
+       19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30}]}}, {
+     {RGBColor[1, 0, 0], PointSize[Large], 
+      PointBox[{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18,
+        19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30}]}, {}, {}}}],
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->True,
+  AxesOrigin->{0, 0},
+  PlotRange->{{0., 29.}, {0, 10.}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{
+    Scaled[0.02], 
+    Scaled[0.02]}]], "Output",
+ CellChangeTimes->{{3.5686804568065767`*^9, 3.568680517740284*^9}, {
+  3.5686805740875826`*^9, 3.568680611917249*^9}}],
+
+Cell[TextData[{
+ "c) Write a function",
+ StyleBox[" stoprandomwalk[lower, upper, start] ",
+  FontWeight->"Bold"],
+ "that creates a random walk as in part a). However the length is not set, \
+the function  simply stops the walk when the walk (more precisely: the \
+y-coordinate) hits either the number ",
+ Cell[BoxData[
+  FormBox[
+   StyleBox["upper",
+    FontSlant->"Italic"], TraditionalForm]]],
+ " or the number ",
+ Cell[BoxData[
+  FormBox[
+   StyleBox["lower",
+    FontSlant->"Italic"], TraditionalForm]]],
+ " for the first time. ",
+ StyleBox["stoprandomwalk[lower, upper, start]",
+  FontWeight->"Bold"],
+ " should returns the list of coordinates for the walk. Modify this function \
+to create a function ",
+ StyleBox["stoppointrandomwalk[lower, upper, start] ",
+  FontWeight->"Bold"],
+ " that only returns the very last coordinate point of the walk, i.e. a \
+single point with coordinates of the form {n, lower} or {n, upper} for some \
+integer n."
+}], "Text",
+ CellChangeTimes->{{3.568640235127554*^9, 3.568640624533382*^9}, {
+  3.568640706506723*^9, 3.568640856031802*^9}, {3.5686797244692907`*^9, 
+  3.5686797357949104`*^9}, {3.5686798375694895`*^9, 3.56867984939431*^9}, {
+  3.5686806686545486`*^9, 3.5686806918673897`*^9}, {3.5686810612146387`*^9, 
+  3.568681089123088*^9}, {3.568681529449461*^9, 3.568681538060676*^9}, {
+  3.5686816441052628`*^9, 3.568681662638095*^9}, {3.568684617422739*^9, 
+  3.5686847483799267`*^9}, {3.5686850773272934`*^9, 3.5686850779980946`*^9}, {
+  3.663244642379507*^9, 3.663244643658709*^9}}],
+
+Cell[TextData[{
+ "d) Write a function ",
+ StyleBox["lowerupper[lower, upper, start, repeat] ",
+  FontWeight->"Bold"],
+ " that uses the earlier function ",
+ StyleBox["stoppointrandomwalk[lower, upper, start]",
+  FontWeight->"Bold"],
+ ". The function ",
+ StyleBox["lowerupper[lower, upper, start, repeat] ",
+  FontWeight->"Bold"],
+ "runs ",
+ StyleBox["stoppointrandomwalk[lower, upper, start]",
+  FontWeight->"Bold"],
+ " ",
+ Cell[BoxData[
+  FormBox[
+   StyleBox["repeat",
+    FontSlant->"Italic"], TraditionalForm]]],
+ " many times and counts and returns how often the walk ends at ",
+ Cell[BoxData[
+  FormBox[
+   StyleBox["lower",
+    FontSlant->"Italic"], TraditionalForm]]],
+ " and how often the walk ends at ",
+ Cell[BoxData[
+  FormBox[
+   StyleBox["upper",
+    FontSlant->"Italic"], TraditionalForm]]],
+ ".\nFor example if ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    StyleBox["repeat",
+     FontSlant->"Italic"], "=", "10"}], TraditionalForm]]],
+ " then it might return ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"{", 
+    RowBox[{"7", ",", "3"}], "}"}], TraditionalForm]]],
+ " then this means in the 10 walks generated,  7 walks stopped when they \
+reached the value ",
+ StyleBox["lower",
+  FontSlant->"Italic"],
+ " (as y-coordinate) and 3 walks stopped when they reached the value ",
+ StyleBox["upper ",
+  FontSlant->"Italic"],
+ "(as y-coordinate). "
+}], "Text",
+ CellChangeTimes->{{3.568640235127554*^9, 3.568640624533382*^9}, {
+   3.568640706506723*^9, 3.568641158029327*^9}, {3.5686797386809154`*^9, 
+   3.5686797662617636`*^9}, {3.5686811483095913`*^9, 3.56868131830309*^9}, {
+   3.568681494037399*^9, 3.568681507391022*^9}, {3.568681676350519*^9, 
+   3.5686817044461684`*^9}, {3.568684763286577*^9, 3.5686847881272173`*^9}, 
+   3.663330743139557*^9}],
+
+Cell[TextData[{
+ "e) Run simulations and collect enough evidence to be able to make a \
+reasonable conjectures about the following:\nGiven ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"I", "=", 
+    RowBox[{"[", 
+     RowBox[{
+      StyleBox["lower",
+       FontSlant->"Italic"], ",", 
+      StyleBox["upper",
+       FontSlant->"Italic"]}], "]"}]}], TraditionalForm]]],
+ " and ",
+ Cell[BoxData[
+  FormBox[
+   StyleBox["start",
+    FontSlant->"Italic"], TraditionalForm]]],
+ " what is the probability to hit the value ",
+ StyleBox["upper",
+  FontSlant->"Italic"],
+ " (as y-coordinate) and what is the probability to hit the value ",
+ StyleBox["lower ",
+  FontSlant->"Italic"],
+ "(as y-coordinate)? (Note: assume the range of ",
+ StyleBox["lower",
+  FontSlant->"Italic"],
+ " and ",
+ StyleBox["upper",
+  FontSlant->"Italic"],
+ " is 10, find the probability for different ",
+ StyleBox["start ",
+  FontSlant->"Italic"],
+ "value by running thousands of simulations)"
+}], "Text",
+ CellChangeTimes->{{3.568640235127554*^9, 3.568640624533382*^9}, {
+   3.568640706506723*^9, 3.568641248238886*^9}, {3.568681348457943*^9, 
+   3.5686814667217507`*^9}, {3.5686815595887136`*^9, 
+   3.5686815720219355`*^9}, {3.568681712651783*^9, 3.568681715147787*^9}, {
+   3.6633515972423835`*^9, 3.6633515992704225`*^9}, {3.6633516699553814`*^9, 
+   3.663351732886992*^9}, 3.663351762917569*^9}]
+}, Open  ]]
+},
+WindowToolbars->"EditBar",
+CellGrouping->Manual,
+WindowSize->{1280, 718},
+WindowMargins->{{-8, Automatic}, {Automatic, -8}},
+PrintingCopies->1,
+PrintingPageRange->{1, Automatic},
+ShowSelection->True,
+Magnification->1.5,
+FrontEndVersion->"10.1 for Microsoft Windows (64-bit) (March 23, 2015)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[567, 22, 221, 5, 72, "Subsection"],
+Cell[791, 29, 1286, 22, 131, "Text"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2114, 56, 145, 1, 58, "Subsubsection"],
+Cell[2262, 59, 1543, 27, 188, "Text"],
+Cell[3808, 88, 2470, 38, 330, "Text"]
+}, Open  ]],
+Cell[6293, 129, 646, 11, 131, "Text"],
+Cell[6942, 142, 111, 1, 72, "Subsection"],
+Cell[7056, 145, 819, 21, 124, "Text"],
+Cell[7878, 168, 219, 3, 72, "Subsection"],
+Cell[8100, 173, 766, 20, 124, "Text"],
+Cell[8869, 195, 111, 1, 72, "Subsection"],
+Cell[8983, 198, 1444, 23, 295, "Text"],
+Cell[CellGroupData[{
+Cell[10452, 225, 358, 5, 72, "Subsection"],
+Cell[10813, 232, 572, 20, 74, "Text"],
+Cell[11388, 254, 2586, 77, 330, "Text"],
+Cell[13977, 333, 714, 14, 102, "Text"],
+Cell[14694, 349, 969, 21, 366, "Output"],
+Cell[15666, 372, 1530, 34, 188, "Text"],
+Cell[17199, 408, 1758, 53, 216, "Text"],
+Cell[18960, 463, 1363, 39, 131, "Text"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

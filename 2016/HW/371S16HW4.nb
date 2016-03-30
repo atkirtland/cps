@@ -1,0 +1,417 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     20385,        408]
+NotebookOptionsPosition[     19517,        375]
+NotebookOutlinePosition[     19939,        393]
+CellTagsIndexPosition[     19896,        390]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[TextData[StyleBox["Mathematica Hw IV",
+ FontSlant->"Italic"]], "Subsection",
+ CellChangeTimes->{{3.504038332241448*^9, 3.504038335556608*^9}, 
+   3.600554681087484*^9, 3.6010312644757123`*^9, {3.602098184209516*^9, 
+   3.602098185388583*^9}},
+ TextAlignment->Center,
+ TextJustification->0.],
+
+Cell[TextData[{
+ "Claus Ernst/Huanjing Wang\t\tMath/Cs 371 Spring 2016\n",
+ StyleBox["Due: Wednesday, February 24 before class.  \nThis assignment must \
+be turned in electronically AND as a hard copy.  ",
+  FontWeight->"Bold"],
+ "The electronic copy must be submitted through blackboard ",
+ StyleBox["prior",
+  FontWeight->"Bold"],
+ " to your class."
+}], "Text",
+ CellChangeTimes->{{3.396307463532086*^9, 3.3963074935485563`*^9}, {
+   3.4731641043982286`*^9, 3.473164105183354*^9}, {3.4732629763552847`*^9, 
+   3.473262983315359*^9}, {3.504038346234837*^9, 3.504038351220984*^9}, {
+   3.504038387910781*^9, 3.504038388085926*^9}, {3.504038436962585*^9, 
+   3.504038450040007*^9}, {3.5040384824502697`*^9, 3.504038490601551*^9}, 
+   3.5044519632271605`*^9, {3.5044570373867207`*^9, 3.504457059558312*^9}, {
+   3.50445769212834*^9, 3.504457692753332*^9}, {3.5044579026725197`*^9, 
+   3.5044579326252613`*^9}, {3.599697701118517*^9, 3.599697709707015*^9}, 
+   3.599699734698741*^9, {3.5998581752573137`*^9, 3.599858184619651*^9}, {
+   3.600554711776409*^9, 3.6005547183170033`*^9}, {3.6005568231351633`*^9, 
+   3.600556839230084*^9}, {3.6010312687148643`*^9, 3.6010312690457983`*^9}, {
+   3.60114485828119*^9, 3.601144862972659*^9}, {3.6020981898618393`*^9, 
+   3.6020981901918583`*^9}, {3.6646400739328346`*^9, 3.664640126212843*^9}, {
+   3.664640169149869*^9, 3.664640169929884*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["General Requirements - read before you start working", "Subsubsection",
+ CellChangeTimes->{{3.6005568947642603`*^9, 3.600556923210887*^9}}],
+
+Cell[TextData[{
+ "Form groups of two. Each member of the group must understand and be able to \
+explain (in detail) all of the code turned in. We allow you to work in groups \
+so that you have someone with whom you can talk about your work in detail. \
+This is ",
+ StyleBox["not ",
+  FontWeight->"Bold"],
+ "meant for group members to only do half of the work. \n\nEach group turns \
+in one (stapled) printout at the beginning of class and submits an electronic \
+copy (one file) ",
+ StyleBox["prior",
+  FontWeight->"Bold"],
+ " to class. "
+}], "Text",
+ CellChangeTimes->{{3.396480117972228*^9, 3.396480213211784*^9}, {
+   3.396481628330934*^9, 3.396481640932308*^9}, {3.397247800613196*^9, 
+   3.397247807531184*^9}, {3.397247840005795*^9, 3.397247853566327*^9}, 
+   3.3972553681909*^9, {3.473262642118073*^9, 3.47326267102844*^9}, {
+   3.473262755690686*^9, 3.473262781328745*^9}, {3.473263003835178*^9, 
+   3.473263035137011*^9}, {3.473263086745429*^9, 3.4732630975755157`*^9}, {
+   3.504038469859208*^9, 3.5040384784188643`*^9}, {3.504038537476225*^9, 
+   3.504038538164055*^9}, {3.5044576595037575`*^9, 3.5044576830190816`*^9}, {
+   3.505520329671875*^9, 3.50552035315625*^9}, {3.505520405328125*^9, 
+   3.505520693015625*^9}, {3.505520726296875*^9, 3.50552093034375*^9}, {
+   3.505521849265625*^9, 3.50552185034375*^9}, {3.505523400421875*^9, 
+   3.505523415984375*^9}, {3.50552409528125*^9, 3.505524127328125*^9}, {
+   3.505524163546875*^9, 3.505524166015625*^9}, {3.505524332828125*^9, 
+   3.505524353015625*^9}, 3.5055601388344927`*^9}],
+
+Cell[TextData[{
+ "Your electronic and hard copy must include: \na) The names of both group \
+members on the print out (printed from the file, not added by hand). The name \
+of both group members must be included in the name of the electronic file. \
+For example if we (Claus and Huanjing) are a team then the file name should \
+be ",
+ StyleBox["ErnstWang371Hw4.nb",
+  FontWeight->"Bold"],
+ ". This will help to identify whose file we are looking at and it will also \
+avoid having several different files with the same name.\nb) A solution to \
+each problem, which includes the code, as well as a couple of executions of \
+your code which demonstrate that the code is (most likely) correct. Select \
+different types of input for your example runs, to show that different parts \
+of your code work correctly.   \nc) Your solutions must be well-documented ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " code, that is, you must use comments, meaningful variable names, proper \
+indentations, hide local variables (if any are needed), etc.  The comments in \
+the code should be such that taken by themselves they describe the algorithm \
+you used."
+}], "Text",
+ CellChangeTimes->{{3.396480117972228*^9, 3.396480213211784*^9}, {
+   3.396481628330934*^9, 3.396481640932308*^9}, {3.397247800613196*^9, 
+   3.397247807531184*^9}, {3.397247840005795*^9, 3.397247853566327*^9}, 
+   3.3972553681909*^9, {3.473262642118073*^9, 3.47326267102844*^9}, {
+   3.473262755690686*^9, 3.473262781328745*^9}, {3.473263003835178*^9, 
+   3.473263035137011*^9}, {3.473263086745429*^9, 3.4732630975755157`*^9}, {
+   3.504038469859208*^9, 3.5040384784188643`*^9}, {3.504038537476225*^9, 
+   3.504038538164055*^9}, {3.5044576595037575`*^9, 3.5044576830190816`*^9}, {
+   3.505520329671875*^9, 3.50552035315625*^9}, {3.505520405328125*^9, 
+   3.505520693015625*^9}, {3.505520726296875*^9, 3.50552093034375*^9}, {
+   3.505521849265625*^9, 3.50552185034375*^9}, {3.505523400421875*^9, 
+   3.505523415984375*^9}, {3.50552409528125*^9, 3.505524127328125*^9}, {
+   3.50552417040625*^9, 3.50552419490625*^9}, 3.50552429053125*^9, {
+   3.53693057117202*^9, 3.5369306050623493`*^9}, {3.568677130625534*^9, 
+   3.568677436152071*^9}, {3.568684000553052*^9, 3.568684134999381*^9}, {
+   3.56868497815792*^9, 3.5686849939607472`*^9}, {3.6005615396809344`*^9, 
+   3.600561541301027*^9}, {3.6632378486312523`*^9, 3.6632378498624544`*^9}, 
+   3.663245656094844*^9, {3.663263998278078*^9, 3.66326399913608*^9}, {
+   3.664641881991247*^9, 3.664641882381254*^9}, {3.6646419534898233`*^9, 
+   3.664641975427846*^9}, {3.6647038311680675`*^9, 3.6647038333053083`*^9}}],
+
+Cell["\<\
+Note: Throughout this assignment, the lists of arguments for functions maybe \
+given to clarify the order and meaning of the arguments; they do not follow \
+Mathematica syntax. However, your solutions must follow the given \
+order/structure of arguments as specified by the assignment. If you do \
+deviate from this our test programs will not run. \
+\>", "Text",
+ CellChangeTimes->{{3.6646420427435417`*^9, 3.66464206550838*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["1. The Game of Life", "Subsubsection",
+ CellChangeTimes->{{3.602096069036775*^9, 3.602096081723332*^9}, 
+   3.602098125220327*^9, {3.6020987395492797`*^9, 3.6020987401503143`*^9}, {
+   3.6646309916150365`*^9, 3.6646309942358866`*^9}, {3.664641708861391*^9, 
+   3.6646417089861937`*^9}}],
+
+Cell[TextData[{
+ "The game of Life was invented by John H. Conway to model some nature laws \
+for birth, death, and survival. Consider a checkerboard consisting of an \
+n-by-n array of squares. Each square can contain one individual (denoted by \
+1) or be empty (denoted by -). The left figure below shows a 6-by-6 board \
+with four of the squares occupied. The future of each individual depends on \
+the number of its neighbors. After each period of time, called a generation, \
+certain individuals will survive, others will die due to either loneliness or \
+overcrowding, and new individuals will be born. Each nonborder square has \
+eight neighboring squares. After each generation, the status of the squares \
+changes as follows:\n(a) An individual survives if there are two or three \
+individuals in neighboring squares.\n(b) An individual dies if he has more \
+than three individuals or less than two in neighboring squares.\n(c) A new \
+individual is born into each empty square that has exactly three individuals \
+as neighbors.\n\nThe right figure below shows the status after one \
+generation.\n",
+ Cell[BoxData[
+  GraphicsBox[{{}, {InsetBox[
+      TagBox[GridBox[{
+         {"\<\"-\"\>", "\<\"-\"\>", "\<\"-\"\>", "\<\"-\"\>", "\<\"-\"\>", \
+"\<\"-\"\>"},
+         {"\<\"-\"\>", "\<\"-\"\>", "\<\"-\"\>", "\<\"-\"\>", "\<\"-\"\>", \
+"\<\"-\"\>"},
+         {"\<\"-\"\>", "1", "1", "1", "1", "\<\"-\"\>"},
+         {"\<\"-\"\>", "\<\"-\"\>", "\<\"-\"\>", "\<\"-\"\>", "\<\"-\"\>", \
+"\<\"-\"\>"},
+         {"\<\"-\"\>", "\<\"-\"\>", "\<\"-\"\>", "\<\"-\"\>", "\<\"-\"\>", \
+"\<\"-\"\>"},
+         {"\<\"-\"\>", "\<\"-\"\>", "\<\"-\"\>", "\<\"-\"\>", "\<\"-\"\>", \
+"\<\"-\"\>"}
+        },
+        AutoDelete->False,
+        GridBoxItemSize->{
+         "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+       "Grid"], {192., -189.}, {Center, Center}, {360., 360.}], InsetBox[
+      TagBox[GridBox[{
+         {"\<\"-\"\>", "\<\"-\"\>", "\<\"-\"\>", "\<\"-\"\>", "\<\"-\"\>", \
+"\<\"-\"\>"},
+         {"\<\"-\"\>", "\<\"-\"\>", "1", "1", "\<\"-\"\>", "\<\"-\"\>"},
+         {"\<\"-\"\>", "\<\"-\"\>", "1", "1", "\<\"-\"\>", "\<\"-\"\>"},
+         {"\<\"-\"\>", "\<\"-\"\>", "1", "1", "\<\"-\"\>", "\<\"-\"\>"},
+         {"\<\"-\"\>", "\<\"-\"\>", "\<\"-\"\>", "\<\"-\"\>", "\<\"-\"\>", \
+"\<\"-\"\>"},
+         {"\<\"-\"\>", "\<\"-\"\>", "\<\"-\"\>", "\<\"-\"\>", "\<\"-\"\>", \
+"\<\"-\"\>"}
+        },
+        AutoDelete->False,
+        GridBoxItemSize->{
+         "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+       "Grid"], {576., -189.}, {Center, Center}, {360., 360.}]}, {}},
+   ContentSelectable->True,
+   PlotRangePadding->{6, 5}]], "Output",
+  CellChangeTimes->{3.6646390446236043`*^9}],
+ "\nWrite a complete ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " program to perform the following works.\n(1) Write a function ",
+ StyleBox["configurationBoard[n]",
+  FontWeight->"Bold"],
+ " where n is the size of board, let n is less than 9 and greater than 2. To \
+specify the initial configuration, have the user input each row as a string \
+of length n, and break the row into 1\[CloseCurlyQuote]s or dashes (for \
+example, assume n is 8, a valid input for a row can be \
+\[OpenCurlyDoubleQuote]1-11-1-1\[CloseCurlyDoubleQuote]) . Then display and \
+return the initial configuration of the board. \n\n(3) Write a function ",
+ StyleBox["nextGeneration[currentBoard]",
+  FontWeight->"Bold"],
+ " where currentBoard is the current generation. This function assigns the \
+next generation values to the current generation, displays and returns the \
+board of next generation.\n\n(4) Write a function ",
+ StyleBox["multipleGenerations[n, m] ",
+  FontWeight->"Bold"],
+ "where n is the size of the board (n-by-n),m is the number of generations, \
+and m is less than or equal to n. ",
+ StyleBox["multipleGenerations",
+  FontWeight->"Bold"],
+ " must call ",
+ StyleBox["configurationBoard[n]",
+  FontWeight->"Bold"],
+ " to generate initial configuration.",
+ StyleBox[" ",
+  FontWeight->"Bold"],
+ "The function then returns the board after m generations. ",
+ StyleBox["multipleGenerations",
+  FontWeight->"Bold"],
+ " must call ",
+ StyleBox["nextGeneration",
+  FontWeight->"Bold"],
+ ".\n\nNote: If you need helper function, write as many as you need.\n\n\
+Demonstrate that the program works correctly by showing two examples, one of \
+them should be the test case posted in Blakboard. (Hint: the hardest part of \
+the program is determining the number of neighbors a cell has. In general, \
+you must check a 3-by-3 square around the cell in question. Exceptions must \
+be made when the cell is on the edge of the board. Don\[CloseCurlyQuote]t \
+forget that a cell is not a neighbor of itself.)\n\n",
+ StyleBox["2. Airline Reservation", "Subsubsection"]
+}], "Text",
+ CellChangeTimes->{{3.6020971773140383`*^9, 3.602097191123241*^9}, {
+   3.602097222202533*^9, 3.602097325085889*^9}, {3.602097361535296*^9, 
+   3.6020974510102053`*^9}, {3.602098005453414*^9, 3.602098118969557*^9}, {
+   3.602098157388646*^9, 3.6020981631729813`*^9}, {3.6020984191156054`*^9, 
+   3.602098419667321*^9}, {3.6020992893377256`*^9, 3.6020993340032806`*^9}, {
+   3.602099489578179*^9, 3.602099497167613*^9}, {3.6020995928990884`*^9, 
+   3.6020996459331217`*^9}, {3.6646310348298674`*^9, 3.664631131399725*^9}, {
+   3.6646314559891853`*^9, 3.664631972713128*^9}, {3.6646320109660635`*^9, 
+   3.664632060290214*^9}, {3.664632147043335*^9, 3.664632323332726*^9}, {
+   3.664632358699606*^9, 3.6646324169073257`*^9}, {3.664632496524061*^9, 
+   3.664632634459716*^9}, {3.6646326881257477`*^9, 3.664632746850278*^9}, {
+   3.664637787546157*^9, 3.664637915939232*^9}, {3.664637979936264*^9, 
+   3.6646380166249723`*^9}, {3.664638059530198*^9, 3.6646381596345267`*^9}, {
+   3.6646382063126245`*^9, 3.664638315439723*^9}, {3.6646383613680067`*^9, 
+   3.664638370620985*^9}, 3.6646388729737005`*^9, 3.6646389859142733`*^9, {
+   3.6646390569946423`*^9, 3.6646391027957263`*^9}, 3.6646391452939434`*^9, {
+   3.664639203067855*^9, 3.6646392233616476`*^9}, {3.6646392600107527`*^9, 
+   3.6646393837935343`*^9}, 3.6646395817485437`*^9, {3.664639840353339*^9, 
+   3.664639842942989*^9}, 3.6646398770658455`*^9, {3.6646399330749226`*^9, 
+   3.6646400556448812`*^9}, {3.664645077981745*^9, 3.664645141118764*^9}, {
+   3.664645177285063*^9, 3.6646452535843334`*^9}, {3.664645420687271*^9, 
+   3.664645545430277*^9}, {3.6646455787459183`*^9, 3.6646456960997815`*^9}, {
+   3.66464578901097*^9, 3.664645888074882*^9}, {3.6646459321783314`*^9, 
+   3.664645982747905*^9}, {3.6646460164535537`*^9, 3.6646460169059625`*^9}, {
+   3.664646871753951*^9, 3.664646879632103*^9}, {3.664647839877624*^9, 
+   3.6646478595123816`*^9}, {3.664647895661673*^9, 3.664647905596819*^9}, {
+   3.6646479555843325`*^9, 3.6646479560047007`*^9}, {3.6646480666084175`*^9, 
+   3.6646480712851777`*^9}, {3.6646481015068445`*^9, 
+   3.6646482834052334`*^9}, {3.6646499424772706`*^9, 
+   3.6646499447549143`*^9}, {3.664650243055148*^9, 3.664650295407156*^9}, {
+   3.664650452463581*^9, 3.664650454743225*^9}, {3.664703873647684*^9, 
+   3.6647039437242317`*^9}, {3.6647043652837105`*^9, 3.664704365564516*^9}, {
+   3.6647045532049246`*^9, 3.664704569366835*^9}, {3.664704818815632*^9, 
+   3.6647048211868773`*^9}, {3.6647048960683174`*^9, 3.6647049230724373`*^9}}],
+
+Cell["\<\
+Write a reservation system for an airline flight. Assume the airplane has m \
+rows with n seats in each row. Use a table of strings to maintain a seating \
+chart. In addition, create a list to be used as a waiting list in case the \
+plane is full. The waiting list should be \[OpenCurlyDoubleQuote]first come, \
+first served\[CloseCurlyDoubleQuote]; that is, people who are added early to \
+this list get priority over those added later. \
+\>", "Text",
+ CellChangeTimes->{{3.6646468905115128`*^9, 3.6646469035125628`*^9}, {
+  3.664647152672974*^9, 3.6646472126293287`*^9}, {3.664647253670119*^9, 
+  3.6646476464050913`*^9}, {3.664647681502167*^9, 3.664647709928295*^9}, {
+  3.6646482965391836`*^9, 3.6646482990054145`*^9}, {3.6646483344544325`*^9, 
+  3.664648359927353*^9}, {3.6646486120211926`*^9, 3.6646486122395773`*^9}, {
+  3.664649988683052*^9, 3.664649989213462*^9}, {3.6646500227913084`*^9, 
+  3.66465003901762*^9}, {3.6646502982484107`*^9, 3.6646503024604917`*^9}, {
+  3.664704009206294*^9, 3.664704010376317*^9}}],
+
+Cell[TextData[{
+ "Developing ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " code as follows\n(1) Write a function ",
+ StyleBox["initialSeatingChart[m,n]",
+  FontWeight->"Bold"],
+ " where m is the number of rows and n is the number of seats in each row. \
+This function return an empty seating chart, use dash to represent available \
+seat.\n\n(2) Write a function ",
+ StyleBox["addSeatingChart[seatingChart, waitingList]",
+  FontWeight->"Bold"],
+ " where seatingChart is the current seating chart and waitingList is the \
+current waiting list. This function will add a passenger to the flight or \
+waiting list and do the followings:\n\tRequest the \
+passenger\[CloseCurlyQuote]s name.\n\tDisplay a chart of seats in the \
+airplane in tabular form.\n\tIf seats are available, let the passenger choose \
+a seat. Add the passenger to the seating chart.\n\tIf no seats are available, \
+place the passenger on the waiting list.\n",
+ StyleBox["addSeatingChart[seatingChart, waitingList] ",
+  FontWeight->"Bold"],
+ "returns the updated seating chart and waiting list.\n\n(3) Write a function",
+ StyleBox[" removeSeatingChart[seatingChart, waitingList]",
+  FontWeight->"Bold"],
+ " where seatingChart is the current seating chart and waitingList is the \
+current waiting list. This function will remove a passenger from the flight \
+and do the followings.\n\tRequest the passenger\[CloseCurlyQuote]s name.\n\t\
+Search the seating chart for the passenger\[CloseCurlyQuote]s name and delete \
+it.\n\tIf the waiting list is empty, update the seating chart so the seat is \
+available.\n\tIf the waiting list is not empty, remove the first person from \
+the list, and give him or her the newly vacated seat.\n",
+ StyleBox["removeSeatingChart[seatingChart, waitingList] ",
+  FontWeight->"Bold"],
+ "returns the updated seating chart and waiting list.\t\n\n(4) Write a \
+function ",
+ StyleBox["airlineReservation[m,n]",
+  FontWeight->"Bold"],
+ " where m is the number of rows and n is the number of seats in each row. \
+This function asks user to perform multiple operations on the reservation \
+system. It first call  the function ",
+ StyleBox["initialSeatingChart[m,n]",
+  FontWeight->"Bold"],
+ " and then performs the following repeatedly:\n\tDisplay the menu, 1-Add, \
+2-Remove, 3-Quit\n\tAsk user to input the operations, the input only can be \
+1, 2, or 3.\n\tIf user input 1, call ",
+ StyleBox["addSeatingChart",
+  FontWeight->"Bold"],
+ ".\n\tif user input 2, call ",
+ StyleBox["removeSeatingChart",
+  FontWeight->"Bold"],
+ ".\n\tif user input 3, quit the loop\nthen displays and returns the final \
+seating chart and waiting list."
+}], "Text",
+ CellChangeTimes->{{3.6646483053571486`*^9, 3.6646483278023677`*^9}, {
+   3.6646483862166853`*^9, 3.664648391254323*^9}, {3.6646485118500834`*^9, 
+   3.6646487860335264`*^9}, {3.6646490570249405`*^9, 
+   3.6646494696913123`*^9}, {3.664649500590799*^9, 3.664649693361083*^9}, {
+   3.664650059710619*^9, 3.6646500941484823`*^9}, {3.664650133141632*^9, 
+   3.6646502242723866`*^9}, {3.6646503038801193`*^9, 
+   3.6646503145527244`*^9}, {3.6646503859122996`*^9, 3.664650397305519*^9}, 
+   3.664650427420099*^9, {3.664704016320031*^9, 3.664704042388132*^9}, {
+   3.6647044753594275`*^9, 3.6647044836899877`*^9}}],
+
+Cell["\<\
+Demonstrate that the program works correctly by showing two examples, one of \
+them should be the test case posted in Blakboard.\
+\>", "Text",
+ CellChangeTimes->{{3.6646504902243075`*^9, 3.664650526770211*^9}, {
+  3.6647047828569403`*^9, 3.6647048024041166`*^9}, {3.6647048576603794`*^9, 
+  3.664704858128388*^9}, {3.664704909219371*^9, 3.664704918064741*^9}}],
+
+Cell[BoxData["\[IndentingNewLine]"], "Input",
+ CellChangeTimes->{3.6646477140385637`*^9, 3.6646491907011166`*^9, 
+  3.6646504781632757`*^9}]
+}, Open  ]]
+}, Open  ]]
+},
+WindowToolbars->"EditBar",
+WindowSize->{1280, 718},
+WindowMargins->{{-8, Automatic}, {Automatic, -8}},
+ShowSelection->True,
+Magnification:>1.5 Inherited,
+FrontEndVersion->"10.1 for Microsoft Windows (64-bit) (March 23, 2015)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 295, 6, 72, "Subsection"],
+Cell[877, 30, 1383, 23, 131, "Text"],
+Cell[CellGroupData[{
+Cell[2285, 57, 145, 1, 58, "Subsubsection"],
+Cell[2433, 60, 1543, 27, 188, "Text"],
+Cell[3979, 89, 2625, 40, 330, "Text"],
+Cell[6607, 131, 439, 7, 102, "Text"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7083, 143, 292, 4, 58, "Subsubsection"],
+Cell[7378, 149, 7306, 130, 1255, "Text"],
+Cell[14687, 281, 1032, 15, 131, "Text"],
+Cell[15722, 298, 3251, 61, 843, "Text"],
+Cell[18976, 361, 370, 6, 74, "Text"],
+Cell[19349, 369, 140, 2, 75, "Input"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
