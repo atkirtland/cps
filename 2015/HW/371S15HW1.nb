@@ -1,0 +1,453 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 6.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[     17901,        444]
+NotebookOptionsPosition[     17267,        418]
+NotebookOutlinePosition[     17757,        439]
+CellTagsIndexPosition[     17714,        436]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[TextData[StyleBox["Mathematica Hw 1",
+ FontSlant->"Italic"]], "Subsection",
+ CellChangeTimes->{{3.504038332241448*^9, 3.504038335556608*^9}},
+ TextAlignment->Center,
+ TextJustification->0.],
+
+Cell[TextData[{
+ "Claus Ernst/Uta Ziegler\t\tDepartment of Mathematics\t\tMath/Cs 371 Spring \
+2015\n",
+ StyleBox["Due: Wednesday, February 4 before class.  \n16 pts total. ",
+  FontWeight->"Bold"],
+ "Each problem is worth 1 point for a total of 16 pts."
+}], "Text",
+ CellChangeTimes->{{3.396307463532086*^9, 3.3963074935485563`*^9}, {
+   3.4731641043982286`*^9, 3.473164105183354*^9}, {3.4732629763552847`*^9, 
+   3.473262983315359*^9}, {3.504038346234837*^9, 3.504038351220984*^9}, {
+   3.504038387910781*^9, 3.504038388085926*^9}, {3.504038436962585*^9, 
+   3.504038450040007*^9}, {3.5040384824502697`*^9, 3.504038490601551*^9}, 
+   3.5044519632271605`*^9, {3.5044570373867207`*^9, 3.504457059558312*^9}, {
+   3.50445769212834*^9, 3.504457692753332*^9}, {3.5044579026725197`*^9, 
+   3.5044579326252613`*^9}, {3.599697701118517*^9, 3.599697709707015*^9}, 
+   3.599699734698741*^9, {3.5998581752573137`*^9, 3.599858184619651*^9}, {
+   3.631125237708308*^9, 3.631125262592093*^9}}]
+}, Open  ]],
+
+Cell[TextData[{
+ "The following are problems that will take only simple commands of the types \
+discussed in class. \nNo problem requires mathematical knowledge beyond \
+trigonometry. \n\nHowever knowledge of mathematical topics you encountered \
+throughout your mathematical career is required. All of you had classes which \
+discussed functions (polynomials, log functions, exponential functions, and \
+more) and how to find zeros, asymptotes, local extrema, etc. You might not \
+remember it, but you need it and so it is your responsibility to study up on \
+it. Find a book or a good website to get started. For example to answer the \
+plotting and solving problems you need to have an idea of how the log \
+function, the exponential function or the sine or cosine functions behave.\n\n\
+",
+ StyleBox["Careful: ",
+  FontWeight->"Bold"],
+ "You will need to use your head! This is not a routine exercise set. A few \
+of the problems require some thought!"
+}], "Text",
+ CellChangeTimes->{{3.396480117972228*^9, 3.396480213211784*^9}, {
+   3.396481628330934*^9, 3.396481640932308*^9}, {3.397247800613196*^9, 
+   3.397247807531184*^9}, {3.397247840005795*^9, 3.397247853566327*^9}, 
+   3.3972553681909*^9, {3.473262642118073*^9, 3.47326267102844*^9}, {
+   3.473262755690686*^9, 3.473262781328745*^9}, {3.473263003835178*^9, 
+   3.473263035137011*^9}, {3.473263086745429*^9, 3.4732630975755157`*^9}, {
+   3.504038469859208*^9, 3.5040384784188643`*^9}, {3.504038537476225*^9, 
+   3.504038538164055*^9}, {3.5044576595037575`*^9, 3.5044576830190816`*^9}, {
+   3.599697765684497*^9, 3.599697787217503*^9}, {3.5996996657703857`*^9, 
+   3.59969970509048*^9}, {3.599868705754962*^9, 3.599868707745965*^9}}],
+
+Cell[TextData[{
+ StyleBox["Plot the following functions",
+  FontWeight->"Bold"],
+ ". Your print out should show a \"nice graph\". A \"nice\" graph should show \
+the following:\na) y-intercepts, b) local minima and maxima, c) zeros, d) \
+asymptotes, and e) the correct end behavior (for x \[Rule] \[PlusMinus]\
+\[Infinity]). For a periodic graph show one period.\nSometimes this might not \
+be possible in a single graph. In those cases plot several graphs of the same \
+function. For each problem write down an explanation how you know that your \
+graph (or graphs) show all important features of the function.\n\n\n1. ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"g", "(", "x", ")"}], "=", 
+    RowBox[{
+     SuperscriptBox["x", "6"], "-", 
+     RowBox[{"1252", 
+      SuperscriptBox["x", "5"]}], "+", 
+     RowBox[{"22213", 
+      SuperscriptBox["x", "4"]}], "+", 
+     RowBox[{"186", 
+      SuperscriptBox["x", "3"]}], "-", 
+     RowBox[{"104", 
+      SuperscriptBox["x", "2"]}], "-", 
+     RowBox[{"1741200", "x"}], "+", "357213"}]}], TraditionalForm]]],
+ " \nHint: There are at most 6 zeros.\n2. ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"h", "(", "x", ")"}], "=", 
+    FractionBox[
+     RowBox[{
+      RowBox[{"-", "240"}], "+", 
+      RowBox[{"188", " ", "x"}], "-", 
+      RowBox[{"28", " ", 
+       SuperscriptBox["x", "2"]}], "-", 
+      RowBox[{"5", " ", 
+       SuperscriptBox["x", "3"]}], "+", 
+      SuperscriptBox["x", "4"]}], 
+     RowBox[{"2100", "-", 
+      RowBox[{"421", " ", "x"}], "-", 
+      RowBox[{"96", " ", 
+       SuperscriptBox["x", "2"]}], "+", 
+      SuperscriptBox["x", "3"]}]]}], TraditionalForm]]],
+ "  \nHint: There are several asymptotes.\n3. ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"f", "(", "x", ")"}], "=", " ", 
+    FractionBox[
+     RowBox[{
+      RowBox[{
+       RowBox[{"-", "40"}], 
+       SuperscriptBox["x", "4"]}], "-", 
+      RowBox[{"3", 
+       SuperscriptBox["x", "3"]}], "+", 
+      RowBox[{"7", "x"}], "+", 
+      RowBox[{"10", 
+       SuperscriptBox["\[ExponentialE]", 
+        RowBox[{
+         RowBox[{"-", ".001"}], "x"}]]}]}], 
+     RowBox[{
+      RowBox[{"5", 
+       SuperscriptBox["x", "4"]}], "-", "27", "-", 
+      RowBox[{"5", 
+       SuperscriptBox["\[ExponentialE]", 
+        RowBox[{
+         RowBox[{"-", ".001"}], "x"}]]}]}]]}], TraditionalForm]]],
+ "\nHint: Careful with the e!  Also, there is more than one asymptote.\n4. ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"l", "(", "x", ")"}], "=", " ", 
+    RowBox[{
+     RowBox[{"ln", "(", 
+      RowBox[{
+       RowBox[{"5", "x"}], "+", "3500"}], ")"}], "+", 
+     FractionBox[
+      SuperscriptBox["x", "2"], "20"]}]}], TraditionalForm]]],
+ " \nHint: Careful with ln! Look it up under \"Help\" within ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ ". Important hint: There IS an asymptote.\n5. ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"f", "(", "x", ")"}], "=", " ", 
+    RowBox[{
+     RowBox[{
+      SuperscriptBox["cos", "2"], "(", 
+      FractionBox["x", "4"], ")"}], "+", 
+     RowBox[{
+      SuperscriptBox["sin", "2"], "(", 
+      FractionBox["x", "6"], ")"}]}]}], TraditionalForm]]],
+ " \nHint: Careful with sin and cos! Look it up under \"Help\" within ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ ". Try to figure out if this function is periodic and how long the period is."
+}], "Text",
+ CellChangeTimes->{{3.39648107901058*^9, 3.396481195258045*^9}, {
+   3.396481242904416*^9, 3.396481300698859*^9}, {3.3964813700781*^9, 
+   3.3964813760087967`*^9}, {3.3964814421673737`*^9, 
+   3.3964815320649633`*^9}, {3.396481598549769*^9, 3.396481621307949*^9}, {
+   3.3964819397473183`*^9, 3.396481955864027*^9}, {3.397255372919841*^9, 
+   3.397255378552888*^9}, {3.4732621353121023`*^9, 3.4732621408854513`*^9}, {
+   3.4732621724240303`*^9, 3.473262177622089*^9}, {3.47326236068077*^9, 
+   3.473262424532236*^9}, {3.504038922146817*^9, 3.504039121810068*^9}, {
+   3.5040391916719227`*^9, 3.50403920982368*^9}, {3.504039249702895*^9, 
+   3.50403927283188*^9}, {3.504452048226073*^9, 3.5044521044597282`*^9}, {
+   3.5044531739909925`*^9, 3.5044531741472406`*^9}, {3.504454103562205*^9, 
+   3.504454295669895*^9}, {3.504456458300383*^9, 3.504456486409398*^9}, {
+   3.5044565210652046`*^9, 3.5044565430336733`*^9}, {3.504456587548729*^9, 
+   3.50445666714146*^9}, {3.5996983254499283`*^9, 3.599698327184914*^9}, {
+   3.5996984493872967`*^9, 3.599698452658587*^9}, {3.599698565396768*^9, 
+   3.599698691905161*^9}, {3.599698729412961*^9, 3.599698739095356*^9}, {
+   3.599858047761558*^9, 3.599858056106353*^9}, 3.599858156836822*^9, 
+   3.5998677230655775`*^9, {3.5998678516247587`*^9, 3.5998679441418886`*^9}, {
+   3.5998685441337347`*^9, 3.5998685990598116`*^9}, {3.6003049290974197`*^9, 
+   3.60030492909753*^9}, {3.63112530708976*^9, 3.631125359347782*^9}, {
+   3.631125704868449*^9, 3.631125731003023*^9}, {3.6311258527910643`*^9, 
+   3.631125859414464*^9}, {3.631126219447652*^9, 3.631126255739935*^9}, {
+   3.631126288649032*^9, 3.6311263184697866`*^9}, {3.631126427151585*^9, 
+   3.631126502814372*^9}, {3.63112678041403*^9, 3.631126797364657*^9}, {
+   3.631233392581128*^9, 3.6312334172855406`*^9}}],
+
+Cell[TextData[{
+ StyleBox["Solve the following equations",
+  FontWeight->"Bold"],
+ ". If you can solve the equations exactly do that! If no exact solution is \
+possible give a numeric solution.     \nLook it up under \"Help\" within the ",
+ StyleBox["Mathematica ",
+  FontSlant->"Italic"],
+ "documentation center. There you can find various commands for equation \
+solving.\n6. ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"0", "=", 
+    RowBox[{
+     RowBox[{"5", 
+      SuperscriptBox["x", "3"]}], " ", "-", 
+     RowBox[{"3", 
+      SuperscriptBox["x", "2"]}], "-", 
+     RowBox[{"3", "x"}], "+", "7"}]}], TraditionalForm]]],
+ "\n7. ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"0", "=", 
+    RowBox[{
+     SuperscriptBox["x", "5"], "+", 
+     RowBox[{"2", 
+      SuperscriptBox["x", "4"]}], "-", 
+     RowBox[{"302", 
+      SuperscriptBox["x", "3"]}], "+", 
+     RowBox[{"893", 
+      SuperscriptBox["x", "2"]}], "+", 
+     RowBox[{"1208", "x"}], "-", "3588"}]}], TraditionalForm]]],
+ "\n8. ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     RowBox[{"ln", "(", "x", ")"}], " ", 
+     RowBox[{"sin", "(", "x", ")"}]}], "=", 
+    RowBox[{
+     RowBox[{
+      FractionBox["2", "10"], "x"}], "-", "1"}]}], TraditionalForm]]],
+ " over the interval ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"[", 
+    RowBox[{
+     RowBox[{"-", "15"}], ",", "15"}], "]"}], TraditionalForm]]],
+ ". Hint: Over this interval there are finitely many solutions."
+}], "Text",
+ CellChangeTimes->{{3.39648107901058*^9, 3.396481195258045*^9}, {
+   3.396481242904416*^9, 3.396481300698859*^9}, {3.3964813700781*^9, 
+   3.3964813760087967`*^9}, {3.3964814421673737`*^9, 
+   3.3964815320649633`*^9}, {3.396481598549769*^9, 3.396481621307949*^9}, {
+   3.3964819397473183`*^9, 3.396481955864027*^9}, {3.397255372919841*^9, 
+   3.397255378552888*^9}, {3.4732621353121023`*^9, 3.4732621408854513`*^9}, {
+   3.4732621724240303`*^9, 3.473262177622089*^9}, {3.47326236068077*^9, 
+   3.473262424532236*^9}, {3.4732625036088953`*^9, 3.473262582487311*^9}, {
+   3.473262800985434*^9, 3.4732628304669943`*^9}, {3.473262882400238*^9, 
+   3.473262915492991*^9}, {3.5040392860438843`*^9, 3.5040393296722193`*^9}, {
+   3.50403952501095*^9, 3.504039595742057*^9}, {3.504456969418841*^9, 
+   3.5044570174494762`*^9}, {3.599698760148925*^9, 3.599698760845152*^9}, {
+   3.599698812804677*^9, 3.5996988166690283`*^9}, {3.59985806716639*^9, 
+   3.599858071885942*^9}, {3.631125453968259*^9, 3.6311254758071203`*^9}, {
+   3.631125508147429*^9, 3.6311255192360363`*^9}, {3.631125557159232*^9, 
+   3.6311255571593*^9}, 3.6312335082287426`*^9}],
+
+Cell[TextData[{
+ StyleBox["Additional problems:",
+  FontWeight->"Bold"],
+ "\nSome of these can be worked without the computer. That is just fine. You \
+can do them on a piece of paper if you don't want to use the computer. \
+However, sometimes you can ask ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " for an answer or a plot which helps you understand.\n\n9. Evaluate the \
+expression ",
+ Cell[BoxData[
+  RowBox[{
+   RowBox[{
+    FractionBox["1", 
+     SqrtBox["5"]], 
+    SuperscriptBox[
+     RowBox[{"(", 
+      FractionBox[
+       RowBox[{"1", "+", 
+        SqrtBox["5"]}], "2"], ")"}], "n"]}], "-", 
+   RowBox[{
+    FractionBox["1", 
+     SqrtBox["5"]], 
+    SuperscriptBox[
+     RowBox[{"(", 
+      FractionBox[
+       RowBox[{"1", "-", 
+        SqrtBox["5"]}], "2"], ")"}], "n"]}]}]],
+  CellChangeTimes->{{3.568071420594366*^9, 3.5680714709044547`*^9}, {
+   3.568071523492147*^9, 3.5680715370173707`*^9}}],
+ " for n = 1, 2, 3, ... .  What\[CloseCurlyQuote]s the name of the sequence \
+of numbers which is generated by this expression?\n10",
+ StyleBox[". ",
+  Evaluatable->False,
+  AspectRatioFixed->True],
+ "Factoring ",
+ Cell[BoxData[
+  RowBox[{
+   SuperscriptBox["x", 
+    SuperscriptBox["3", "n"]], "-", "1"}]]],
+ ". Let ",
+ Cell[BoxData[
+  FormBox["n", TraditionalForm]]],
+ " be a positive integer (",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"n", "\[GreaterEqual]", "1"}], TraditionalForm]]],
+ "). Come up with a patter that shows how ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SuperscriptBox["x", 
+     SuperscriptBox["3", "n"]], "-", "1", " "}], TraditionalForm]]],
+ "can be factored.  Hint: Check out at least 5 different n values larger than \
+two before you jump to conclusions.\n11. Atmospheric thickness\n\
+\[OpenCurlyDoubleQuote]",
+ StyleBox["For the first time in my life, I saw the horizon as a curved line. \
+It was accentuated by a thin seam of dark blue light\[LongDash]our \
+atmosphere. Obviously this was not the 'ocean' of air I had been told it was \
+so many times before in my life. I was terrified by its fragile appearance.",
+  FontColor->RGBColor[0, 0, 1]],
+ "\[CloseCurlyDoubleQuote]\[LongDash]Ulf Merbold, German space shuttle \
+astronaut, in 1988, as quoted by Carl Sagan, ",
+ StyleBox["Pale Blue Dot",
+  FontSlant->"Italic"],
+ ", New York:  Random House, 1994, 217.\nSuppose that the \
+\[OpenCurlyDoubleQuote]thin seam of dark blue light\[CloseCurlyDoubleQuote] \
+extends about 300,000 feet above the surface of the Earth. The diameter of \
+the Earth is about 8000 miles. If we had a basketball-sized model of the \
+Earth, measuring 10 inches in diameter, about how far would the atmosphere \
+stick out above the surface of the ball?\n12.  What is the ",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["771", "th"], TraditionalForm]]],
+ " decimal digit of the number \[Pi] ? Hint: Careful! Think this through \
+before you are sure you are done. Make sure your approach works correctly by \
+checking it carefully.\n13. What is the period of ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"f", "(", "x", ")"}], "=", " ", 
+    RowBox[{
+     RowBox[{"cos", "(", 
+      FractionBox["x", "4"], ")"}], "+", 
+     RowBox[{
+      SuperscriptBox["sin", "2"], "(", 
+      FractionBox["x", "6"], ")"}]}]}], TraditionalForm]]],
+ " ? Explain your answer.\n14",
+ StyleBox[". Write the ",
+  Evaluatable->False,
+  AspectRatioFixed->True],
+ StyleBox["exact value ",
+  Evaluatable->False,
+  AspectRatioFixed->True,
+  FontVariations->{"Underline"->True}],
+ StyleBox["of ",
+  Evaluatable->False,
+  AspectRatioFixed->True],
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"|", 
+    RowBox[{"40", "-", " ", 
+     RowBox[{"4", 
+      SqrtBox["103"]}]}], "|"}], TraditionalForm]]],
+ " ",
+ StyleBox["without using absolute value bars. \n15. ",
+  Evaluatable->False,
+  AspectRatioFixed->True],
+ "Compute all three cube roots of ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"-", "27"}], TraditionalForm]]],
+ ".",
+ StyleBox["\n16. Is this always true:",
+  Evaluatable->False,
+  AspectRatioFixed->True],
+ " ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RadicalBox[
+     SuperscriptBox[
+      RowBox[{"(", 
+       RowBox[{"x", "+", "1000"}], ")"}], "4"], "4"], "=", 
+    RowBox[{"x", "+", "1000"}]}], TraditionalForm]]],
+ ". Explain your answer."
+}], "Text",
+ CellChangeTimes->{{3.396481654375134*^9, 3.396481698573409*^9}, {
+   3.396481753114209*^9, 3.396481754221251*^9}, {3.396481789766574*^9, 
+   3.396481900128661*^9}, {3.397247731503316*^9, 3.397247739683057*^9}, {
+   3.397255382265682*^9, 3.397255383657546*^9}, {3.473262184699836*^9, 
+   3.473262252768079*^9}, 3.473262344002327*^9, {3.473262439903346*^9, 
+   3.473262456165183*^9}, {3.473262588146858*^9, 3.4732625989747257`*^9}, {
+   3.4732629401160316`*^9, 3.47326295777942*^9}, {3.504039771057276*^9, 
+   3.504039774836094*^9}, {3.5044571541352262`*^9, 3.5044571934159737`*^9}, {
+   3.5044572277280345`*^9, 3.5044572399935026`*^9}, {3.5044572753055506`*^9, 
+   3.504457285086675*^9}, {3.504457315976905*^9, 3.504457355710771*^9}, {
+   3.504457461053173*^9, 3.5044575052244825`*^9}, {3.59969880595711*^9, 
+   3.599698806485528*^9}, {3.599699229624794*^9, 3.5996993594857264`*^9}, {
+   3.599699606338997*^9, 3.599699647218935*^9}, {3.59985803472505*^9, 
+   3.599858035248476*^9}, {3.5998580775299873`*^9, 3.599858119554392*^9}, 
+   3.5998677373575974`*^9, {3.5998687259679904`*^9, 3.599868738600008*^9}, {
+   3.5998688126401124`*^9, 3.5998688134901133`*^9}, {3.5998695970982175`*^9, 
+   3.599869601509224*^9}, {3.599870009964799*^9, 3.599870011404801*^9}, {
+   3.599870350364278*^9, 3.5998703541242833`*^9}, {3.5998707627588587`*^9, 
+   3.599870800673912*^9}, {3.5998708356989613`*^9, 3.599870841109969*^9}, {
+   3.599871761987034*^9, 3.5998718129568453`*^9}, {3.6003047067793913`*^9, 
+   3.6003047067794857`*^9}, {3.6311268976531057`*^9, 3.631126920570444*^9}, {
+   3.631126969670223*^9, 3.631127007541009*^9}, {3.631127052674967*^9, 
+   3.631127111447339*^9}, {3.6311271532625923`*^9, 3.631127190427051*^9}, {
+   3.6312336701620045`*^9, 3.6312336731891775`*^9}}]
+},
+WindowToolbars->"EditBar",
+CellGrouping->Manual,
+WindowSize->{1600, 818},
+WindowMargins->{{-8, Automatic}, {Automatic, -8}},
+PrintingCopies->1,
+PrintingPageRange->{1, Automatic},
+ShowSelection->True,
+Magnification->1.5,
+FrontEndVersion->"10.0 for Microsoft Windows (64-bit) (December 4, 2014)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[567, 22, 194, 4, 72, "Subsection"],
+Cell[764, 28, 981, 16, 102, "Text"]
+}, Open  ]],
+Cell[1760, 47, 1696, 26, 273, "Text"],
+Cell[3459, 75, 5190, 123, 543, "Text"],
+Cell[8652, 200, 2584, 64, 174, "Text"],
+Cell[11239, 266, 6024, 150, 648, "Text"]
+}
+]
+*)
+
+(* End of internal cache information *)

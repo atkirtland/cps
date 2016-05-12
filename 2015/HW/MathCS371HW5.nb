@@ -1,0 +1,2907 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     97951,       2898]
+NotebookOptionsPosition[     95781,       2828]
+NotebookOutlinePosition[     96184,       2845]
+CellTagsIndexPosition[     96141,       2842]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[TextData[StyleBox["Mathematica Hw 5",
+ FontSlant->"Italic"]], "Subsection",
+ CellChangeTimes->{{3.504038332241448*^9, 3.504038335556608*^9}, {
+   3.6318918128070087`*^9, 3.6318918136941643`*^9}, 3.6326162980124063`*^9, 
+   3.633470267951882*^9, 3.634382128441214*^9},
+ TextAlignment->Center,
+ TextJustification->0.],
+
+Cell[TextData[{
+ "Claus Ernst/Uta Ziegler\t\t\t\t\t\t\t\tMath/Cs 371 Spring 2015\n",
+ StyleBox["Due: Wednesday, March 18 before class. ",
+  FontWeight->"Bold"]
+}], "Text",
+ CellChangeTimes->{{3.396307463532086*^9, 3.3963074935485563`*^9}, {
+   3.4731641043982286`*^9, 3.473164105183354*^9}, {3.4732629763552847`*^9, 
+   3.473262983315359*^9}, {3.504038346234837*^9, 3.504038351220984*^9}, {
+   3.504038387910781*^9, 3.504038388085926*^9}, {3.504038436962585*^9, 
+   3.504038450040007*^9}, {3.5040384824502697`*^9, 3.504038490601551*^9}, 
+   3.5044519632271605`*^9, {3.5044570373867207`*^9, 3.504457059558312*^9}, {
+   3.50445769212834*^9, 3.504457692753332*^9}, {3.5044579026725197`*^9, 
+   3.5044579326252613`*^9}, {3.599697701118517*^9, 3.599697709707015*^9}, 
+   3.599699734698741*^9, {3.5998581752573137`*^9, 3.599858184619651*^9}, {
+   3.631125237708308*^9, 3.631125262592093*^9}, {3.6318918182304783`*^9, 
+   3.631891825245789*^9}, {3.632008488659422*^9, 3.632008488841485*^9}, {
+   3.632010328361659*^9, 3.6320103306805067`*^9}, {3.6320152108411283`*^9, 
+   3.6320152168604727`*^9}, 3.632015454332055*^9, 3.632616311164855*^9, {
+   3.632616985495686*^9, 3.632617004551454*^9}, {3.633470294549295*^9, 
+   3.633470299245779*^9}, {3.633639345990467*^9, 3.633639354300479*^9}, {
+   3.634382204658247*^9, 3.634382228690914*^9}}],
+
+Cell[TextData[{
+ StyleBox["Submission instructions:",
+  FontWeight->"Bold"],
+ "\nYour HW 5 is to be turned in electronically. Submit one file containing \
+all your work, the required executions, and the required explanations. Make \
+sure your code follows standard quality expectations including (but not \
+limited to) using meaningful variable names, using proper indentations, \
+containing sufficient comments, using specified names and parameters and \
+being correct.\nThe file name should contain the last names of the students \
+turning it in and no spaces. E.g. ErnstZieglerHW5.nb. Your file - on the \
+first page - must also contain the names of the students turning it in."
+}], "Text",
+ CellChangeTimes->{{3.6320152206726904`*^9, 3.6320154997056503`*^9}, {
+   3.632616317612198*^9, 3.632616322219727*^9}, {3.6326170196173153`*^9, 
+   3.632617020353358*^9}, 3.633470303117446*^9, {3.633639368753499*^9, 
+   3.633639381185517*^9}, 3.634382197348146*^9, 3.634382238939192*^9}],
+
+Cell[TextData[{
+ StyleBox["Additional instructions:",
+  FontWeight->"Bold"],
+ "\nUse a different partner for HW 5 than you had for HW4."
+}], "Text",
+ CellChangeTimes->{{3.6320152206726904`*^9, 3.6320154997056503`*^9}, {
+   3.632616317612198*^9, 3.632616382589816*^9}, 3.6326658271297817`*^9, {
+   3.634393304546933*^9, 3.6343933459441357`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ StyleBox["Problem 1: ",
+  FontWeight->"Bold"],
+ " ",
+ StyleBox[" Pascal\[CloseCurlyQuote]s Triangle - sideways and in colors",
+  FontWeight->"Bold"]
+}], "Subsubsection",
+ CellChangeTimes->{{3.6326162073864613`*^9, 3.632616210112747*^9}, {
+   3.6334703572005653`*^9, 3.633470365079947*^9}, 3.6343827153074617`*^9, {
+   3.634397304007128*^9, 3.634397310246983*^9}}],
+
+Cell["\<\
+Pascal\[CloseCurlyQuote]s triangle is a triangle of numbers, whose tip is the \
+number 1. Each successive row in the triangle starts with a 1 and ends with a \
+1, and the remaining numbers are created by adding up the two numbers in the \
+row above to the left and right of it.
+Below is a picture of the first 7 lines of Pascal\[CloseCurlyQuote]s triangle.\
+\>", "Text",
+ CellChangeTimes->{{3.634397367110544*^9, 3.63439741620261*^9}, {
+  3.6344328210768065`*^9, 3.6344328215968075`*^9}, {3.634432879328889*^9, 
+  3.63443287990889*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["\<\"                                                            \
+ 1     \"\>"], "Print",
+ CellChangeTimes->{3.634393607420484*^9}],
+
+Cell[BoxData["\<\"                                                          1 \
+    1     \"\>"], "Print",
+ CellChangeTimes->{3.63439360742358*^9}],
+
+Cell[BoxData["\<\"                                                       1    \
+ 2     1     \"\>"], "Print",
+ CellChangeTimes->{3.6343936074277163`*^9}],
+
+Cell[BoxData["\<\"                                                    1     3 \
+    3     1     \"\>"], "Print",
+ CellChangeTimes->{3.6343936074318247`*^9}],
+
+Cell[BoxData["\<\"                                                 1     4    \
+ 6     4     1     \"\>"], "Print",
+ CellChangeTimes->{3.6343936074359827`*^9}],
+
+Cell[BoxData["\<\"                                              1     5     \
+10    10    5     1     \"\>"], "Print",
+ CellChangeTimes->{3.634393607440549*^9}],
+
+Cell[BoxData["\<\"                                           1     6     15   \
+ 20    15    6     1     \"\>"], "Print",
+ CellChangeTimes->{3.634393607444722*^9}]
+}, Open  ]],
+
+Cell[TextData[{
+ "We want to consider the triangle rotated by a quarter turn \
+counterclockwise. Below is a picture of the first 5 lines (= columns) of \
+Pascal's triangle. This is not the usual way to arrange the triangle, but has \
+the advantage that we not have to worry about the width of the screen for the \
+rows which will start to wrap around and make the picture weird. This will \
+allow us to look at large triangles. The original Pascal\[CloseCurlyQuote]s \
+triangle (see above) has ",
+ StyleBox["lines. ",
+  FontSlant->"Italic"],
+ "In the rotated version we use the term ",
+ StyleBox["column",
+  FontSlant->"Italic"],
+ " instead. Note that individual columns are vertically aligned - even if \
+some numbers in the column contain more digits (see the colored example \
+below). \n"
+}], "Text",
+ CellChangeTimes->{{3.504437937919004*^9, 3.504437942672122*^9}, {
+   3.505499878140625*^9, 3.50549989403125*^9}, {3.505500260359375*^9, 
+   3.50550026321875*^9}, {3.50618159246875*^9, 3.5061816205*^9}, {
+   3.5061816509375*^9, 3.5061818131719313`*^9}, {3.506181857602606*^9, 
+   3.5061819517287703`*^9}, {3.50618199264436*^9, 3.506182108495224*^9}, {
+   3.5061976554375*^9, 3.506197675015625*^9}, {3.5061977166875*^9, 
+   3.506197723625*^9}, {3.506211196995679*^9, 3.5062112082079277`*^9}, {
+   3.506211310528592*^9, 3.506211314146337*^9}, {3.506211361429574*^9, 
+   3.506211493236031*^9}, {3.50621181498344*^9, 3.506211844694915*^9}, {
+   3.506211879709725*^9, 3.506211893655341*^9}, {3.5067891394989777`*^9, 
+   3.5067895695606194`*^9}, {3.506801654797707*^9, 3.506801656360197*^9}, {
+   3.50681735625*^9, 3.50681740815625*^9}, {3.50681748359375*^9, 
+   3.506817494421875*^9}, {3.507377771717602*^9, 3.507377925583127*^9}, {
+   3.507390449619483*^9, 3.507390573004672*^9}, {3.507393960423461*^9, 
+   3.507394128590692*^9}, {3.507395846339993*^9, 3.5073960407097673`*^9}, {
+   3.5074072693100824`*^9, 3.507407310117097*^9}, {3.5074073667652836`*^9, 
+   3.5074073736390953`*^9}, {3.5074191308125*^9, 3.507419161296875*^9}, {
+   3.50741921503125*^9, 3.507419671953125*^9}, 3.50741970875*^9, {
+   3.50746540766781*^9, 3.507465489371975*^9}, {3.5074670753287888`*^9, 
+   3.507467088935363*^9}, {3.507939793924288*^9, 3.50794042508396*^9}, {
+   3.50794261991982*^9, 3.5079427090719357`*^9}, {3.50800562546875*^9, 
+   3.508006085265625*^9}, {3.508006286078125*^9, 3.50800630365625*^9}, {
+   3.508006336328125*^9, 3.508006360421875*^9}, {3.508006399640625*^9, 
+   3.5080065135625*^9}, {3.508006583359375*^9, 3.508006671890625*^9}, {
+   3.508009189953125*^9, 3.508009211796875*^9}, {3.634382710454265*^9, 
+   3.634382722235837*^9}, {3.6343830767856007`*^9, 3.634383385844803*^9}, {
+   3.63438662216504*^9, 3.63438676718246*^9}, {3.634386866708234*^9, 
+   3.6343869152994757`*^9}, {3.634387302634242*^9, 3.6343873200887537`*^9}, {
+   3.634395548831112*^9, 3.634395670330008*^9}, 3.634397363687117*^9, {
+   3.634397421930385*^9, 3.634397523150323*^9}, {3.634432982936035*^9, 
+   3.634432995169052*^9}, {3.634433053653135*^9, 3.6344330987011986`*^9}, {
+   3.6344333188125086`*^9, 3.6344334692867208`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"uPascalsTriange", "[", "5", "]"}]], "Input",
+ CellChangeTimes->{
+  3.6343955400583467`*^9, {3.634434254728829*^9, 3.6344342557488303`*^9}}],
+
+Cell[BoxData[
+ InterpretationBox[GridBox[{
+    {GridBox[{
+       {"\<\" \"\>"},
+       {"\<\" \"\>"},
+       {"1"},
+       {"\<\" \"\>"},
+       {"\<\" \"\>"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], GridBox[{
+       {"\<\" \"\>"},
+       {"1"},
+       {"1"},
+       {"\<\" \"\>"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], GridBox[{
+       {"\<\" \"\>"},
+       {"1"},
+       {"2"},
+       {"1"},
+       {"\<\" \"\>"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], GridBox[{
+       {"1"},
+       {"3"},
+       {"3"},
+       {"1"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], GridBox[{
+       {"1"},
+       {"4"},
+       {"6"},
+       {"4"},
+       {"1"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}]}
+   },
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}},
+   GridBoxSpacings->{"Columns" -> {
+       Offset[0.27999999999999997`], {
+        Offset[2.0999999999999996`]}, 
+       Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+       Offset[0.2], {
+        Offset[0.4]}, 
+       Offset[0.2]}, "RowsIndexed" -> {}}],
+  TableForm[{{{" ", " ", 1, " ", " "}, {" ", 1, 1, " "}, {
+     " ", 1, 2, 1, " "}, {1, 3, 3, 1}, {1, 4, 6, 4, 1}}}]]], "Output",
+ CellChangeTimes->{3.6343955403980427`*^9}]
+}, Open  ]],
+
+Cell["\<\
+Do not repeat unnecessary code when writing the functions below. Call the \
+appropriate functions instead of copying code.\
+\>", "Text",
+ CellChangeTimes->{{3.6343933806486197`*^9, 3.6343934513238497`*^9}, {
+   3.6343957170320177`*^9, 3.634395724095686*^9}, 3.634407045244008*^9, {
+   3.634433131627245*^9, 3.634433159202284*^9}, {3.634433487489746*^9, 
+   3.634433493490755*^9}, {3.634433570144863*^9, 3.6344336050619125`*^9}, 
+   3.6344397405302916`*^9}],
+
+Cell[TextData[{
+ "a) Write a function uPascalsLine [ number ] which generates and returns a \
+list of the elements in the given line ",
+ StyleBox["number",
+  FontSlant->"Italic"],
+ ".\nFor example  uPascalsLine [ 3 ]  returns {1,2,1}."
+}], "Text",
+ CellChangeTimes->{{3.6343933806486197`*^9, 3.6343934513238497`*^9}, {
+   3.6343957170320177`*^9, 3.634395724095686*^9}, 3.634407045244008*^9, {
+   3.634433131627245*^9, 3.634433159202284*^9}, {3.634433487489746*^9, 
+   3.634433493490755*^9}, {3.6344378765636597`*^9, 3.634437884796672*^9}, {
+   3.6344383095272713`*^9, 3.6344383123992753`*^9}}],
+
+Cell[TextData[{
+ "b) Write a function uPascalsLines [ number ] which returns a list \
+containing the first ",
+ StyleBox["number",
+  FontSlant->"Italic"],
+ " lines of the triangle - each line being a line created by uPascalsLine. \
+For example uPascalsLines [ 4 ] returns ",
+ "{{1},{1,1},{1,2,1},{1,3,3,1}}"
+}], "Text",
+ CellChangeTimes->{{3.634393467236805*^9, 3.634393474147677*^9}, {
+  3.634407051161645*^9, 3.634407057596635*^9}, {3.6344332237783747`*^9, 
+  3.634433225948378*^9}, {3.634433494450756*^9, 3.6344335025727673`*^9}, {
+  3.6344335511518364`*^9, 3.6344335554028425`*^9}, {3.634433674864011*^9, 
+  3.634433710832062*^9}, {3.6344378863466735`*^9, 3.634437911079708*^9}, {
+  3.6344382872792397`*^9, 3.634438334132306*^9}}],
+
+Cell[TextData[{
+ "c) Write a function uPascalsTriangle [ number ] which prints  out the first \
+",
+ StyleBox["number",
+  FontSlant->"Italic"],
+ " columns of the triangle - arranged such that they form a rotated triangle \
+as shown above. There are various ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " functions which control where things are displayed, such as Row, Column, \
+TableForm and more which might be helpful here. Our solutions do not use a \
+single ",
+ StyleBox["Print",
+  FontSlant->"Italic"],
+ " statement."
+}], "Text",
+ CellChangeTimes->{{3.634395742824856*^9, 3.6343957829972563`*^9}, {
+   3.6344335150737853`*^9, 3.6344335170947886`*^9}, {3.6344342424458113`*^9, 
+   3.6344342433758125`*^9}, {3.634437951609766*^9, 3.6344380338358817`*^9}, 
+   3.634438701943825*^9, {3.634439889345502*^9, 3.634439945434581*^9}}],
+
+Cell[TextData[{
+ "d) Write a function uColorPascalsTriangle [ number, n ], which prints out \
+the first ",
+ StyleBox["number",
+  FontSlant->"Italic"],
+ " columns of the triangle like in c, except this time the values are colored \
+as follows:\nThe color of a value is determined by the remainder of dividing \
+the value by n. All values with the same remainder use the same color.\nFor \
+example if n=4 then there are 4 colors, and the reminders are zero, one, two \
+or three.\nNote 1: There is no limit on the n. Your colors do not have to be \
+the exact same colors as below, they just have to be different. \nNote 2:  In \
+order to do this you need a colored list of values. You can either get this \
+list by implementing \[OpenCurlyQuote]colored\[CloseCurlyQuote] versions of \
+uPascalsLine [ number, n] and uPascalsLines [number, n], or you can use the \
+result of uPascalsLines and color it. Once you have the colored values, you \
+proceed as in the uPascalsTriangle function\n"
+}], "Text",
+ CellChangeTimes->{
+  3.634387292564233*^9, {3.634393489802711*^9, 3.63439357452711*^9}, {
+   3.63439495364013*^9, 3.6343949546712646`*^9}, 3.634395739640668*^9, {
+   3.634395788853385*^9, 3.634395818212082*^9}, {3.634396557429881*^9, 
+   3.634396558757628*^9}, {3.6343966010453444`*^9, 3.634396602020349*^9}, {
+   3.634397169212656*^9, 3.634397223882403*^9}, {3.6343975573965893`*^9, 
+   3.634397580860038*^9}, {3.634433733836094*^9, 3.634433783458164*^9}, {
+   3.634433858122269*^9, 3.634433873894292*^9}, {3.634433906940338*^9, 
+   3.634434015611491*^9}, {3.6344342354448013`*^9, 3.634434238465806*^9}, {
+   3.634434364679984*^9, 3.6344343812730074`*^9}, {3.6344382321471615`*^9, 
+   3.634438244360179*^9}, {3.6344383816413727`*^9, 3.634438749412892*^9}, 
+   3.634438883293081*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"uColorPascalsTriangle", "[", 
+  RowBox[{"15", ",", "4"}], "]"}]], "Input",
+ CellChangeTimes->{
+  3.634396588013489*^9, 3.634397007331917*^9, {3.6344342244437857`*^9, 
+   3.6344342258937883`*^9}, 3.634438696452817*^9}],
+
+Cell[BoxData[
+ InterpretationBox[GridBox[{
+    {GridBox[{
+       {"\<\" \"\>"},
+       {"\<\" \"\>"},
+       {"\<\" \"\>"},
+       {"\<\" \"\>"},
+       {"\<\" \"\>"},
+       {"\<\" \"\>"},
+       {"\<\" \"\>"},
+       {
+        StyleBox["1",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 4]]]},
+       {"\<\" \"\>"},
+       {"\<\" \"\>"},
+       {"\<\" \"\>"},
+       {"\<\" \"\>"},
+       {"\<\" \"\>"},
+       {"\<\" \"\>"},
+       {"\<\" \"\>"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], GridBox[{
+       {"\<\" \"\>"},
+       {"\<\" \"\>"},
+       {"\<\" \"\>"},
+       {"\<\" \"\>"},
+       {"\<\" \"\>"},
+       {"\<\" \"\>"},
+       {
+        StyleBox["1",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 4]]]},
+       {
+        StyleBox["1",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 4]]]},
+       {"\<\" \"\>"},
+       {"\<\" \"\>"},
+       {"\<\" \"\>"},
+       {"\<\" \"\>"},
+       {"\<\" \"\>"},
+       {"\<\" \"\>"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], GridBox[{
+       {"\<\" \"\>"},
+       {"\<\" \"\>"},
+       {"\<\" \"\>"},
+       {"\<\" \"\>"},
+       {"\<\" \"\>"},
+       {"\<\" \"\>"},
+       {
+        StyleBox["1",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 4]]]},
+       {
+        StyleBox["2",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 2]]]},
+       {
+        StyleBox["1",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 4]]]},
+       {"\<\" \"\>"},
+       {"\<\" \"\>"},
+       {"\<\" \"\>"},
+       {"\<\" \"\>"},
+       {"\<\" \"\>"},
+       {"\<\" \"\>"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], GridBox[{
+       {"\<\" \"\>"},
+       {"\<\" \"\>"},
+       {"\<\" \"\>"},
+       {"\<\" \"\>"},
+       {"\<\" \"\>"},
+       {
+        StyleBox["1",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 4]]]},
+       {
+        StyleBox["3",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[3, 4]]]},
+       {
+        StyleBox["3",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[3, 4]]]},
+       {
+        StyleBox["1",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 4]]]},
+       {"\<\" \"\>"},
+       {"\<\" \"\>"},
+       {"\<\" \"\>"},
+       {"\<\" \"\>"},
+       {"\<\" \"\>"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], GridBox[{
+       {"\<\" \"\>"},
+       {"\<\" \"\>"},
+       {"\<\" \"\>"},
+       {"\<\" \"\>"},
+       {"\<\" \"\>"},
+       {
+        StyleBox["1",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 4]]]},
+       {
+        StyleBox["4",
+         StripOnInput->False,
+         FontColor->Hue[0]]},
+       {
+        StyleBox["6",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 2]]]},
+       {
+        StyleBox["4",
+         StripOnInput->False,
+         FontColor->Hue[0]]},
+       {
+        StyleBox["1",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 4]]]},
+       {"\<\" \"\>"},
+       {"\<\" \"\>"},
+       {"\<\" \"\>"},
+       {"\<\" \"\>"},
+       {"\<\" \"\>"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], GridBox[{
+       {"\<\" \"\>"},
+       {"\<\" \"\>"},
+       {"\<\" \"\>"},
+       {"\<\" \"\>"},
+       {
+        StyleBox["1",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 4]]]},
+       {
+        StyleBox["5",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 4]]]},
+       {
+        StyleBox["10",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 2]]]},
+       {
+        StyleBox["10",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 2]]]},
+       {
+        StyleBox["5",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 4]]]},
+       {
+        StyleBox["1",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 4]]]},
+       {"\<\" \"\>"},
+       {"\<\" \"\>"},
+       {"\<\" \"\>"},
+       {"\<\" \"\>"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], GridBox[{
+       {"\<\" \"\>"},
+       {"\<\" \"\>"},
+       {"\<\" \"\>"},
+       {"\<\" \"\>"},
+       {
+        StyleBox["1",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 4]]]},
+       {
+        StyleBox["6",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 2]]]},
+       {
+        StyleBox["15",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[3, 4]]]},
+       {
+        StyleBox["20",
+         StripOnInput->False,
+         FontColor->Hue[0]]},
+       {
+        StyleBox["15",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[3, 4]]]},
+       {
+        StyleBox["6",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 2]]]},
+       {
+        StyleBox["1",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 4]]]},
+       {"\<\" \"\>"},
+       {"\<\" \"\>"},
+       {"\<\" \"\>"},
+       {"\<\" \"\>"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], GridBox[{
+       {"\<\" \"\>"},
+       {"\<\" \"\>"},
+       {"\<\" \"\>"},
+       {
+        StyleBox["1",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 4]]]},
+       {
+        StyleBox["7",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[3, 4]]]},
+       {
+        StyleBox["21",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 4]]]},
+       {
+        StyleBox["35",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[3, 4]]]},
+       {
+        StyleBox["35",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[3, 4]]]},
+       {
+        StyleBox["21",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 4]]]},
+       {
+        StyleBox["7",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[3, 4]]]},
+       {
+        StyleBox["1",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 4]]]},
+       {"\<\" \"\>"},
+       {"\<\" \"\>"},
+       {"\<\" \"\>"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], GridBox[{
+       {"\<\" \"\>"},
+       {"\<\" \"\>"},
+       {"\<\" \"\>"},
+       {
+        StyleBox["1",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 4]]]},
+       {
+        StyleBox["8",
+         StripOnInput->False,
+         FontColor->Hue[0]]},
+       {
+        StyleBox["28",
+         StripOnInput->False,
+         FontColor->Hue[0]]},
+       {
+        StyleBox["56",
+         StripOnInput->False,
+         FontColor->Hue[0]]},
+       {
+        StyleBox["70",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 2]]]},
+       {
+        StyleBox["56",
+         StripOnInput->False,
+         FontColor->Hue[0]]},
+       {
+        StyleBox["28",
+         StripOnInput->False,
+         FontColor->Hue[0]]},
+       {
+        StyleBox["8",
+         StripOnInput->False,
+         FontColor->Hue[0]]},
+       {
+        StyleBox["1",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 4]]]},
+       {"\<\" \"\>"},
+       {"\<\" \"\>"},
+       {"\<\" \"\>"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], GridBox[{
+       {"\<\" \"\>"},
+       {"\<\" \"\>"},
+       {
+        StyleBox["1",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 4]]]},
+       {
+        StyleBox["9",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 4]]]},
+       {
+        StyleBox["36",
+         StripOnInput->False,
+         FontColor->Hue[0]]},
+       {
+        StyleBox["84",
+         StripOnInput->False,
+         FontColor->Hue[0]]},
+       {
+        StyleBox["126",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 2]]]},
+       {
+        StyleBox["126",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 2]]]},
+       {
+        StyleBox["84",
+         StripOnInput->False,
+         FontColor->Hue[0]]},
+       {
+        StyleBox["36",
+         StripOnInput->False,
+         FontColor->Hue[0]]},
+       {
+        StyleBox["9",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 4]]]},
+       {
+        StyleBox["1",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 4]]]},
+       {"\<\" \"\>"},
+       {"\<\" \"\>"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], GridBox[{
+       {"\<\" \"\>"},
+       {"\<\" \"\>"},
+       {
+        StyleBox["1",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 4]]]},
+       {
+        StyleBox["10",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 2]]]},
+       {
+        StyleBox["45",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 4]]]},
+       {
+        StyleBox["120",
+         StripOnInput->False,
+         FontColor->Hue[0]]},
+       {
+        StyleBox["210",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 2]]]},
+       {
+        StyleBox["252",
+         StripOnInput->False,
+         FontColor->Hue[0]]},
+       {
+        StyleBox["210",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 2]]]},
+       {
+        StyleBox["120",
+         StripOnInput->False,
+         FontColor->Hue[0]]},
+       {
+        StyleBox["45",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 4]]]},
+       {
+        StyleBox["10",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 2]]]},
+       {
+        StyleBox["1",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 4]]]},
+       {"\<\" \"\>"},
+       {"\<\" \"\>"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], GridBox[{
+       {"\<\" \"\>"},
+       {
+        StyleBox["1",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 4]]]},
+       {
+        StyleBox["11",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[3, 4]]]},
+       {
+        StyleBox["55",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[3, 4]]]},
+       {
+        StyleBox["165",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 4]]]},
+       {
+        StyleBox["330",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 2]]]},
+       {
+        StyleBox["462",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 2]]]},
+       {
+        StyleBox["462",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 2]]]},
+       {
+        StyleBox["330",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 2]]]},
+       {
+        StyleBox["165",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 4]]]},
+       {
+        StyleBox["55",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[3, 4]]]},
+       {
+        StyleBox["11",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[3, 4]]]},
+       {
+        StyleBox["1",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 4]]]},
+       {"\<\" \"\>"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], GridBox[{
+       {"\<\" \"\>"},
+       {
+        StyleBox["1",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 4]]]},
+       {
+        StyleBox["12",
+         StripOnInput->False,
+         FontColor->Hue[0]]},
+       {
+        StyleBox["66",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 2]]]},
+       {
+        StyleBox["220",
+         StripOnInput->False,
+         FontColor->Hue[0]]},
+       {
+        StyleBox["495",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[3, 4]]]},
+       {
+        StyleBox["792",
+         StripOnInput->False,
+         FontColor->Hue[0]]},
+       {
+        StyleBox["924",
+         StripOnInput->False,
+         FontColor->Hue[0]]},
+       {
+        StyleBox["792",
+         StripOnInput->False,
+         FontColor->Hue[0]]},
+       {
+        StyleBox["495",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[3, 4]]]},
+       {
+        StyleBox["220",
+         StripOnInput->False,
+         FontColor->Hue[0]]},
+       {
+        StyleBox["66",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 2]]]},
+       {
+        StyleBox["12",
+         StripOnInput->False,
+         FontColor->Hue[0]]},
+       {
+        StyleBox["1",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 4]]]},
+       {"\<\" \"\>"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], GridBox[{
+       {
+        StyleBox["1",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 4]]]},
+       {
+        StyleBox["13",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 4]]]},
+       {
+        StyleBox["78",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 2]]]},
+       {
+        StyleBox["286",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 2]]]},
+       {
+        StyleBox["715",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[3, 4]]]},
+       {
+        StyleBox["1287",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[3, 4]]]},
+       {
+        StyleBox["1716",
+         StripOnInput->False,
+         FontColor->Hue[0]]},
+       {
+        StyleBox["1716",
+         StripOnInput->False,
+         FontColor->Hue[0]]},
+       {
+        StyleBox["1287",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[3, 4]]]},
+       {
+        StyleBox["715",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[3, 4]]]},
+       {
+        StyleBox["286",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 2]]]},
+       {
+        StyleBox["78",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 2]]]},
+       {
+        StyleBox["13",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 4]]]},
+       {
+        StyleBox["1",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 4]]]}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], GridBox[{
+       {
+        StyleBox["1",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 4]]]},
+       {
+        StyleBox["14",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 2]]]},
+       {
+        StyleBox["91",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[3, 4]]]},
+       {
+        StyleBox["364",
+         StripOnInput->False,
+         FontColor->Hue[0]]},
+       {
+        StyleBox["1001",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 4]]]},
+       {
+        StyleBox["2002",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 2]]]},
+       {
+        StyleBox["3003",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[3, 4]]]},
+       {
+        StyleBox["3432",
+         StripOnInput->False,
+         FontColor->Hue[0]]},
+       {
+        StyleBox["3003",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[3, 4]]]},
+       {
+        StyleBox["2002",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 2]]]},
+       {
+        StyleBox["1001",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 4]]]},
+       {
+        StyleBox["364",
+         StripOnInput->False,
+         FontColor->Hue[0]]},
+       {
+        StyleBox["91",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[3, 4]]]},
+       {
+        StyleBox["14",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 2]]]},
+       {
+        StyleBox["1",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 4]]]}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}]}
+   },
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}},
+   GridBoxSpacings->{"Columns" -> {
+       Offset[0.27999999999999997`], {
+        Offset[2.0999999999999996`]}, 
+       Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+       Offset[0.2], {
+        Offset[0.4]}, 
+       Offset[0.2]}, "RowsIndexed" -> {}}],
+  TableForm[{{{" ", " ", " ", " ", " ", " ", " ", 
+      Style[1, FontColor -> Hue[
+         Rational[1, 4]]], " ", " ", " ", " ", " ", " ", " "}, {
+     " ", " ", " ", " ", " ", " ", 
+      Style[1, FontColor -> Hue[
+         Rational[1, 4]]], 
+      Style[1, FontColor -> Hue[
+         Rational[1, 4]]], " ", " ", " ", " ", " ", " "}, {
+     " ", " ", " ", " ", " ", " ", 
+      Style[1, FontColor -> Hue[
+         Rational[1, 4]]], 
+      Style[2, FontColor -> Hue[
+         Rational[1, 2]]], 
+      Style[1, FontColor -> Hue[
+         Rational[1, 4]]], " ", " ", " ", " ", " ", " "}, {
+     " ", " ", " ", " ", " ", 
+      Style[1, FontColor -> Hue[
+         Rational[1, 4]]], 
+      Style[3, FontColor -> Hue[
+         Rational[3, 4]]], 
+      Style[3, FontColor -> Hue[
+         Rational[3, 4]]], 
+      Style[1, FontColor -> Hue[
+         Rational[1, 4]]], " ", " ", " ", " ", " "}, {" ", " ", " ", " ", " ", 
+      Style[1, FontColor -> Hue[
+         Rational[1, 4]]], 
+      Style[4, FontColor -> Hue[0]], 
+      Style[6, FontColor -> Hue[
+         Rational[1, 2]]], 
+      Style[4, FontColor -> Hue[0]], 
+      Style[1, FontColor -> Hue[
+         Rational[1, 4]]], " ", " ", " ", " ", " "}, {" ", " ", " ", " ", 
+      Style[1, FontColor -> Hue[
+         Rational[1, 4]]], 
+      Style[5, FontColor -> Hue[
+         Rational[1, 4]]], 
+      Style[10, FontColor -> Hue[
+         Rational[1, 2]]], 
+      Style[10, FontColor -> Hue[
+         Rational[1, 2]]], 
+      Style[5, FontColor -> Hue[
+         Rational[1, 4]]], 
+      Style[1, FontColor -> Hue[
+         Rational[1, 4]]], " ", " ", " ", " "}, {" ", " ", " ", " ", 
+      Style[1, FontColor -> Hue[
+         Rational[1, 4]]], 
+      Style[6, FontColor -> Hue[
+         Rational[1, 2]]], 
+      Style[15, FontColor -> Hue[
+         Rational[3, 4]]], 
+      Style[20, FontColor -> Hue[0]], 
+      Style[15, FontColor -> Hue[
+         Rational[3, 4]]], 
+      Style[6, FontColor -> Hue[
+         Rational[1, 2]]], 
+      Style[1, FontColor -> Hue[
+         Rational[1, 4]]], " ", " ", " ", " "}, {" ", " ", " ", 
+      Style[1, FontColor -> Hue[
+         Rational[1, 4]]], 
+      Style[7, FontColor -> Hue[
+         Rational[3, 4]]], 
+      Style[21, FontColor -> Hue[
+         Rational[1, 4]]], 
+      Style[35, FontColor -> Hue[
+         Rational[3, 4]]], 
+      Style[35, FontColor -> Hue[
+         Rational[3, 4]]], 
+      Style[21, FontColor -> Hue[
+         Rational[1, 4]]], 
+      Style[7, FontColor -> Hue[
+         Rational[3, 4]]], 
+      Style[1, FontColor -> Hue[
+         Rational[1, 4]]], " ", " ", " "}, {" ", " ", " ", 
+      Style[1, FontColor -> Hue[
+         Rational[1, 4]]], 
+      Style[8, FontColor -> Hue[0]], 
+      Style[28, FontColor -> Hue[0]], 
+      Style[56, FontColor -> Hue[0]], 
+      Style[70, FontColor -> Hue[
+         Rational[1, 2]]], 
+      Style[56, FontColor -> Hue[0]], 
+      Style[28, FontColor -> Hue[0]], 
+      Style[8, FontColor -> Hue[0]], 
+      Style[1, FontColor -> Hue[
+         Rational[1, 4]]], " ", " ", " "}, {" ", " ", 
+      Style[1, FontColor -> Hue[
+         Rational[1, 4]]], 
+      Style[9, FontColor -> Hue[
+         Rational[1, 4]]], 
+      Style[36, FontColor -> Hue[0]], 
+      Style[84, FontColor -> Hue[0]], 
+      Style[126, FontColor -> Hue[
+         Rational[1, 2]]], 
+      Style[126, FontColor -> Hue[
+         Rational[1, 2]]], 
+      Style[84, FontColor -> Hue[0]], 
+      Style[36, FontColor -> Hue[0]], 
+      Style[9, FontColor -> Hue[
+         Rational[1, 4]]], 
+      Style[1, FontColor -> Hue[
+         Rational[1, 4]]], " ", " "}, {" ", " ", 
+      Style[1, FontColor -> Hue[
+         Rational[1, 4]]], 
+      Style[10, FontColor -> Hue[
+         Rational[1, 2]]], 
+      Style[45, FontColor -> Hue[
+         Rational[1, 4]]], 
+      Style[120, FontColor -> Hue[0]], 
+      Style[210, FontColor -> Hue[
+         Rational[1, 2]]], 
+      Style[252, FontColor -> Hue[0]], 
+      Style[210, FontColor -> Hue[
+         Rational[1, 2]]], 
+      Style[120, FontColor -> Hue[0]], 
+      Style[45, FontColor -> Hue[
+         Rational[1, 4]]], 
+      Style[10, FontColor -> Hue[
+         Rational[1, 2]]], 
+      Style[1, FontColor -> Hue[
+         Rational[1, 4]]], " ", " "}, {" ", 
+      Style[1, FontColor -> Hue[
+         Rational[1, 4]]], 
+      Style[11, FontColor -> Hue[
+         Rational[3, 4]]], 
+      Style[55, FontColor -> Hue[
+         Rational[3, 4]]], 
+      Style[165, FontColor -> Hue[
+         Rational[1, 4]]], 
+      Style[330, FontColor -> Hue[
+         Rational[1, 2]]], 
+      Style[462, FontColor -> Hue[
+         Rational[1, 2]]], 
+      Style[462, FontColor -> Hue[
+         Rational[1, 2]]], 
+      Style[330, FontColor -> Hue[
+         Rational[1, 2]]], 
+      Style[165, FontColor -> Hue[
+         Rational[1, 4]]], 
+      Style[55, FontColor -> Hue[
+         Rational[3, 4]]], 
+      Style[11, FontColor -> Hue[
+         Rational[3, 4]]], 
+      Style[1, FontColor -> Hue[
+         Rational[1, 4]]], " "}, {" ", 
+      Style[1, FontColor -> Hue[
+         Rational[1, 4]]], 
+      Style[12, FontColor -> Hue[0]], 
+      Style[66, FontColor -> Hue[
+         Rational[1, 2]]], 
+      Style[220, FontColor -> Hue[0]], 
+      Style[495, FontColor -> Hue[
+         Rational[3, 4]]], 
+      Style[792, FontColor -> Hue[0]], 
+      Style[924, FontColor -> Hue[0]], 
+      Style[792, FontColor -> Hue[0]], 
+      Style[495, FontColor -> Hue[
+         Rational[3, 4]]], 
+      Style[220, FontColor -> Hue[0]], 
+      Style[66, FontColor -> Hue[
+         Rational[1, 2]]], 
+      Style[12, FontColor -> Hue[0]], 
+      Style[1, FontColor -> Hue[
+         Rational[1, 4]]], " "}, {
+      Style[1, FontColor -> Hue[
+         Rational[1, 4]]], 
+      Style[13, FontColor -> Hue[
+         Rational[1, 4]]], 
+      Style[78, FontColor -> Hue[
+         Rational[1, 2]]], 
+      Style[286, FontColor -> Hue[
+         Rational[1, 2]]], 
+      Style[715, FontColor -> Hue[
+         Rational[3, 4]]], 
+      Style[1287, FontColor -> Hue[
+         Rational[3, 4]]], 
+      Style[1716, FontColor -> Hue[0]], 
+      Style[1716, FontColor -> Hue[0]], 
+      Style[1287, FontColor -> Hue[
+         Rational[3, 4]]], 
+      Style[715, FontColor -> Hue[
+         Rational[3, 4]]], 
+      Style[286, FontColor -> Hue[
+         Rational[1, 2]]], 
+      Style[78, FontColor -> Hue[
+         Rational[1, 2]]], 
+      Style[13, FontColor -> Hue[
+         Rational[1, 4]]], 
+      Style[1, FontColor -> Hue[
+         Rational[1, 4]]]}, {
+      Style[1, FontColor -> Hue[
+         Rational[1, 4]]], 
+      Style[14, FontColor -> Hue[
+         Rational[1, 2]]], 
+      Style[91, FontColor -> Hue[
+         Rational[3, 4]]], 
+      Style[364, FontColor -> Hue[0]], 
+      Style[1001, FontColor -> Hue[
+         Rational[1, 4]]], 
+      Style[2002, FontColor -> Hue[
+         Rational[1, 2]]], 
+      Style[3003, FontColor -> Hue[
+         Rational[3, 4]]], 
+      Style[3432, FontColor -> Hue[0]], 
+      Style[3003, FontColor -> Hue[
+         Rational[3, 4]]], 
+      Style[2002, FontColor -> Hue[
+         Rational[1, 2]]], 
+      Style[1001, FontColor -> Hue[
+         Rational[1, 4]]], 
+      Style[364, FontColor -> Hue[0]], 
+      Style[91, FontColor -> Hue[
+         Rational[3, 4]]], 
+      Style[14, FontColor -> Hue[
+         Rational[1, 2]]], 
+      Style[1, FontColor -> Hue[
+         Rational[1, 4]]]}}}]]], "Output",
+ CellChangeTimes->{3.634396588745874*^9, 3.634397007594529*^9}]
+}, Open  ]],
+
+Cell[TextData[{
+ "e) The colorings of the values form patterns, however they are hard to see \
+because the values become larger and larger and take more and more space. To \
+see the patterns better let us remove the numbers and replace them with a \
+dot.\nWrite a function uColorPascalsTriangleDot [ number, n ], which displays \
+the first ",
+ StyleBox["number",
+  FontSlant->"Italic"],
+ " columns however we only see a \[OpenCurlyDoubleQuote]dot\
+\[CloseCurlyDoubleQuote] instead of each value. The color of each dot is \
+determined in the same manner as the color of each value in d).\nNote 3:  In \
+order to do this you need a colored list of dots. You can either get this \
+list by implementing \[OpenCurlyQuote]colored dotted\[CloseCurlyQuote] \
+versions of uPascalsLine [ number, n] and uPascalsLines [number, n], or you \
+can use the result of uPascalsLines and \[OpenCurlyQuote]color dot\
+\[CloseCurlyQuote] it. Once you have the colored dots, you proceed as in the \
+uPascalsTriangle function.\nNote 4:  \[FilledCircle] is a special character \
+in ",
+ StyleBox["Mathematica,",
+  FontSlant->"Italic"],
+ " and you can display it with different colors. There is a palette with \
+special characters. Select Palettes -> Special Characters.\n\n\nThe example \
+in d) looks now like this:"
+}], "Text",
+ CellChangeTimes->{{3.634396607012623*^9, 3.6343966722409973`*^9}, {
+   3.634396876009233*^9, 3.634396884560236*^9}, {3.634396916983796*^9, 
+   3.634396952797707*^9}, {3.63439723854593*^9, 3.634397248985508*^9}, {
+   3.634397594131403*^9, 3.63439763632161*^9}, {3.6344340411645274`*^9, 
+   3.634434128374651*^9}, 3.634434206618761*^9, 3.634438775139928*^9, {
+   3.634438819689991*^9, 3.6344388932580953`*^9}, {3.634438983688223*^9, 
+   3.6344390213862762`*^9}, {3.634439054825323*^9, 3.6344390568853264`*^9}, {
+   3.6344395433330135`*^9, 3.6344395862720737`*^9}, 3.634439743781296*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"uColorPascalsTriangleDot", "[", 
+  RowBox[{"15", ",", "4"}], "]"}]], "Input",
+ CellChangeTimes->{{3.634396906267271*^9, 3.634396906903863*^9}, {
+   3.63439698044065*^9, 3.634397011207594*^9}, {3.634397131993417*^9, 
+   3.634397159053505*^9}, {3.6344342102497663`*^9, 3.634434212100769*^9}, 
+   3.6344387777909317`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[GridBox[{
+    {GridBox[{
+       {"\<\" \"\>"},
+       {"\<\" \"\>"},
+       {"\<\" \"\>"},
+       {"\<\" \"\>"},
+       {"\<\" \"\>"},
+       {"\<\" \"\>"},
+       {"\<\" \"\>"},
+       {
+        StyleBox["\[FilledCircle]",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 4]]]},
+       {"\<\" \"\>"},
+       {"\<\" \"\>"},
+       {"\<\" \"\>"},
+       {"\<\" \"\>"},
+       {"\<\" \"\>"},
+       {"\<\" \"\>"},
+       {"\<\" \"\>"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], GridBox[{
+       {"\<\" \"\>"},
+       {"\<\" \"\>"},
+       {"\<\" \"\>"},
+       {"\<\" \"\>"},
+       {"\<\" \"\>"},
+       {"\<\" \"\>"},
+       {
+        StyleBox["\[FilledCircle]",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 4]]]},
+       {
+        StyleBox["\[FilledCircle]",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 4]]]},
+       {"\<\" \"\>"},
+       {"\<\" \"\>"},
+       {"\<\" \"\>"},
+       {"\<\" \"\>"},
+       {"\<\" \"\>"},
+       {"\<\" \"\>"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], GridBox[{
+       {"\<\" \"\>"},
+       {"\<\" \"\>"},
+       {"\<\" \"\>"},
+       {"\<\" \"\>"},
+       {"\<\" \"\>"},
+       {"\<\" \"\>"},
+       {
+        StyleBox["\[FilledCircle]",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 4]]]},
+       {
+        StyleBox["\[FilledCircle]",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 2]]]},
+       {
+        StyleBox["\[FilledCircle]",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 4]]]},
+       {"\<\" \"\>"},
+       {"\<\" \"\>"},
+       {"\<\" \"\>"},
+       {"\<\" \"\>"},
+       {"\<\" \"\>"},
+       {"\<\" \"\>"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], GridBox[{
+       {"\<\" \"\>"},
+       {"\<\" \"\>"},
+       {"\<\" \"\>"},
+       {"\<\" \"\>"},
+       {"\<\" \"\>"},
+       {
+        StyleBox["\[FilledCircle]",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 4]]]},
+       {
+        StyleBox["\[FilledCircle]",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[3, 4]]]},
+       {
+        StyleBox["\[FilledCircle]",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[3, 4]]]},
+       {
+        StyleBox["\[FilledCircle]",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 4]]]},
+       {"\<\" \"\>"},
+       {"\<\" \"\>"},
+       {"\<\" \"\>"},
+       {"\<\" \"\>"},
+       {"\<\" \"\>"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], GridBox[{
+       {"\<\" \"\>"},
+       {"\<\" \"\>"},
+       {"\<\" \"\>"},
+       {"\<\" \"\>"},
+       {"\<\" \"\>"},
+       {
+        StyleBox["\[FilledCircle]",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 4]]]},
+       {
+        StyleBox["\[FilledCircle]",
+         StripOnInput->False,
+         FontColor->Hue[0]]},
+       {
+        StyleBox["\[FilledCircle]",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 2]]]},
+       {
+        StyleBox["\[FilledCircle]",
+         StripOnInput->False,
+         FontColor->Hue[0]]},
+       {
+        StyleBox["\[FilledCircle]",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 4]]]},
+       {"\<\" \"\>"},
+       {"\<\" \"\>"},
+       {"\<\" \"\>"},
+       {"\<\" \"\>"},
+       {"\<\" \"\>"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], GridBox[{
+       {"\<\" \"\>"},
+       {"\<\" \"\>"},
+       {"\<\" \"\>"},
+       {"\<\" \"\>"},
+       {
+        StyleBox["\[FilledCircle]",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 4]]]},
+       {
+        StyleBox["\[FilledCircle]",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 4]]]},
+       {
+        StyleBox["\[FilledCircle]",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 2]]]},
+       {
+        StyleBox["\[FilledCircle]",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 2]]]},
+       {
+        StyleBox["\[FilledCircle]",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 4]]]},
+       {
+        StyleBox["\[FilledCircle]",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 4]]]},
+       {"\<\" \"\>"},
+       {"\<\" \"\>"},
+       {"\<\" \"\>"},
+       {"\<\" \"\>"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], GridBox[{
+       {"\<\" \"\>"},
+       {"\<\" \"\>"},
+       {"\<\" \"\>"},
+       {"\<\" \"\>"},
+       {
+        StyleBox["\[FilledCircle]",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 4]]]},
+       {
+        StyleBox["\[FilledCircle]",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 2]]]},
+       {
+        StyleBox["\[FilledCircle]",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[3, 4]]]},
+       {
+        StyleBox["\[FilledCircle]",
+         StripOnInput->False,
+         FontColor->Hue[0]]},
+       {
+        StyleBox["\[FilledCircle]",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[3, 4]]]},
+       {
+        StyleBox["\[FilledCircle]",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 2]]]},
+       {
+        StyleBox["\[FilledCircle]",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 4]]]},
+       {"\<\" \"\>"},
+       {"\<\" \"\>"},
+       {"\<\" \"\>"},
+       {"\<\" \"\>"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], GridBox[{
+       {"\<\" \"\>"},
+       {"\<\" \"\>"},
+       {"\<\" \"\>"},
+       {
+        StyleBox["\[FilledCircle]",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 4]]]},
+       {
+        StyleBox["\[FilledCircle]",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[3, 4]]]},
+       {
+        StyleBox["\[FilledCircle]",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 4]]]},
+       {
+        StyleBox["\[FilledCircle]",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[3, 4]]]},
+       {
+        StyleBox["\[FilledCircle]",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[3, 4]]]},
+       {
+        StyleBox["\[FilledCircle]",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 4]]]},
+       {
+        StyleBox["\[FilledCircle]",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[3, 4]]]},
+       {
+        StyleBox["\[FilledCircle]",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 4]]]},
+       {"\<\" \"\>"},
+       {"\<\" \"\>"},
+       {"\<\" \"\>"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], GridBox[{
+       {"\<\" \"\>"},
+       {"\<\" \"\>"},
+       {"\<\" \"\>"},
+       {
+        StyleBox["\[FilledCircle]",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 4]]]},
+       {
+        StyleBox["\[FilledCircle]",
+         StripOnInput->False,
+         FontColor->Hue[0]]},
+       {
+        StyleBox["\[FilledCircle]",
+         StripOnInput->False,
+         FontColor->Hue[0]]},
+       {
+        StyleBox["\[FilledCircle]",
+         StripOnInput->False,
+         FontColor->Hue[0]]},
+       {
+        StyleBox["\[FilledCircle]",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 2]]]},
+       {
+        StyleBox["\[FilledCircle]",
+         StripOnInput->False,
+         FontColor->Hue[0]]},
+       {
+        StyleBox["\[FilledCircle]",
+         StripOnInput->False,
+         FontColor->Hue[0]]},
+       {
+        StyleBox["\[FilledCircle]",
+         StripOnInput->False,
+         FontColor->Hue[0]]},
+       {
+        StyleBox["\[FilledCircle]",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 4]]]},
+       {"\<\" \"\>"},
+       {"\<\" \"\>"},
+       {"\<\" \"\>"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], GridBox[{
+       {"\<\" \"\>"},
+       {"\<\" \"\>"},
+       {
+        StyleBox["\[FilledCircle]",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 4]]]},
+       {
+        StyleBox["\[FilledCircle]",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 4]]]},
+       {
+        StyleBox["\[FilledCircle]",
+         StripOnInput->False,
+         FontColor->Hue[0]]},
+       {
+        StyleBox["\[FilledCircle]",
+         StripOnInput->False,
+         FontColor->Hue[0]]},
+       {
+        StyleBox["\[FilledCircle]",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 2]]]},
+       {
+        StyleBox["\[FilledCircle]",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 2]]]},
+       {
+        StyleBox["\[FilledCircle]",
+         StripOnInput->False,
+         FontColor->Hue[0]]},
+       {
+        StyleBox["\[FilledCircle]",
+         StripOnInput->False,
+         FontColor->Hue[0]]},
+       {
+        StyleBox["\[FilledCircle]",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 4]]]},
+       {
+        StyleBox["\[FilledCircle]",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 4]]]},
+       {"\<\" \"\>"},
+       {"\<\" \"\>"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], GridBox[{
+       {"\<\" \"\>"},
+       {"\<\" \"\>"},
+       {
+        StyleBox["\[FilledCircle]",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 4]]]},
+       {
+        StyleBox["\[FilledCircle]",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 2]]]},
+       {
+        StyleBox["\[FilledCircle]",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 4]]]},
+       {
+        StyleBox["\[FilledCircle]",
+         StripOnInput->False,
+         FontColor->Hue[0]]},
+       {
+        StyleBox["\[FilledCircle]",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 2]]]},
+       {
+        StyleBox["\[FilledCircle]",
+         StripOnInput->False,
+         FontColor->Hue[0]]},
+       {
+        StyleBox["\[FilledCircle]",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 2]]]},
+       {
+        StyleBox["\[FilledCircle]",
+         StripOnInput->False,
+         FontColor->Hue[0]]},
+       {
+        StyleBox["\[FilledCircle]",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 4]]]},
+       {
+        StyleBox["\[FilledCircle]",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 2]]]},
+       {
+        StyleBox["\[FilledCircle]",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 4]]]},
+       {"\<\" \"\>"},
+       {"\<\" \"\>"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], GridBox[{
+       {"\<\" \"\>"},
+       {
+        StyleBox["\[FilledCircle]",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 4]]]},
+       {
+        StyleBox["\[FilledCircle]",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[3, 4]]]},
+       {
+        StyleBox["\[FilledCircle]",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[3, 4]]]},
+       {
+        StyleBox["\[FilledCircle]",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 4]]]},
+       {
+        StyleBox["\[FilledCircle]",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 2]]]},
+       {
+        StyleBox["\[FilledCircle]",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 2]]]},
+       {
+        StyleBox["\[FilledCircle]",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 2]]]},
+       {
+        StyleBox["\[FilledCircle]",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 2]]]},
+       {
+        StyleBox["\[FilledCircle]",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 4]]]},
+       {
+        StyleBox["\[FilledCircle]",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[3, 4]]]},
+       {
+        StyleBox["\[FilledCircle]",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[3, 4]]]},
+       {
+        StyleBox["\[FilledCircle]",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 4]]]},
+       {"\<\" \"\>"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], GridBox[{
+       {"\<\" \"\>"},
+       {
+        StyleBox["\[FilledCircle]",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 4]]]},
+       {
+        StyleBox["\[FilledCircle]",
+         StripOnInput->False,
+         FontColor->Hue[0]]},
+       {
+        StyleBox["\[FilledCircle]",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 2]]]},
+       {
+        StyleBox["\[FilledCircle]",
+         StripOnInput->False,
+         FontColor->Hue[0]]},
+       {
+        StyleBox["\[FilledCircle]",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[3, 4]]]},
+       {
+        StyleBox["\[FilledCircle]",
+         StripOnInput->False,
+         FontColor->Hue[0]]},
+       {
+        StyleBox["\[FilledCircle]",
+         StripOnInput->False,
+         FontColor->Hue[0]]},
+       {
+        StyleBox["\[FilledCircle]",
+         StripOnInput->False,
+         FontColor->Hue[0]]},
+       {
+        StyleBox["\[FilledCircle]",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[3, 4]]]},
+       {
+        StyleBox["\[FilledCircle]",
+         StripOnInput->False,
+         FontColor->Hue[0]]},
+       {
+        StyleBox["\[FilledCircle]",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 2]]]},
+       {
+        StyleBox["\[FilledCircle]",
+         StripOnInput->False,
+         FontColor->Hue[0]]},
+       {
+        StyleBox["\[FilledCircle]",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 4]]]},
+       {"\<\" \"\>"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], GridBox[{
+       {
+        StyleBox["\[FilledCircle]",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 4]]]},
+       {
+        StyleBox["\[FilledCircle]",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 4]]]},
+       {
+        StyleBox["\[FilledCircle]",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 2]]]},
+       {
+        StyleBox["\[FilledCircle]",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 2]]]},
+       {
+        StyleBox["\[FilledCircle]",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[3, 4]]]},
+       {
+        StyleBox["\[FilledCircle]",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[3, 4]]]},
+       {
+        StyleBox["\[FilledCircle]",
+         StripOnInput->False,
+         FontColor->Hue[0]]},
+       {
+        StyleBox["\[FilledCircle]",
+         StripOnInput->False,
+         FontColor->Hue[0]]},
+       {
+        StyleBox["\[FilledCircle]",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[3, 4]]]},
+       {
+        StyleBox["\[FilledCircle]",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[3, 4]]]},
+       {
+        StyleBox["\[FilledCircle]",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 2]]]},
+       {
+        StyleBox["\[FilledCircle]",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 2]]]},
+       {
+        StyleBox["\[FilledCircle]",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 4]]]},
+       {
+        StyleBox["\[FilledCircle]",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 4]]]}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], GridBox[{
+       {
+        StyleBox["\[FilledCircle]",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 4]]]},
+       {
+        StyleBox["\[FilledCircle]",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 2]]]},
+       {
+        StyleBox["\[FilledCircle]",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[3, 4]]]},
+       {
+        StyleBox["\[FilledCircle]",
+         StripOnInput->False,
+         FontColor->Hue[0]]},
+       {
+        StyleBox["\[FilledCircle]",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 4]]]},
+       {
+        StyleBox["\[FilledCircle]",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 2]]]},
+       {
+        StyleBox["\[FilledCircle]",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[3, 4]]]},
+       {
+        StyleBox["\[FilledCircle]",
+         StripOnInput->False,
+         FontColor->Hue[0]]},
+       {
+        StyleBox["\[FilledCircle]",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[3, 4]]]},
+       {
+        StyleBox["\[FilledCircle]",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 2]]]},
+       {
+        StyleBox["\[FilledCircle]",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 4]]]},
+       {
+        StyleBox["\[FilledCircle]",
+         StripOnInput->False,
+         FontColor->Hue[0]]},
+       {
+        StyleBox["\[FilledCircle]",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[3, 4]]]},
+       {
+        StyleBox["\[FilledCircle]",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 2]]]},
+       {
+        StyleBox["\[FilledCircle]",
+         StripOnInput->False,
+         FontColor->Hue[
+           Rational[1, 4]]]}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}]}
+   },
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}},
+   GridBoxSpacings->{"Columns" -> {
+       Offset[0.27999999999999997`], {
+        Offset[2.0999999999999996`]}, 
+       Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+       Offset[0.2], {
+        Offset[0.4]}, 
+       Offset[0.2]}, "RowsIndexed" -> {}}],
+  TableForm[{{{" ", " ", " ", " ", " ", " ", " ", 
+      Style[$CellContext`\[FilledCircle], FontColor -> Hue[
+         Rational[1, 4]]], " ", " ", " ", " ", " ", " ", " "}, {
+     " ", " ", " ", " ", " ", " ", 
+      Style[$CellContext`\[FilledCircle], FontColor -> Hue[
+         Rational[1, 4]]], 
+      Style[$CellContext`\[FilledCircle], FontColor -> Hue[
+         Rational[1, 4]]], " ", " ", " ", " ", " ", " "}, {
+     " ", " ", " ", " ", " ", " ", 
+      Style[$CellContext`\[FilledCircle], FontColor -> Hue[
+         Rational[1, 4]]], 
+      Style[$CellContext`\[FilledCircle], FontColor -> Hue[
+         Rational[1, 2]]], 
+      Style[$CellContext`\[FilledCircle], FontColor -> Hue[
+         Rational[1, 4]]], " ", " ", " ", " ", " ", " "}, {
+     " ", " ", " ", " ", " ", 
+      Style[$CellContext`\[FilledCircle], FontColor -> Hue[
+         Rational[1, 4]]], 
+      Style[$CellContext`\[FilledCircle], FontColor -> Hue[
+         Rational[3, 4]]], 
+      Style[$CellContext`\[FilledCircle], FontColor -> Hue[
+         Rational[3, 4]]], 
+      Style[$CellContext`\[FilledCircle], FontColor -> Hue[
+         Rational[1, 4]]], " ", " ", " ", " ", " "}, {" ", " ", " ", " ", " ", 
+      Style[$CellContext`\[FilledCircle], FontColor -> Hue[
+         Rational[1, 4]]], 
+      Style[$CellContext`\[FilledCircle], FontColor -> Hue[0]], 
+      Style[$CellContext`\[FilledCircle], FontColor -> Hue[
+         Rational[1, 2]]], 
+      Style[$CellContext`\[FilledCircle], FontColor -> Hue[0]], 
+      Style[$CellContext`\[FilledCircle], FontColor -> Hue[
+         Rational[1, 4]]], " ", " ", " ", " ", " "}, {" ", " ", " ", " ", 
+      Style[$CellContext`\[FilledCircle], FontColor -> Hue[
+         Rational[1, 4]]], 
+      Style[$CellContext`\[FilledCircle], FontColor -> Hue[
+         Rational[1, 4]]], 
+      Style[$CellContext`\[FilledCircle], FontColor -> Hue[
+         Rational[1, 2]]], 
+      Style[$CellContext`\[FilledCircle], FontColor -> Hue[
+         Rational[1, 2]]], 
+      Style[$CellContext`\[FilledCircle], FontColor -> Hue[
+         Rational[1, 4]]], 
+      Style[$CellContext`\[FilledCircle], FontColor -> Hue[
+         Rational[1, 4]]], " ", " ", " ", " "}, {" ", " ", " ", " ", 
+      Style[$CellContext`\[FilledCircle], FontColor -> Hue[
+         Rational[1, 4]]], 
+      Style[$CellContext`\[FilledCircle], FontColor -> Hue[
+         Rational[1, 2]]], 
+      Style[$CellContext`\[FilledCircle], FontColor -> Hue[
+         Rational[3, 4]]], 
+      Style[$CellContext`\[FilledCircle], FontColor -> Hue[0]], 
+      Style[$CellContext`\[FilledCircle], FontColor -> Hue[
+         Rational[3, 4]]], 
+      Style[$CellContext`\[FilledCircle], FontColor -> Hue[
+         Rational[1, 2]]], 
+      Style[$CellContext`\[FilledCircle], FontColor -> Hue[
+         Rational[1, 4]]], " ", " ", " ", " "}, {" ", " ", " ", 
+      Style[$CellContext`\[FilledCircle], FontColor -> Hue[
+         Rational[1, 4]]], 
+      Style[$CellContext`\[FilledCircle], FontColor -> Hue[
+         Rational[3, 4]]], 
+      Style[$CellContext`\[FilledCircle], FontColor -> Hue[
+         Rational[1, 4]]], 
+      Style[$CellContext`\[FilledCircle], FontColor -> Hue[
+         Rational[3, 4]]], 
+      Style[$CellContext`\[FilledCircle], FontColor -> Hue[
+         Rational[3, 4]]], 
+      Style[$CellContext`\[FilledCircle], FontColor -> Hue[
+         Rational[1, 4]]], 
+      Style[$CellContext`\[FilledCircle], FontColor -> Hue[
+         Rational[3, 4]]], 
+      Style[$CellContext`\[FilledCircle], FontColor -> Hue[
+         Rational[1, 4]]], " ", " ", " "}, {" ", " ", " ", 
+      Style[$CellContext`\[FilledCircle], FontColor -> Hue[
+         Rational[1, 4]]], 
+      Style[$CellContext`\[FilledCircle], FontColor -> Hue[0]], 
+      Style[$CellContext`\[FilledCircle], FontColor -> Hue[0]], 
+      Style[$CellContext`\[FilledCircle], FontColor -> Hue[0]], 
+      Style[$CellContext`\[FilledCircle], FontColor -> Hue[
+         Rational[1, 2]]], 
+      Style[$CellContext`\[FilledCircle], FontColor -> Hue[0]], 
+      Style[$CellContext`\[FilledCircle], FontColor -> Hue[0]], 
+      Style[$CellContext`\[FilledCircle], FontColor -> Hue[0]], 
+      Style[$CellContext`\[FilledCircle], FontColor -> Hue[
+         Rational[1, 4]]], " ", " ", " "}, {" ", " ", 
+      Style[$CellContext`\[FilledCircle], FontColor -> Hue[
+         Rational[1, 4]]], 
+      Style[$CellContext`\[FilledCircle], FontColor -> Hue[
+         Rational[1, 4]]], 
+      Style[$CellContext`\[FilledCircle], FontColor -> Hue[0]], 
+      Style[$CellContext`\[FilledCircle], FontColor -> Hue[0]], 
+      Style[$CellContext`\[FilledCircle], FontColor -> Hue[
+         Rational[1, 2]]], 
+      Style[$CellContext`\[FilledCircle], FontColor -> Hue[
+         Rational[1, 2]]], 
+      Style[$CellContext`\[FilledCircle], FontColor -> Hue[0]], 
+      Style[$CellContext`\[FilledCircle], FontColor -> Hue[0]], 
+      Style[$CellContext`\[FilledCircle], FontColor -> Hue[
+         Rational[1, 4]]], 
+      Style[$CellContext`\[FilledCircle], FontColor -> Hue[
+         Rational[1, 4]]], " ", " "}, {" ", " ", 
+      Style[$CellContext`\[FilledCircle], FontColor -> Hue[
+         Rational[1, 4]]], 
+      Style[$CellContext`\[FilledCircle], FontColor -> Hue[
+         Rational[1, 2]]], 
+      Style[$CellContext`\[FilledCircle], FontColor -> Hue[
+         Rational[1, 4]]], 
+      Style[$CellContext`\[FilledCircle], FontColor -> Hue[0]], 
+      Style[$CellContext`\[FilledCircle], FontColor -> Hue[
+         Rational[1, 2]]], 
+      Style[$CellContext`\[FilledCircle], FontColor -> Hue[0]], 
+      Style[$CellContext`\[FilledCircle], FontColor -> Hue[
+         Rational[1, 2]]], 
+      Style[$CellContext`\[FilledCircle], FontColor -> Hue[0]], 
+      Style[$CellContext`\[FilledCircle], FontColor -> Hue[
+         Rational[1, 4]]], 
+      Style[$CellContext`\[FilledCircle], FontColor -> Hue[
+         Rational[1, 2]]], 
+      Style[$CellContext`\[FilledCircle], FontColor -> Hue[
+         Rational[1, 4]]], " ", " "}, {" ", 
+      Style[$CellContext`\[FilledCircle], FontColor -> Hue[
+         Rational[1, 4]]], 
+      Style[$CellContext`\[FilledCircle], FontColor -> Hue[
+         Rational[3, 4]]], 
+      Style[$CellContext`\[FilledCircle], FontColor -> Hue[
+         Rational[3, 4]]], 
+      Style[$CellContext`\[FilledCircle], FontColor -> Hue[
+         Rational[1, 4]]], 
+      Style[$CellContext`\[FilledCircle], FontColor -> Hue[
+         Rational[1, 2]]], 
+      Style[$CellContext`\[FilledCircle], FontColor -> Hue[
+         Rational[1, 2]]], 
+      Style[$CellContext`\[FilledCircle], FontColor -> Hue[
+         Rational[1, 2]]], 
+      Style[$CellContext`\[FilledCircle], FontColor -> Hue[
+         Rational[1, 2]]], 
+      Style[$CellContext`\[FilledCircle], FontColor -> Hue[
+         Rational[1, 4]]], 
+      Style[$CellContext`\[FilledCircle], FontColor -> Hue[
+         Rational[3, 4]]], 
+      Style[$CellContext`\[FilledCircle], FontColor -> Hue[
+         Rational[3, 4]]], 
+      Style[$CellContext`\[FilledCircle], FontColor -> Hue[
+         Rational[1, 4]]], " "}, {" ", 
+      Style[$CellContext`\[FilledCircle], FontColor -> Hue[
+         Rational[1, 4]]], 
+      Style[$CellContext`\[FilledCircle], FontColor -> Hue[0]], 
+      Style[$CellContext`\[FilledCircle], FontColor -> Hue[
+         Rational[1, 2]]], 
+      Style[$CellContext`\[FilledCircle], FontColor -> Hue[0]], 
+      Style[$CellContext`\[FilledCircle], FontColor -> Hue[
+         Rational[3, 4]]], 
+      Style[$CellContext`\[FilledCircle], FontColor -> Hue[0]], 
+      Style[$CellContext`\[FilledCircle], FontColor -> Hue[0]], 
+      Style[$CellContext`\[FilledCircle], FontColor -> Hue[0]], 
+      Style[$CellContext`\[FilledCircle], FontColor -> Hue[
+         Rational[3, 4]]], 
+      Style[$CellContext`\[FilledCircle], FontColor -> Hue[0]], 
+      Style[$CellContext`\[FilledCircle], FontColor -> Hue[
+         Rational[1, 2]]], 
+      Style[$CellContext`\[FilledCircle], FontColor -> Hue[0]], 
+      Style[$CellContext`\[FilledCircle], FontColor -> Hue[
+         Rational[1, 4]]], " "}, {
+      Style[$CellContext`\[FilledCircle], FontColor -> Hue[
+         Rational[1, 4]]], 
+      Style[$CellContext`\[FilledCircle], FontColor -> Hue[
+         Rational[1, 4]]], 
+      Style[$CellContext`\[FilledCircle], FontColor -> Hue[
+         Rational[1, 2]]], 
+      Style[$CellContext`\[FilledCircle], FontColor -> Hue[
+         Rational[1, 2]]], 
+      Style[$CellContext`\[FilledCircle], FontColor -> Hue[
+         Rational[3, 4]]], 
+      Style[$CellContext`\[FilledCircle], FontColor -> Hue[
+         Rational[3, 4]]], 
+      Style[$CellContext`\[FilledCircle], FontColor -> Hue[0]], 
+      Style[$CellContext`\[FilledCircle], FontColor -> Hue[0]], 
+      Style[$CellContext`\[FilledCircle], FontColor -> Hue[
+         Rational[3, 4]]], 
+      Style[$CellContext`\[FilledCircle], FontColor -> Hue[
+         Rational[3, 4]]], 
+      Style[$CellContext`\[FilledCircle], FontColor -> Hue[
+         Rational[1, 2]]], 
+      Style[$CellContext`\[FilledCircle], FontColor -> Hue[
+         Rational[1, 2]]], 
+      Style[$CellContext`\[FilledCircle], FontColor -> Hue[
+         Rational[1, 4]]], 
+      Style[$CellContext`\[FilledCircle], FontColor -> Hue[
+         Rational[1, 4]]]}, {
+      Style[$CellContext`\[FilledCircle], FontColor -> Hue[
+         Rational[1, 4]]], 
+      Style[$CellContext`\[FilledCircle], FontColor -> Hue[
+         Rational[1, 2]]], 
+      Style[$CellContext`\[FilledCircle], FontColor -> Hue[
+         Rational[3, 4]]], 
+      Style[$CellContext`\[FilledCircle], FontColor -> Hue[0]], 
+      Style[$CellContext`\[FilledCircle], FontColor -> Hue[
+         Rational[1, 4]]], 
+      Style[$CellContext`\[FilledCircle], FontColor -> Hue[
+         Rational[1, 2]]], 
+      Style[$CellContext`\[FilledCircle], FontColor -> Hue[
+         Rational[3, 4]]], 
+      Style[$CellContext`\[FilledCircle], FontColor -> Hue[0]], 
+      Style[$CellContext`\[FilledCircle], FontColor -> Hue[
+         Rational[3, 4]]], 
+      Style[$CellContext`\[FilledCircle], FontColor -> Hue[
+         Rational[1, 2]]], 
+      Style[$CellContext`\[FilledCircle], FontColor -> Hue[
+         Rational[1, 4]]], 
+      Style[$CellContext`\[FilledCircle], FontColor -> Hue[0]], 
+      Style[$CellContext`\[FilledCircle], FontColor -> Hue[
+         Rational[3, 4]]], 
+      Style[$CellContext`\[FilledCircle], FontColor -> Hue[
+         Rational[1, 2]]], 
+      Style[$CellContext`\[FilledCircle], FontColor -> Hue[
+         Rational[1, 4]]]}}}]]], "Output",
+ CellChangeTimes->{
+  3.634396908138781*^9, {3.6343969809910316`*^9, 3.634397011380683*^9}, {
+   3.634397132609762*^9, 3.63439715926334*^9}}]
+}, Open  ]],
+
+Cell["\<\
+f) Investigate the patterns you find when your run uColorPascalsTriangleDot [ \
+number, n ] for n=2,3,4,....
+Describe some of the patterns you see for or small numbers of n.\
+\>", "Text",
+ CellChangeTimes->{
+  3.634396977678422*^9, {3.6343970274586267`*^9, 3.634397126086328*^9}, 
+   3.6344070777230883`*^9, {3.634434198296749*^9, 3.6344341991777506`*^9}, {
+   3.634439614096113*^9, 3.6344396588941765`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ StyleBox["Problem 2: ",
+  FontWeight->"Bold"],
+ " ",
+ StyleBox[" Catch me if you can with escape door.",
+  FontWeight->"Bold"]
+}], "Subsubsection",
+ CellChangeTimes->{{3.6326162073864613`*^9, 3.632616210112747*^9}, {
+   3.6334703572005653`*^9, 3.633470365079947*^9}, {3.633472472808909*^9, 
+   3.63347248033664*^9}, {3.634388587646142*^9, 3.634388593915881*^9}, {
+   3.634406428350375*^9, 3.6344064378293657`*^9}, 3.634407085474601*^9}],
+
+Cell[TextData[{
+ "This is a modified version of the problem we discussed in class during the \
+last week. This problem is designed to use the same type of simulation using \
+small line segments as steps that we discussed in class.\n\n",
+ StyleBox["The problem:",
+  FontWeight->"Bold"],
+ " For simplicity we assume that you are in a very large circular room - \
+think of Diddle arena.\nNo obstacles are in the room - but there is one door \
+on the \[OpenCurlyDoubleQuote]north pole of the circle.\nThere are two \
+people: the runner with speed ",
+ Cell[BoxData[
+  FormBox["v2", TraditionalForm]],
+  FontSize->14],
+ " and the catcher with speed ",
+ Cell[BoxData[
+  FormBox["v1", TraditionalForm]],
+  FontSize->14],
+ ". The runner wins if the runner reaches the door before she/he is caught. \
+The runner is caught if the catcher comes with distance rad/50 of the runner.\
+\nAny program you write for this problem should return a graphic like the one \
+below with the runner in red and the catcher in blue and the door as a black \
+dot on the top. The graphic shows the paths each person walks; the small dot \
+is the starting position and the bigger dot is the current position. In the \
+graphic below the runner is faster (its path is longer) and the runner can \
+now head straight towards the door to win. \nNote that this is not a graphic \
+that will be generated by the code in problem 2, it is just a graphic that \
+illustrates how this could look like.\n\n"
+}], "Text",
+ CellChangeTimes->{{3.633471964086917*^9, 3.633472097106411*^9}, {
+  3.633472168887898*^9, 3.63347218561731*^9}, {3.633472222389076*^9, 
+  3.633472259303876*^9}, {3.633640345290875*^9, 3.6336404810280657`*^9}, {
+  3.6336405837842107`*^9, 3.6336407175504*^9}, {3.6343886182864637`*^9, 
+  3.634388643413769*^9}, {3.634388689056693*^9, 3.6343888356607533`*^9}, {
+  3.6343888824234467`*^9, 3.634388908575109*^9}, {3.634388945488303*^9, 
+  3.634388997593996*^9}, {3.634389145821274*^9, 3.634389154313734*^9}, {
+  3.634389316884994*^9, 3.634389371583049*^9}, {3.6343977906453323`*^9, 
+  3.634397819538473*^9}, {3.634397858692127*^9, 3.634397886231587*^9}, {
+  3.634405788442439*^9, 3.634405986735763*^9}, {3.634407087556061*^9, 
+  3.634407106467292*^9}, {3.634407215519985*^9, 3.634407257484651*^9}, {
+  3.6344397892013597`*^9, 3.6344398706794753`*^9}, {3.6344399740796213`*^9, 
+  3.6344399934346485`*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[{{{}, {{}, {}, 
+     {RGBColor[1, 0, 0], PointSize[0.01388888888888889], Thickness[0.01], 
+      LineBox[CompressedData["
+1:eJwBQQO+/CFib1JlAgAAADMAAAACAAAAAAAAAAAACMAAAAAAAADwvyyXEWiZ
+VQfA0MI58jbj8L/5i68UE6gGwJmWO0DEvPG/LA8Lo4X3BcDusqZyWIzyv2bp
+hYwLRAXA9cxJUqNR87/8lu49wY0EwC8JLf5TDPS/9i6mL8XUA8CuWGYEGbz0
+v+jPsv43GQPAdoPxfaBg9b8L2sCGPFsCwBftyi2Y+fW/9dMU/feaAcA6QpCj
+rYb2v016bwyS2ADAe8/uYY4H979pLuXxNBQAwCVkLAnoe/e/entTNRuc/r92
+fx2GaOP3vzmpooWXDP2/51DiRb49+L+srA4qRHr7v0sKzG6Yivi/jYZ3lozl
++b/dcdUep8n4v1d4j6DiTvi/buQksJv6+L+P8hLFvrb2v1Z2GwQpHfm/vyDv
+bqAd9b8hFYXVAzH5v+XnVEAOhPO/A/yQEuM1+b/m1bJdlurxv38PUT+AK/m/
+SvuKus5R8L9raZrhlxH5vycBItCqdO2/5StC9+nn+L+Dh9/KoUnqv8E72Hc6
+rvi/D7kF4+Aj579qYC7jUWT4v0RCa7vYBOS/sPEt3v0J+L+UnijDDO7gv0j5
+uN8Rn/e/IP+nuSfC27+tcpXvZyP3v57GDggyv9W/uZypeeGW9r+LZdG6b63P
+vw3uHTho+fW/H3Grm8YYxL+VGEo370r1vxZ5AsUokLG/wFSj9nOL9L+AHQlL
+DuWRP0oTLqr/uvO/UGjgfPfZuT9wdzWgqNnyv6T9+lA9QMc/s6I2z5Pn8b/y
+SZwGp5bQP2V5+Y/25PC/n0t18lxV1T90f1wPMaTvv3pu7opZ19k/xt0Oi6te
+7b8ivG7NihfeP4qpMS1C+uq/MRpGIVsI4T+G5HIjDXjovwizw2m+3uI/Xehl
+t1zZ5b/h8dUAMIzkP8LNYkS/H+O/0ByaXeQN5j9KXneTB03gv/tJjAQIYec/
+jIDBIqfG2r+9udDmxILoPzDJlJwmytS/nc5U4khw6T96EqLQQFTNv/T7lnbN
+Juo/hHC9gNHZwL//x2S9oKPqP4iP9/cgzaC/8VXMxRFj6j9N8ewc5PXAv8rt
+ZfS64eo/upLKTPtBob+j5KFrwqPqPwLz2fDnE8G/5onNTA==
+       "]]}, 
+     {RGBColor[0, 0, 1], PointSize[0.01388888888888889], Thickness[0.01], 
+      LineBox[CompressedData["
+1:eJwBQQO+/CFib1JlAgAAADMAAAACAAAAAAAAAAAA8L8AAAAAAAAAQGp/AUSa
+cfC/SJY3kt5U/z/2C/zJX97wvzHFZZWnpv4/trsc2ChG8b+ZAjpedPX9P0hk
+VFTNqPG/DNbMCmBB/T9OTk/PJAbyv5poWpaHivw/oEjSkAZe8r/pdrTtCdH7
+P2Fsm6VJsPK/+gxzBAgV+z/Q4ObuxPzyv/WY7OqkVvo/2BS6M09D87+DTP/k
+BZb5PzVAGjS/g/O/nXu3gVLT+D/ZnFW+673zv0q14LO0Dvg/cb2Jxqvx87/6
+vZHrWEj3P5jGlIDWHvS/G2LGMG6A9j/BOaN8Q0X0v3dNHT8mt/U/npWQxspk
+9L+3r9Oitez0PwJ5VghFffS/cXEc11Mh9D9dY8yvi470v4cI9WU7VfM/5tgB
+GHmY9L+vfJ4JqojyP1rYhbbomvS/sr3lz+C78T94e/lMt5X0v6vRaj8k7/A/
+qZdYH8OI9L8ERxp/vCLwPwCTci/sc/S/1JMeAOut7j/DtR9+FFf0v0VJLFQ+
+GO0/7lnUUiAy9L/XAAwWG4XrP+29S4r2BPS/c8ZIEjL16T8bISDtgM/zv5CO
+dzE9aeg/DkJFj6yR87/KAf7p/+HmP8w6fTlqS/O/gGx1uEdg5T9RqgXervzy
+v9Q+ZJ7s5OM/6VfjGXSl8r9uJKKm0XDiP5C7W8S4RfK/P10tbuUE4T98I1SO
+gd3xvzxR8l5FRN8/5r5ys9ls8b9wqoCaIZPcPw/Z+r7T8/C/mzI8sYj42T8L
+CG5minLwv+7lFBm/dtc/aIPz90LS77/FKYxtJRDVP9V7OPWNr+6/4NppBznH
+0j8B81hbaH3tv9nKIz+UntA/r0UO6l087L/VwRlv3DHNP1kBDE0W7eq/gVg4
+DDRyyT9+NSoZWJDpv7LmGgoKBMY/WBtmAQwn6L8RV3AkaO3CPzZp+j5Asua/
+ggb36H40wD93z18lLDPlvzSQTWg0v7s/jIDY2DOr4795wKh1I+q3P2j1vxzs
+G+K/BtIU9mn2tD/v5M8uHofgv//vffFj8LI/yG0FTZfd3b/+qeeE7OOxP00h
+UqJFtNq/PhCVLLGprz8ddlVjbYPXv7zJ7HS1pK0/Zl+5TQ==
+       "]]}}, {}}, {
+    {RGBColor[0, 0, 1], PointSize[Large], PointBox[{-1, 2}]}, 
+    {RGBColor[1, 0, 0], PointSize[Large], PointBox[{-3, -1}]}, 
+    {RGBColor[0, 0, 1], CircleBox[{0, 0}, 5]}, 
+    {GrayLevel[0], PointSize[0.05], PointBox[{0, 5}]}, 
+    {RGBColor[1, 0, 0], PointSize[0.03], 
+     PointBox[{0.8324901678271498, -0.13341998348541756`}]}, 
+    {RGBColor[0, 0, 1], PointSize[0.03], 
+     PointBox[{-0.36739668560571365`, 0.05789725353533323}]}}},
+  AspectRatio->1,
+  Axes->{True, True},
+  AxesLabel->{None, None},
+  AxesOrigin->{0, 0},
+  DisplayFunction->Identity,
+  Frame->{{False, False}, {False, False}},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+  GridLines->{None, None},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  Method->{},
+  PlotRange->{{-5, 5}, {-5, 5}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{0, 0}, {0, 0}},
+  Ticks->{Automatic, Automatic}]], "Input"],
+
+Cell[TextData[{
+ "The description below uses the following notation:\n{cx,cy} = the starting \
+position of the catcher and v1 is the speed of the catcher.\n{rx,ry} = the \
+starting position of the runner and v2 is the speed of the runner.\nThe \
+circle has the origin as the center and radius rad and the door is at \
+{0,rad}. \n",
+ StyleBox["timestep",
+  FontSlant->"Italic"],
+ " determines the length of the line segment for each step.\nThe catcher uses \
+v1* timestep as the length of one step and the runner uses v2* timestep as \
+the length of one step. \n",
+ StyleBox["n",
+  FontSlant->"Italic"],
+ " is the number of steps in the simulation.\n"
+}], "Text",
+ CellChangeTimes->{{3.634406047551421*^9, 3.634406134089794*^9}, {
+  3.6344071312172537`*^9, 3.634407146809792*^9}, {3.6344396825892096`*^9, 
+  3.634439686160215*^9}, {3.63444003697571*^9, 3.6344400635207477`*^9}, {
+  3.634440094545791*^9, 3.6344401191608257`*^9}}],
+
+Cell["\<\
+a) Write a function uCatchmeDoorSleep [ {cx,cy}, {rx,ry}, v1, v2, timestep, \
+rad, n ], where the catcher is asleep (not moving) and the runner runs in a \
+straight line towards the door with the correct step length as explained \
+above. The runner should stop once the door is reached, i.e. the runner \
+should not move past the point (0,rad) - even if the number of steps n is \
+larger than what is needed to reach the door. The runner just stops at the \
+door and does not move anymore.\
+\>", "Text",
+ CellChangeTimes->{
+  3.634405794225451*^9, 3.63440602882347*^9, {3.6344061394740973`*^9, 
+   3.634406381895567*^9}, 3.634407158926147*^9, {3.6344401679198947`*^9, 
+   3.6344402714710407`*^9}}],
+
+Cell["\<\
+b) Assume that the runner moves as implemented in part a). Discuss a strategy \
+that the catcher can use to intercept the runner and explain how you know \
+that this is  a good strategy.\
+\>", "Text",
+ CellChangeTimes->{{3.634406375241851*^9, 3.634406388192114*^9}, 
+   3.63440717245988*^9, {3.634440297306077*^9, 3.6344403037370863`*^9}}],
+
+Cell["\<\
+c) Implement the strategy for the catcher that you describe in part b) by \
+creating the function below\
+\>", "Text",
+ CellChangeTimes->{
+  3.63440639109626*^9, {3.6344064704767447`*^9, 3.634406504378751*^9}, 
+   3.634407174867271*^9, {3.634440315420103*^9, 3.6344403165111046`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"uCatchmeDoor", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"cx", ",", "cy"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"rx", ",", "ry"}], "}"}], ",", "v1", ",", "v2", ",", "timestep", 
+   ",", "rad", ",", "n"}], "]"}]], "Input",
+ CellChangeTimes->{{3.634389001172776*^9, 3.634389042117144*^9}, {
+  3.63438910665414*^9, 3.634389108838228*^9}, {3.634389376927351*^9, 
+  3.634389378064231*^9}}],
+
+Cell["\<\
+Again the output will be graphic. The runner and catcher should stop moving \
+if either the runner reaches the door or the catcher caught the runner, i.e \
+is within distance or rad/50 of the runner.\
+\>", "Text",
+ CellChangeTimes->{{3.634389045643968*^9, 3.6343891315184107`*^9}, {
+   3.634389162663402*^9, 3.6343893113247013`*^9}, {3.634389381511135*^9, 
+   3.6343894673857937`*^9}, {3.6343979039347773`*^9, 3.634397925909779*^9}, 
+   3.634405805848957*^9, 3.634406039902495*^9, {3.634406541001133*^9, 
+   3.634406551600854*^9}, {3.634406593478958*^9, 3.634406653260687*^9}}],
+
+Cell["\<\
+d) Use the Manipulate command to illustrate how your strategy will work out \
+in a variety of cases.\
+\>", "Text",
+ CellChangeTimes->{{3.6344065623367767`*^9, 3.634406587799138*^9}, {
+  3.634406684051353*^9, 3.634406685691367*^9}}],
+
+Cell["Your test cases must include the following:", "Text",
+ CellChangeTimes->{{3.6344066961312103`*^9, 3.634406732625416*^9}, 
+   3.634406881883271*^9}],
+
+Cell["\<\
+(i) {cx,cy}= {-2,-3},{rx,ry}={1,-2},v1=1,v2=1,timestep=.1,rad=5
+(ii) {cx,cy}= {-2,-3},{rx,ry}={1,-3},v1=1,v2=1,timestep=.1,rad=5
+(iii) {cx,cy}= {-2,3},{rx,ry}={1,-3},v1=1,v2=2,timestep=.1,rad=5
+(iv) {cx,cy}= {-2,3},{rx,ry}={1,3},v1=2,v2=1,timestep=.1,rad=5\
+\>", "Text",
+ CellChangeTimes->{{3.634389555340857*^9, 3.6343897578999987`*^9}, 
+   3.634406689650985*^9, {3.634406738321169*^9, 3.6344068350370693`*^9}, {
+   3.634406919418528*^9, 3.634406965304612*^9}}],
+
+Cell["\<\
+e) Extra credit: Any additonal strategy that you can add in the code for the \
+runner will give you some extra credit. Call the function you create \
+\>", "Text",
+ CellChangeTimes->{{3.6344065623367767`*^9, 3.634406587799138*^9}, {
+   3.634406684051353*^9, 3.634406685691367*^9}, {3.6344072874120073`*^9, 
+   3.634407341025116*^9}, 3.6344397192872615`*^9}],
+
+Cell[BoxData[
+ RowBox[{"uCatchmeDoorExtra", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"cx", ",", "cy"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"rx", ",", "ry"}], "}"}], ",", "v1", ",", "v2", ",", "timestep", 
+   ",", "rad", ",", "n"}], "]"}]], "Input",
+ CellChangeTimes->{{3.634389001172776*^9, 3.634389042117144*^9}, {
+  3.63438910665414*^9, 3.634389108838228*^9}, {3.634389376927351*^9, 
+  3.634389378064231*^9}, {3.634407349017846*^9, 3.634407349889225*^9}}],
+
+Cell["\<\
+You need to clearly explain the strategy you added and show by examples that \
+it works.\
+\>", "Text",
+ CellChangeTimes->{{3.634407353344404*^9, 3.63440738924715*^9}, 
+   3.634439724767269*^9}]
+}, Closed]]
+}, Open  ]]
+},
+WindowToolbars->"EditBar",
+WindowSize->{1451, 842},
+WindowMargins->{{65, Automatic}, {Automatic, 1}},
+Magnification:>1.25 Inherited,
+FrontEndVersion->"10.0 for Microsoft Windows (64-bit) (December 4, 2014)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 320, 6, 59, "Subsection"],
+Cell[903, 30, 1330, 20, 63, "Text"],
+Cell[2236, 52, 981, 15, 162, "Text"],
+Cell[3220, 69, 344, 7, 63, "Text"],
+Cell[CellGroupData[{
+Cell[3589, 80, 380, 9, 49, "Subsubsection"],
+Cell[3972, 91, 546, 9, 88, "Text"],
+Cell[CellGroupData[{
+Cell[4543, 104, 145, 2, 27, "Print"],
+Cell[4691, 108, 147, 2, 27, "Print"],
+Cell[4841, 112, 153, 2, 27, "Print"],
+Cell[4997, 116, 156, 2, 27, "Print"],
+Cell[5156, 120, 159, 2, 27, "Print"],
+Cell[5318, 124, 160, 2, 27, "Print"],
+Cell[5481, 128, 163, 2, 27, "Print"]
+}, Open  ]],
+Cell[5659, 133, 3100, 48, 139, "Text"],
+Cell[CellGroupData[{
+Cell[8784, 185, 163, 3, 36, "Input"],
+Cell[8950, 190, 3191, 94, 93, "Output"]
+}, Open  ]],
+Cell[12156, 287, 466, 8, 38, "Text"],
+Cell[12625, 297, 593, 11, 64, "Text"],
+Cell[13221, 310, 733, 14, 64, "Text"],
+Cell[13957, 326, 838, 19, 91, "Text"],
+Cell[14798, 347, 1781, 28, 237, "Text"],
+Cell[CellGroupData[{
+Cell[16604, 379, 241, 5, 36, "Input"],
+Cell[16848, 386, 29910, 1065, 243, "Output"]
+}, Open  ]],
+Cell[46773, 1454, 1888, 31, 313, "Text"],
+Cell[CellGroupData[{
+Cell[48686, 1489, 342, 6, 36, "Input"],
+Cell[49031, 1497, 34662, 1067, 243, "Output"]
+}, Open  ]],
+Cell[83708, 2567, 418, 8, 63, "Text"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[84163, 2580, 453, 10, 49, "Subsubsection"],
+Cell[84619, 2592, 2374, 40, 335, "Text"],
+Cell[86996, 2634, 3535, 69, 468, "Input"],
+Cell[90534, 2705, 928, 18, 214, "Text"],
+Cell[91465, 2725, 707, 12, 88, "Text"],
+Cell[92175, 2739, 349, 6, 63, "Text"],
+Cell[92527, 2747, 293, 6, 38, "Text"],
+Cell[92823, 2755, 418, 10, 36, "Input"],
+Cell[93244, 2767, 587, 9, 63, "Text"],
+Cell[93834, 2778, 241, 5, 38, "Text"],
+Cell[94078, 2785, 153, 2, 38, "Text"],
+Cell[94234, 2789, 472, 8, 113, "Text"],
+Cell[94709, 2799, 366, 6, 38, "Text"],
+Cell[95078, 2807, 469, 10, 36, "Input"],
+Cell[95550, 2819, 203, 5, 38, "Text"]
+}, Closed]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

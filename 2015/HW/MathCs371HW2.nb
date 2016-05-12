@@ -1,0 +1,594 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     22606,        585]
+NotebookOptionsPosition[     21555,        547]
+NotebookOutlinePosition[     21917,        563]
+CellTagsIndexPosition[     21874,        560]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[TextData[StyleBox["Mathematica Hw 2",
+ FontSlant->"Italic"]], "Subsection",
+ CellChangeTimes->{{3.504038332241448*^9, 3.504038335556608*^9}, {
+  3.6318918128070087`*^9, 3.6318918136941643`*^9}},
+ TextAlignment->Center,
+ TextJustification->0.],
+
+Cell[TextData[{
+ "Claus Ernst/Uta Ziegler\t\tDepartment of Mathematics\t\tMath/Cs 371 Spring \
+2015\n",
+ StyleBox["Due: Wednesday, February 10 before class. ",
+  FontWeight->"Bold"]
+}], "Text",
+ CellChangeTimes->{{3.396307463532086*^9, 3.3963074935485563`*^9}, {
+   3.4731641043982286`*^9, 3.473164105183354*^9}, {3.4732629763552847`*^9, 
+   3.473262983315359*^9}, {3.504038346234837*^9, 3.504038351220984*^9}, {
+   3.504038387910781*^9, 3.504038388085926*^9}, {3.504038436962585*^9, 
+   3.504038450040007*^9}, {3.5040384824502697`*^9, 3.504038490601551*^9}, 
+   3.5044519632271605`*^9, {3.5044570373867207`*^9, 3.504457059558312*^9}, {
+   3.50445769212834*^9, 3.504457692753332*^9}, {3.5044579026725197`*^9, 
+   3.5044579326252613`*^9}, {3.599697701118517*^9, 3.599697709707015*^9}, 
+   3.599699734698741*^9, {3.5998581752573137`*^9, 3.599858184619651*^9}, {
+   3.631125237708308*^9, 3.631125262592093*^9}, {3.6318918182304783`*^9, 
+   3.631891825245789*^9}, {3.632008488659422*^9, 3.632008488841485*^9}, {
+   3.632010328361659*^9, 3.6320103306805067`*^9}, {3.6320152108411283`*^9, 
+   3.6320152168604727`*^9}, 3.632015454332055*^9}],
+
+Cell[TextData[{
+ StyleBox["Submission instructions:",
+  FontWeight->"Bold"],
+ "\nYour HW 2 (and later homeworks) are to be turned in electronically. \
+Submit one file containing all your work, the required executions, and the \
+required explanations. Make sure your code follows standard quality \
+expectations including (but not limited to) using meaningful variable names, \
+using proper indentations, containing sufficient comments, using specified \
+names and parameters and being correct.\nThe file name should contain the \
+last names of the students turning it in. E.g. ErnstZieglerHW2.nb. Your file \
+- on the first page - must also contain the names of the students turning it \
+in."
+}], "Text",
+ CellChangeTimes->{{3.6320152206726904`*^9, 3.6320154997056503`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Discovery Investigation", "Subsubsection",
+ CellChangeTimes->{{3.474217026694322*^9, 3.4742170623022623`*^9}}],
+
+Cell[TextData[{
+ "Consider the following function f with domain the positive integers. If ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["n", "0"], TraditionalForm]]],
+ " is a positive integer then we define:\n\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"f", "(", 
+    SubscriptBox["n", "0"]}], TraditionalForm]]],
+ ") = the sum of the prime factors of ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["n", "0"], TraditionalForm]]],
+ ".\nFor example, if ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["n", "0"], TraditionalForm]]],
+ "= 90, then ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"f", "(", 
+    SubscriptBox["n", "0"]}], TraditionalForm]]],
+ ") is the sum of the prime factors which will be ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"2", "+", "3", "+", "3", "+", "5"}], "=", "13"}], 
+   TraditionalForm]]],
+ ".\n",
+ "Given a number ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["n", "0"], TraditionalForm]]],
+ ", a sequence of numbers ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["n", "1"], ",", 
+    SubscriptBox["n", "2"]}], TraditionalForm]]],
+ ", ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["n", "3"], TraditionalForm]]],
+ ", \[Ellipsis]. can be created by repeatedly applying the function f, that \
+is ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["n", "1"], TraditionalForm]]],
+ " = f(",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["n", "0"], TraditionalForm]]],
+ "), ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["n", "2"], TraditionalForm]]],
+ " = f(",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["n", "1"], TraditionalForm]]],
+ "), ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["n", "3"], TraditionalForm]]],
+ " = f(",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["n", "2"], TraditionalForm]]],
+ "), ....."
+}], "Text",
+ CellChangeTimes->{{3.53756121547132*^9, 3.53756121805855*^9}, {
+  3.537577323205803*^9, 3.5375773490361147`*^9}, {3.537577397009018*^9, 
+  3.537577433338133*^9}, {3.537577505658222*^9, 3.5375775064263763`*^9}}],
+
+Cell[TextData[{
+ "For example, if ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["n", "0"], TraditionalForm]]],
+ "= 90, then ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["n", "1"], "=", 
+    RowBox[{
+     RowBox[{"f", "(", 
+      SubscriptBox["n", "0"], ")"}], "=", "13"}]}], TraditionalForm]]],
+ " and ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["n", "2"], "=", 
+    RowBox[{
+     RowBox[{"f", "(", 
+      SubscriptBox["n", "1"], ")"}], "=", "4"}]}], TraditionalForm]]],
+ ",..."
+}], "Text",
+ CellChangeTimes->{{3.632009048150899*^9, 3.632009103054544*^9}}],
+
+Cell[TextData[{
+ "The objective of this part of the homework is to explore the sequences of \
+numbers which are generated in this way for various values of ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["n", "0"], TraditionalForm]]],
+ ". More precisely, your task consists of three parts.\n\n1) ",
+ StyleBox["Tool development\n",
+  FontWeight->"Bold"],
+ "Develop tools needed to explore the sequences (this can include the \
+progression of the numbers in the sequences, the final values of sequences \
+(that is when ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["n", 
+    RowBox[{"i", "+", "1"}]], TraditionalForm]]],
+ " = f(",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["n", "i"], TraditionalForm]]],
+ ") = ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["n", "i"], TraditionalForm]]],
+ "), the number of steps needed to reach the final values in a sequence, \
+...). You must ",
+ StyleBox["at least ",
+  FontWeight->"Bold"],
+ "include a ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " function to compute f (the name of that function must be f), and an \
+additional ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " function ufSequence which computes and returns the sequence of values for \
+f from ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["n", "0"], TraditionalForm]]],
+ " to ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["n", "k"], TraditionalForm]]],
+ ", where  ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["n", "0"], TraditionalForm]]],
+ " and k are the parameter of the function (in this order). So ufSequence[90, \
+2] returns (",
+ StyleBox["not ",
+  FontWeight->"Bold"],
+ "prints) {90, 13, 4}. You need to write additional functions for your \
+exploration. Each function should include a short description (clear enough \
+to someone who has not done your work) of what it does. Show that your code \
+works by executing a few (sufficiently different) examples - and of course \
+making sure the results are correct.\n\n2) ",
+ StyleBox["Explore and report",
+  FontWeight->"Bold"],
+ "\nExplore the sequences and report interesting patterns/observations you \
+made. Your report must consist of the following pieces for each \
+pattern/observation you report:\na)  A ",
+ StyleBox["clear ",
+  FontWeight->"Bold"],
+ "and ",
+ StyleBox["precise ",
+  FontWeight->"Bold"],
+ "statement of the pattern/observation using complete sentences.\nb) \
+Sufficient data to support that there is a pattern/valid observation. \
+'Sufficient' means that the reader can see that there is in fact a pattern, \
+rather that there are 3-4 examples which seem somewhat similar. You can \
+present your data as plots (you can label them by hand) and lists of computed \
+values, together with explanations (as needed). You must include the ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " code which created the data. \nMake sure the report is well-organized and \
+well-written - it should say what you want to say. Please do not count on us \
+guessing what you meant to say.\n\nWe expect you to find at least 4 ",
+ StyleBox["interesting ",
+  FontWeight->"Bold"],
+ "and",
+ StyleBox[" significantly different ",
+  FontWeight->"Bold"],
+ "patterns. At least 2 of the patterns must be in a general form, that means \
+they cannot be proven by showing a finite number of examples. You can report \
+more than 4 patterns for extra credit.\n\n3) ",
+ StyleBox["Proof",
+  FontWeight->"Bold"],
+ "\nPick 2 of the patterns you reported in 2. Both patterns must be \
+significantly different from each other and in a general form, that is, they \
+cannot be proven by showing a finite number of examples. For each,  provide \
+convincing reason(s) why the pattern is true in general. Often finding a \
+convincing argument is the result of further exploration - using a \
+combination of ",
+ StyleBox["Mathematica,",
+  FontSlant->"Italic"],
+ " pencil and paper, and your brain.  (You don't have to write a formal \
+proof, but your argumentation should be as strong - basically an informal as \
+proof.)\n\nPlease be specific and use correct terminology when writing the \
+statement of patterns and observations. You can refer to ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["n", "0"], TraditionalForm]]],
+ " as the ",
+ StyleBox["starting value ",
+  FontSlant->"Italic"],
+ "or ",
+ StyleBox["starting number",
+  FontSlant->"Italic"],
+ ";  ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["n", "0"], TraditionalForm]]],
+ ", ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["n", "1"], ",", 
+    SubscriptBox["n", "2"]}], TraditionalForm]]],
+ ", ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["n", "3"], TraditionalForm]]],
+ ", \[Ellipsis].  is a ",
+ StyleBox["sequence",
+  FontSlant->"Italic"],
+ " of numbers; if for a starting value ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["n", "0"], TraditionalForm]]],
+ "  ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["n", 
+    RowBox[{"i", "+", "1"}]], TraditionalForm]]],
+ "= ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["n", "i"], TraditionalForm]]],
+ ", then you can refer to ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["n", "i"], TraditionalForm]]],
+ " as the ",
+ StyleBox["terminal value of the sequence starting at ",
+  FontSlant->"Italic"],
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["n", "0"], "."}], TraditionalForm]]],
+ "\n\n"
+}], "Text",
+ CellChangeTimes->{{3.39863028194858*^9, 3.3986307053670063`*^9}, {
+   3.398630801958922*^9, 3.398630806561976*^9}, {3.47421145178125*^9, 
+   3.474211532703125*^9}, {3.474211569859375*^9, 3.474212027625*^9}, {
+   3.4742123748125*^9, 3.4742123793125*^9}, {3.47421291553125*^9, 
+   3.47421297271875*^9}, {3.474213240796875*^9, 3.474213290296875*^9}, {
+   3.4742133806875*^9, 3.474214142140625*^9}, {3.474217014304718*^9, 
+   3.474217015895734*^9}, {3.474243419296875*^9, 3.4742434433125*^9}, {
+   3.506182183240918*^9, 3.5061822837195053`*^9}, {3.5061823342174587`*^9, 
+   3.506182366576213*^9}, {3.5061978004375*^9, 3.5061978278125*^9}, {
+   3.5061979873125*^9, 3.506197988640625*^9}, {3.5061980878125*^9, 
+   3.506198088984375*^9}, {3.50619813040625*^9, 3.5061982855*^9}, {
+   3.506204331078125*^9, 3.50620441759375*^9}, {3.50620446490625*^9, 
+   3.506204465390625*^9}, {3.506204498359375*^9, 3.506204524515625*^9}, {
+   3.5062045686875*^9, 3.50620486075*^9}, {3.506204892734375*^9, 
+   3.50620490984375*^9}, {3.506204940515625*^9, 3.506205160078125*^9}, {
+   3.5062051934375*^9, 3.506205357984375*^9}, {3.50620539034375*^9, 
+   3.50620566978125*^9}, {3.50620570159375*^9, 3.5062057518125*^9}, {
+   3.506211541354537*^9, 3.5062115517888937`*^9}, {3.50621161059064*^9, 
+   3.5062116232144117`*^9}, 3.506211856690793*^9, {3.537561170704752*^9, 
+   3.537561233065825*^9}, {3.537577503330002*^9, 3.537577511206593*^9}, {
+   3.5375785434253674`*^9, 3.537578587455419*^9}, {3.537578693297265*^9, 
+   3.537578736002733*^9}, {3.537578861201233*^9, 3.5375788634416513`*^9}, {
+   3.537578927682181*^9, 3.5375789311380243`*^9}, {3.632009119322081*^9, 
+   3.632009130080965*^9}, {3.632009160113133*^9, 3.6320091829298983`*^9}, 
+   3.6320151825895123`*^9, {3.6320155768960657`*^9, 3.632015585849578*^9}, {
+   3.632015624031761*^9, 3.6320156625139627`*^9}, {3.632015714277923*^9, 
+   3.6320158878308496`*^9}, 3.6320162340176506`*^9, 3.632016807571456*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Function Investigation", "Subsubsection",
+ CellChangeTimes->{{3.474217026694322*^9, 3.4742170623022623`*^9}, {
+  3.631890460461192*^9, 3.63189046218799*^9}}],
+
+Cell[TextData[{
+ "\n",
+ StyleBox["Problem 1:  Varying one coefficient in a polynomial.\n",
+  FontWeight->"Bold"],
+ "(a)    Consider the polynomial ",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["x", "4"], TraditionalForm]]],
+ "+ c ",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["x", "2"], TraditionalForm]]],
+ "+8 of degree four with the real coefficient c, and define the polynomial as \
+a function uPoly[x, c] of the two arguments x and c.\n(b)    Graph the \
+function of part (a) with some fixed values for the coefficient c, for \
+example c = -5, -1, 0, 1, 5.\n(c)    Draw the five curves of part (b) in \
+different colors in a single plot - not using ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ "'s default colors.\n(d)    Use ",
+ StyleBox["Manipulate",
+  FontWeight->"Bold"],
+ " to provide a visual display of how the function changes with changing \
+values of c. Create a nice display. \n(e) Verbally describe how the function \
+changes as the constant c changes. If there any particular values of c where \
+a drastic changes occurs, state those values and the change that occurs \
+explicitly. "
+}], "Text",
+ CellChangeTimes->{{3.504437897046816*^9, 3.504437901102043*^9}, {
+   3.505499774328125*^9, 3.505499802625*^9}, {3.505517171183917*^9, 
+   3.5055171712760353`*^9}, {3.505519126211361*^9, 3.5055191338203278`*^9}, {
+   3.505521539015625*^9, 3.5055215516875*^9}, {3.505521617984375*^9, 
+   3.50552165109375*^9}, {3.505521711921875*^9, 3.505521822359375*^9}, 
+   3.50552186371875*^9, {3.505559937509688*^9, 3.505560101284101*^9}, 
+   3.5055743086078672`*^9, {3.506351785*^9, 3.506351791953125*^9}, {
+   3.536875586776425*^9, 3.536875619302968*^9}, {3.536875977035192*^9, 
+   3.536876003428854*^9}, {3.631890667494532*^9, 3.631890692859066*^9}, {
+   3.631890827278219*^9, 3.631890832565876*^9}, {3.631891506579214*^9, 
+   3.6318915139625673`*^9}, {3.63189156371237*^9, 3.631891565232441*^9}}],
+
+Cell[TextData[{
+ StyleBox["Problem 2:  Varying one coefficient in a rational function.\n",
+  FontWeight->"Bold"],
+ "(a)    Consider the rational function ",
+ Cell[BoxData[
+  FractionBox[
+   RowBox[{
+    SuperscriptBox["x", "2"], "-", 
+    RowBox[{"c", " ", "x"}], "+", "4"}], 
+   RowBox[{"x", "+", "2"}]]],
+  CellChangeTimes->{{3.536875344721416*^9, 3.536875417385387*^9}, {
+    3.5368754653645144`*^9, 3.5368755235829906`*^9}, {3.536875731314762*^9, 
+    3.536875731632575*^9}, {3.631890976819278*^9, 3.631891002420251*^9}, {
+    3.631891069415061*^9, 3.631891073556407*^9}, {3.631891126036461*^9, 
+    3.631891139913776*^9}, {3.6318912505074587`*^9, 3.6318912928037987`*^9}, {
+    3.6318913507791023`*^9, 3.631891391599661*^9}, 3.631891428166767*^9}],
+ " of degree five with the real coefficient c, and define the polynomial as a \
+function uRat[x, c] of the two arguments x and c.\n(b)    Graph the function \
+of part (a) with some fixed values for the coefficient c, for example c = -5, \
+-1, 0, 1, 5.\n(c)    Draw the five curves of part (b) in different colors in \
+a single plot - not using ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ "\[CloseCurlyQuote]s default colors.\n(d)    Use ",
+ StyleBox["Manipulate",
+  FontWeight->"Bold"],
+ " to provide a visual display of how the function changes with changing \
+values of c. Create a nice display. \n(e) Verbally describe how the function \
+changes as the constant c changes. If there any particular values of c where \
+a drastic changes occurs, state those values and the change that occurs \
+explicitly. "
+}], "Text",
+ CellChangeTimes->{{3.631891520003577*^9, 3.631891594527413*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Programming", "Subsubsection",
+ CellChangeTimes->{{3.474217026694322*^9, 3.4742170623022623`*^9}, {
+  3.631890460461192*^9, 3.63189046218799*^9}, {3.631891733378591*^9, 
+  3.631891734977337*^9}}],
+
+Cell["\<\
+For each of the problems below include 5 examples for each function to show \
+that your code works correctly (and of course make sure the computed answer \
+in fact is correct)!\
+\>", "Text",
+ CellChangeTimes->{{3.632010254126004*^9, 3.63201028877514*^9}, {
+  3.632016456987404*^9, 3.6320164742793927`*^9}}],
+
+Cell[TextData[{
+ StyleBox["Problem 1:  How far is it to the next prime?\n",
+  FontWeight->"Bold"],
+ "Write two functions that given an integer returns the distance from the \
+number to the nearest prime.  \nFor example if such a function is called F \
+then \nF[7] is 0, since 7 is a prime number; F[25] is 2, since 23 is the \
+nearest prime number;  F[16] is 1, since 17 is the nearest prime number; and \
+F[18] is 1.  So the nearest prime might be larger or smaller than ",
+ StyleBox["number",
+  FontSlant->"Italic"],
+ ". Moreover F[-1] is 3 since 2 is the nearest prime number."
+}], "Text",
+ CellChangeTimes->{{3.5055221186875*^9, 3.505522355796875*^9}, {
+   3.50552261103125*^9, 3.50552282515625*^9}, 3.631891745889557*^9, {
+   3.632009245091785*^9, 3.6320093003659143`*^9}, {3.632009564247065*^9, 
+   3.632009655249795*^9}, {3.632009700484877*^9, 3.632009722523953*^9}, {
+   3.63200981849512*^9, 3.632009819903219*^9}, 3.6320151271423407`*^9}],
+
+Cell[TextData[{
+ StyleBox["(i) No loop\n",
+  FontWeight->"Bold"],
+ "Write a function uDistToPrimeNoloop[number]  which returns the distance \
+from the number to the nearest prime as given in the above description. The \
+function uDistToPrimenoloop[number] cannot use any kind of loop construction. \
+Hint: Look for ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " commands that allow you to do this."
+}], "Text",
+ CellChangeTimes->{{3.5055221186875*^9, 3.505522355796875*^9}, {
+   3.50552261103125*^9, 3.50552282515625*^9}, 3.631891745889557*^9, {
+   3.632009245091785*^9, 3.632009442802382*^9}, 3.6320151906449733`*^9, 
+   3.6320165512267942`*^9, {3.6320166265741034`*^9, 3.6320166315583887`*^9}}],
+
+Cell[TextData[{
+ StyleBox["(ii) With loop\n",
+  FontWeight->"Bold"],
+ "Write a function uDistToPrimeWithloop[number]  uDWhwhich returns the \
+distance from the number to the nearest prime as given in the above \
+description. The function uDistToPrimenoloop[number] must use a loop in its \
+construction and you are not allowed to use the ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " command NextPrime."
+}], "Text",
+ CellChangeTimes->{{3.5055221186875*^9, 3.505522355796875*^9}, {
+   3.50552261103125*^9, 3.50552282515625*^9}, 3.631891745889557*^9, {
+   3.632009245091785*^9, 3.632009546341848*^9}, 3.632015153258835*^9, {
+   3.6320166355056143`*^9, 3.6320166375217295`*^9}, {3.6323272736959267`*^9, 
+   3.632327273966341*^9}, {3.6323278087457933`*^9, 3.632327808999064*^9}}],
+
+Cell[TextData[{
+ StyleBox["Problem 2:  How far is it to the next prime square?\n",
+  FontWeight->"Bold"],
+ "Write a function uDistToPrimeSquare[number] that given an integer number \
+returns the distance from the number to the nearest prime square.  \nFor \
+example  uDistToPrimeSquare[7] is 2, since 9 is a prime square; \
+uDistToPrimeSquare[25] is 0, since 25 is the prime square;  \
+uDistToPrimeSquare[126] is 5, since 121 is ",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["11", "2"], TraditionalForm]]],
+ "; uDistToPrimeSquare[-1] is 5 since 4 is the nearest prime square."
+}], "Text",
+ CellChangeTimes->{{3.5055221186875*^9, 3.505522355796875*^9}, {
+   3.50552261103125*^9, 3.50552282515625*^9}, 3.631891745889557*^9, {
+   3.632009245091785*^9, 3.6320093003659143`*^9}, {3.632009564247065*^9, 
+   3.632009655249795*^9}, {3.632009700484877*^9, 3.632009722523953*^9}, {
+   3.632009794528153*^9, 3.632009901690064*^9}, {3.632009936187317*^9, 
+   3.6320100056140747`*^9}, {3.63201007860013*^9, 3.632010086032127*^9}, {
+   3.632010151283812*^9, 3.632010151906535*^9}}],
+
+Cell[TextData[{
+ StyleBox["Problem 3:  Generalize Problem 2\n",
+  FontWeight->"Bold"],
+ "Write a function uDistToPrimePower[number,k] that given an integer number \
+returns the distance from the number to the nearest ",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["k", "th"], TraditionalForm]]],
+ " prime power.  \nFor example uDistToPrimePower[7,3] is 1 since ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SuperscriptBox["2", "3"], "=", "8"}], TraditionalForm]]],
+ " while uDistToPrimePower[7,5] is 25 since ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SuperscriptBox["2", "5"], "=", "32"}], TraditionalForm]]],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.5055221186875*^9, 3.505522355796875*^9}, {
+   3.50552261103125*^9, 3.50552282515625*^9}, 3.631891745889557*^9, {
+   3.632009245091785*^9, 3.6320093003659143`*^9}, {3.632009564247065*^9, 
+   3.632009655249795*^9}, {3.632009700484877*^9, 3.632009722523953*^9}, {
+   3.632009794528153*^9, 3.632009901690064*^9}, {3.632009936187317*^9, 
+   3.6320100056140747`*^9}, {3.632010054105035*^9, 3.632010233045397*^9}}]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{681, 690},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+Magnification:>1.5 Inherited,
+FrontEndVersion->"10.0 for Linux x86 (64-bit) (June 27, 2014)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 247, 5, 69, "Subsection"],
+Cell[830, 29, 1134, 18, 102, "Text"],
+Cell[1967, 49, 774, 13, 387, "Text"],
+Cell[CellGroupData[{
+Cell[2766, 66, 116, 1, 55, "Subsubsection"],
+Cell[2885, 69, 1948, 73, 314, "Text"],
+Cell[4836, 144, 582, 23, 78, "Text"],
+Cell[5421, 169, 7208, 178, 2142, "Text"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[12666, 352, 163, 2, 55, "Subsubsection"],
+Cell[12832, 356, 1911, 38, 590, "Text"],
+Cell[14746, 396, 1648, 32, 576, "Text"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[16431, 433, 201, 3, 55, "Subsubsection"],
+Cell[16635, 438, 316, 6, 131, "Text"],
+Cell[16954, 446, 947, 16, 302, "Text"],
+Cell[17904, 464, 704, 14, 216, "Text"],
+Cell[18611, 480, 784, 15, 216, "Text"],
+Cell[19398, 497, 1068, 19, 305, "Text"],
+Cell[20469, 518, 1058, 25, 226, "Text"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

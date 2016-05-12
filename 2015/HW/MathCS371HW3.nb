@@ -1,0 +1,851 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     31487,        842]
+NotebookOptionsPosition[     28971,        765]
+NotebookOutlinePosition[     29375,        782]
+CellTagsIndexPosition[     29332,        779]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[TextData[StyleBox["Mathematica Hw 3",
+ FontSlant->"Italic"]], "Subsection",
+ CellChangeTimes->{{3.504038332241448*^9, 3.504038335556608*^9}, {
+   3.6318918128070087`*^9, 3.6318918136941643`*^9}, 3.6326162980124063`*^9},
+ TextAlignment->Center,
+ TextJustification->0.],
+
+Cell[TextData[{
+ "Claus Ernst/Uta Ziegler\t\t\t\t\t\t\t\tMath/Cs 371 Spring 2015\n",
+ StyleBox["Due: Wednesday, February 17 before class. ",
+  FontWeight->"Bold"]
+}], "Text",
+ CellChangeTimes->{{3.396307463532086*^9, 3.3963074935485563`*^9}, {
+   3.4731641043982286`*^9, 3.473164105183354*^9}, {3.4732629763552847`*^9, 
+   3.473262983315359*^9}, {3.504038346234837*^9, 3.504038351220984*^9}, {
+   3.504038387910781*^9, 3.504038388085926*^9}, {3.504038436962585*^9, 
+   3.504038450040007*^9}, {3.5040384824502697`*^9, 3.504038490601551*^9}, 
+   3.5044519632271605`*^9, {3.5044570373867207`*^9, 3.504457059558312*^9}, {
+   3.50445769212834*^9, 3.504457692753332*^9}, {3.5044579026725197`*^9, 
+   3.5044579326252613`*^9}, {3.599697701118517*^9, 3.599697709707015*^9}, 
+   3.599699734698741*^9, {3.5998581752573137`*^9, 3.599858184619651*^9}, {
+   3.631125237708308*^9, 3.631125262592093*^9}, {3.6318918182304783`*^9, 
+   3.631891825245789*^9}, {3.632008488659422*^9, 3.632008488841485*^9}, {
+   3.632010328361659*^9, 3.6320103306805067`*^9}, {3.6320152108411283`*^9, 
+   3.6320152168604727`*^9}, 3.632015454332055*^9, 3.632616311164855*^9, {
+   3.632616985495686*^9, 3.632617004551454*^9}}],
+
+Cell[TextData[{
+ StyleBox["Submission instructions:",
+  FontWeight->"Bold"],
+ "\nYour HW 3 is to be turned in electronically. Submit one file containing \
+all your work, the required executions, and the required explanations. Make \
+sure your code follows standard quality expectations including (but not \
+limited to) using meaningful variable names, using proper indentations, \
+containing sufficient comments, using specified names and parameters and \
+being correct.\nThe file name should contain the last names of the students \
+turning it in. E.g. ErnstZieglerHW3.nb. Your file - on the first page - must \
+also contain the names of the students turning it in."
+}], "Text",
+ CellChangeTimes->{{3.6320152206726904`*^9, 3.6320154997056503`*^9}, {
+  3.632616317612198*^9, 3.632616322219727*^9}, {3.6326170196173153`*^9, 
+  3.632617020353358*^9}}],
+
+Cell[TextData[{
+ StyleBox["Additional instructions:",
+  FontWeight->"Bold"],
+ "\nIf you had the same partner for both Hw1 and Hw2 then you need to use a \
+different partner for HW 3!"
+}], "Text",
+ CellChangeTimes->{{3.6320152206726904`*^9, 3.6320154997056503`*^9}, {
+   3.632616317612198*^9, 3.632616382589816*^9}, 3.6326658271297817`*^9}],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ StyleBox["Problem 1: ",
+  FontWeight->"Bold"],
+ " ",
+ StyleBox[" Plotting a path of colored points in three-dimensional space in a \
+cube.",
+  FontWeight->"Bold"]
+}], "Subsubsection",
+ CellChangeTimes->{3.63261617923324*^9}],
+
+Cell[TextData[{
+ "(a) Write a function uEuclidean[{x, y, z} ] that computes the distance of a \
+point to the origin using distance  ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"d", "=", 
+    SqrtBox[
+     RowBox[{
+      SuperscriptBox["x", "2"], "+", 
+      SuperscriptBox["y", "2"], "+", 
+      SuperscriptBox["z", "2"], " "}]]}], TraditionalForm]]],
+ ". Do not use the built-in ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " functions EuclideanDistance or Norm to do this."
+}], "Text",
+ CellChangeTimes->{3.632616421450264*^9}],
+
+Cell[TextData[{
+ "(b)    Write a function uRandomPoints[ count, {lower, upper} ] that takes \
+two arguments.  The first is the number of points to be generated.  The \
+second is a range argument { lower, upper } for the coordinates of the \
+points.  Therefore, all points will be inside the cube from ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"[", 
+     RowBox[{"lower", ",", "upper"}], "]"}], "\[Times]", 
+    RowBox[{"[", 
+     RowBox[{"lower", ",", "upper"}], "]"}], "\[Times]", 
+    RowBox[{"[", 
+     RowBox[{"lower", ",", "upper"}], "]"}]}], TraditionalForm]]],
+ ". The function returns a list of count three-dimensional points chosen at \
+random in the cube. "
+}], "Text",
+ CellChangeTimes->{3.632616427689411*^9}],
+
+Cell[TextData[{
+ "(c)  We want to color each point and use its coordinates to determine its \
+color.  A point on the x-axis is red, on the y-axis green, and on the z-axis \
+blue.  Since the arguments for RGBColor must be between 0 and 1 we use the \
+coordinates of the point and the distance of the point from the origin in \
+computing the color values for the point.    Write a function uPointColor[{x, \
+y, z} ] that takes a point ( x, y, z ) as its argument and returns the color \
+value \nRGBColor[ ",
+ Cell[BoxData[
+  FormBox[
+   FractionBox[
+    RowBox[{"\[VerticalSeparator]", "x", "\[VerticalSeparator]"}], "d"], 
+   TraditionalForm]]],
+ ", ",
+ Cell[BoxData[
+  FormBox[
+   FractionBox[
+    RowBox[{"\[VerticalSeparator]", "y", "\[VerticalSeparator]"}], "d"], 
+   TraditionalForm]]],
+ ", ",
+ Cell[BoxData[
+  FormBox[
+   FractionBox[
+    RowBox[{"\[VerticalSeparator]", "z", "\[VerticalSeparator]"}], "d"], 
+   TraditionalForm]]],
+ "], where d =",
+ Cell[BoxData[
+  FormBox[
+   SqrtBox[
+    RowBox[{
+     SuperscriptBox["x", "2"], "+", 
+     SuperscriptBox["y", "2"], "+", 
+     SuperscriptBox["z", "2"], " "}]], TraditionalForm]]],
+ ". Note that the function heading is ",
+ StyleBox["not ",
+  FontWeight->"Bold"],
+ "uPointColor[x, y, z]"
+}], "Text",
+ CellChangeTimes->{{3.6326164355774927`*^9, 3.6326164433370256`*^9}}],
+
+Cell[TextData[{
+ "(d)    Given is a list pointlist = { ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["p", "1"], TraditionalForm]]],
+ ", ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["p", "2"], TraditionalForm]]],
+ ", \[Ellipsis], ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["p", "k"], TraditionalForm]]],
+ "} of k random points.  Compute a color for each point according to part \
+(c).  Write a function uColoredPoints[ pointlist] that takes the list \
+pointlist as its input and returns the list of pairs { uPointColor[p], \
+Point[p] }. "
+}], "Text",
+ CellChangeTimes->{
+  3.632616452921866*^9, {3.6326172313450203`*^9, 3.632617239026031*^9}, 
+   3.63266120848645*^9}],
+
+Cell["\<\
+(e)    Write a function uPlotColoredPointList[ datalst ] that takes a list of \
+points specified as coordinate triples, and plots each point in the color as \
+specified above. Experiment with additional graphics primitives for \
+Graphics3D[ ] and the options of Show[ ] to get an \
+\[OpenCurlyDoubleQuote]nice\[CloseCurlyDoubleQuote] graphics rendering. \
+(Note: uPlotColoredPointList should call the function uColoredPoints, but NOT \
+the function uPointColor).\
+\>", "Text",
+ CellChangeTimes->{
+  3.632616462234215*^9, {3.6326171374272223`*^9, 3.63261717778828*^9}, {
+   3.632617258938059*^9, 3.632617312933096*^9}}],
+
+Cell["\<\
+(f)    Combine all the prior parts to write a function uPlotColoredPoints[ k, \
+{ a, b } ], that plots the k points in the colors computed in part (d).  \
+(Note: use the functions you already wrote as much as possible - instead of \
+rewriting code here).\
+\>", "Text",
+ CellChangeTimes->{{3.632616472490555*^9, 3.632616475609816*^9}, {
+  3.6326173696198816`*^9, 3.6326173905888667`*^9}}],
+
+Cell[TextData[{
+ "(g) Write a function uPlotColoredPointsPath[ k, { a, b } ] that adds to the \
+graph generated by uPlotColoredPoints[ k, { a, b } ] a black path starting at \
+the corner {lower, lower, lower} then moving through your list of random \
+points in order of increasing distance from {lower, lower, lower} and ends at \
+the corner {upper, upper, upper}. In addition the function \
+uPlotColoredPointsPath[ k, { a, b } ] needs to show the cube from ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"[", 
+     RowBox[{"lower", ",", "upper"}], "]"}], "\[Times]", 
+    RowBox[{"[", 
+     RowBox[{"lower", ",", "upper"}], "]"}], "\[Times]", 
+    RowBox[{"[", 
+     RowBox[{"lower", ",", "upper"}], "]"}]}], TraditionalForm]]],
+ " as a wire frame of black wires."
+}], "Text",
+ CellChangeTimes->{{3.6326164854594517`*^9, 3.6326164891706448`*^9}, {
+   3.632617411942088*^9, 3.6326174469256597`*^9}, 3.6326663631536136`*^9}],
+
+Cell["\<\
+(h) Are there points at different locations in the cube which are of the same \
+color? Explain your answer and support it with a diagram which you can create \
+using the above functions.\
+\>", "Text",
+ CellChangeTimes->{{3.632592028628433*^9, 3.632592045192215*^9}, {
+   3.632592090095722*^9, 3.632592112878111*^9}, {3.632592154827901*^9, 
+   3.632592247296424*^9}, {3.632592292638493*^9, 3.63259277297117*^9}, {
+   3.632592807745078*^9, 3.632592815824791*^9}, {3.632596922712386*^9, 
+   3.632596926203246*^9}, {3.632596975008294*^9, 3.632597018184709*^9}, {
+   3.632597050469709*^9, 3.632597105948709*^9}, {3.632597175279709*^9, 
+   3.6325972144657087`*^9}, {3.632597449335501*^9, 3.6325975265178175`*^9}, 
+   3.63261607976165*^9, {3.6326161746179667`*^9, 3.6326161949046907`*^9}, {
+   3.632616395071541*^9, 3.63261650162537*^9}}]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ StyleBox["Problem 2: ",
+  FontWeight->"Bold"],
+ " ",
+ StyleBox[" Word puzzle",
+  FontWeight->"Bold"]
+}], "Subsubsection",
+ CellChangeTimes->{{3.6326162073864613`*^9, 3.632616210112747*^9}, {
+  3.632620099563983*^9, 3.632620103372201*^9}}],
+
+Cell["\<\
+Given a square of letters and a list of words (see  below), determine which \
+of the words can be found in the square and color the letters of the found \
+words in green. Follow the instructions below to accomplish the important \
+pieces for this task. \
+\>", "Text",
+ CellChangeTimes->{3.632661430965632*^9, 3.6326614667703114`*^9}],
+
+Cell["\<\
+a) Write a function uValidX [square, xVal], which returns True if the xVal is \
+a valid column in the given square. The function returns False otherwise. For \
+example if the square is a 3 by 3 square then uValidX [square, 4] and uValidX \
+[square, 0] return False, while uValidX [square, 2] returns True. Write a \
+similar function uValisY[square, yVal] which checks whether yVal is a valid \
+row in the given square. (Note: This is the boolean value True, not a string \
+\[OpenCurlyDoubleQuote]True\[CloseCurlyDoubleQuote] or a blue symbols true. \
+Same applies every time True or False is returned.)\
+\>", "Text",
+ CellChangeTimes->{
+  3.632661437229151*^9, {3.632662755191863*^9, 3.632662863466762*^9}, {
+   3.6326664772956133`*^9, 3.6326665325526133`*^9}}],
+
+Cell[TextData[{
+ "b) Write a function uFindInSquare [ square, word, {startx, starty}, \
+{changex, changey}], where ",
+ StyleBox["{startx, starty}",
+  FontSlant->"Italic"],
+ " is the location in the ",
+ StyleBox["square",
+  FontSlant->"Italic"],
+ " where we start looking for the ",
+ StyleBox["word",
+  FontSlant->"Italic"],
+ " and ",
+ StyleBox["{changex, changey}",
+  FontSlant->"Italic"],
+ " is the change to the x and the y value before checking the next letter in \
+the word. e.g if {changex, changey}  is {1, 0}, then the word is checked left \
+to right (we add one to the x-value);  if {changex, changey}  is {-1, -1}, \
+then the word is checked diagonally to the top left (we subtract one from the \
+x-value and from the y-value). The function returns True (if the word is \
+found starting at the given position and moving in the given direction) and \
+False otherwise. "
+}], "Text",
+ CellChangeTimes->{{3.632661496769663*^9, 3.6326614989223957`*^9}, {
+  3.632662201373926*^9, 3.6326622170525427`*^9}, {3.6326664452666135`*^9, 
+  3.6326664553526134`*^9}}],
+
+Cell[TextData[{
+ "c) Write a function uFindInSquare[square, word, {startx, starty}], which \
+checks possible directions for the given starting location ",
+ StyleBox["{startx, starty}",
+  FontSlant->"Italic"],
+ "; ",
+ StyleBox["square",
+  FontSlant->"Italic"],
+ " and ",
+ StyleBox["word",
+  FontSlant->"Italic"],
+ " are as before. The function returns a list containing the word, the \
+starting location and the direction in which it was found, or an empty list \
+if the word was not found in any of the 8 possible directions. (Note: This \
+function has the same name as the one in b), but a different parameter list. \
+You know that as function overloading from Java  - and now you know it exists \
+in other languages as well.)"
+}], "Text",
+ CellChangeTimes->{
+  3.63266223343749*^9, {3.6326666085036135`*^9, 3.6326666674226136`*^9}, {
+   3.6326668489706135`*^9, 3.632666895617614*^9}}],
+
+Cell["\<\
+d) Write a function uCheckWord[square, word], which checks all starting \
+locations (that is all x and y positions) for the word. The function returns \
+a list containing the word, the starting location and the direction where it \
+was found, or an empty list if the word was not found at all.\
+\>", "Text",
+ CellChangeTimes->{
+  3.632662415822576*^9, {3.6326666952766137`*^9, 3.6326666963266134`*^9}}],
+
+Cell[TextData[{
+ "e) Write a function  uCheckSquare[square, wordLst], which checks all the \
+words in the ",
+ StyleBox["wordLst",
+  FontSlant->"Italic"],
+ " and returns a list of elements, where each element specifies the word \
+found in the ",
+ StyleBox["square",
+  FontSlant->"Italic"],
+ ", the location of its first letter in the square, and the direction in \
+which to read the word in the square. If a word in wordLst was not found, no \
+information about it is returned."
+}], "Text",
+ CellChangeTimes->{
+  3.6326624366535063`*^9, {3.6326667123296137`*^9, 3.6326667352536135`*^9}}],
+
+Cell["\<\
+f) Write a function uColorWord[square, match, color], which colors the \
+letters of the given match in the given color.\
+\>", "Text",
+ CellChangeTimes->{3.632662451740851*^9, 3.632665880060583*^9}],
+
+Cell["\<\
+g) Write a function uColorSquare[square, matchlst, color] which colors all \
+the letters in square which were matched by the given color. For testing \
+purposes call the function in the following way: TableForm[uColorSquare[...]]\
+\>", "Text",
+ CellChangeTimes->{3.6326624634365587`*^9}],
+
+Cell["For example if the square is:", "Text",
+ CellChangeTimes->{{3.632663196301655*^9, 3.6326632217567577`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"square", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "\"\<b\>\"", ",", "\"\<r\>\"", ",", "\"\<e\>\"", ",", "\"\<a\>\"", ",", 
+       "\"\<d\>\""}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+      "\"\<m\>\"", ",", "\"\<o\>\"", ",", "\"\<u\>\"", ",", "\"\<s\>\"", ",", 
+       "\"\<e\>\""}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+      "\"\<s\>\"", ",", "\"\<t\>\"", ",", "\"\<o\>\"", ",", "\"\<v\>\"", ",", 
+       "\"\<e\>\""}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+      "\"\<f\>\"", ",", "\"\<l\>\"", ",", "\"\<o\>\"", ",", "\"\<w\>\"", ",", 
+       "\"\<r\>\""}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+      "\"\<g\>\"", ",", "\"\<r\>\"", ",", "\"\<a\>\"", ",", "\"\<p\>\"", ",", 
+       "\"\<e\>\""}], "}"}]}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"TableForm", "[", "square", "]"}]}], "Input",
+ CellChangeTimes->{{3.632663227493803*^9, 3.632663236597438*^9}}],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {"\<\"b\"\>", "\<\"r\"\>", "\<\"e\"\>", "\<\"a\"\>", "\<\"d\"\>"},
+    {"\<\"m\"\>", "\<\"o\"\>", "\<\"u\"\>", "\<\"s\"\>", "\<\"e\"\>"},
+    {"\<\"s\"\>", "\<\"t\"\>", "\<\"o\"\>", "\<\"v\"\>", "\<\"e\"\>"},
+    {"\<\"f\"\>", "\<\"l\"\>", "\<\"o\"\>", "\<\"w\"\>", "\<\"r\"\>"},
+    {"\<\"g\"\>", "\<\"r\"\>", "\<\"a\"\>", "\<\"p\"\>", "\<\"e\"\>"}
+   },
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}},
+   GridBoxSpacings->{"Columns" -> {
+       Offset[0.27999999999999997`], {
+        Offset[2.0999999999999996`]}, 
+       Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+       Offset[0.2], {
+        Offset[0.4]}, 
+       Offset[0.2]}, "RowsIndexed" -> {}}],
+  Function[BoxForm`e$, 
+   TableForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{3.6326632374155397`*^9}]
+}, Open  ]],
+
+Cell["and the word list is given by ", "Text",
+ CellChangeTimes->{{3.632663249892239*^9, 3.632663260371025*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"wordlst", "=", 
+   RowBox[{"{", 
+    RowBox[{
+    "\"\<kjhg\>\"", ",", "\"\<pan\>\"", ",", " ", "\"\<read\>\"", ",", " ", 
+     "\"\<top\>\"", ",", " ", "\"\<jhg\>\"", ",", "\"\<pot\>\"", ",", " ", 
+     "\"\<wolf\>\"", ",", " ", "\"\<deer\>\"", ",", " ", "\"\<sol\>\"", ",", 
+     " ", "\"\<rove\>\"", ",", " ", "\"\<reed\>\"", ",", "\"\<hg\>\""}], 
+    "}"}]}], ";"}]], "Input"],
+
+Cell["\<\
+Then uCheckSquare[square, wordlst] returns the following list of solutions\
+\>", "Text",
+ CellChangeTimes->{{3.6326633151695557`*^9, 3.632663317864832*^9}, {
+  3.63266338203098*^9, 3.632663385750252*^9}, {3.632663454619461*^9, 
+  3.632663462587105*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"solutionwords", "=", 
+  RowBox[{"uCheckSquare", "[", 
+   RowBox[{"square", ",", " ", "wordlst"}], "]"}], " "}]], "Input",
+ CellChangeTimes->{{3.6326635436551847`*^9, 3.6326635666555634`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"\<\"read\"\>", ",", 
+     RowBox[{"{", 
+      RowBox[{"2", ",", "1"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "0"}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"top\"\>", ",", 
+     RowBox[{"{", 
+      RowBox[{"2", ",", "3"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "1"}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"pot\"\>", ",", 
+     RowBox[{"{", 
+      RowBox[{"4", ",", "5"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "1"}], ",", 
+       RowBox[{"-", "1"}]}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"wolf\"\>", ",", 
+     RowBox[{"{", 
+      RowBox[{"4", ",", "4"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "1"}], ",", "0"}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"deer\"\>", ",", 
+     RowBox[{"{", 
+      RowBox[{"5", ",", "1"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "1"}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"sol\"\>", ",", 
+     RowBox[{"{", 
+      RowBox[{"4", ",", "2"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "1"}], ",", "1"}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"rove\"\>", ",", 
+     RowBox[{"{", 
+      RowBox[{"2", ",", "5"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", 
+       RowBox[{"-", "1"}]}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"reed\"\>", ",", 
+     RowBox[{"{", 
+      RowBox[{"5", ",", "4"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", 
+       RowBox[{"-", "1"}]}], "}"}]}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{{3.632663544681988*^9, 3.6326635680493507`*^9}}]
+}, Open  ]],
+
+Cell["and uColorSquare[square, solutionswords, Red] returns", "Text",
+ CellChangeTimes->{{3.632663354663994*^9, 3.632663355159298*^9}, 
+   3.632663414703326*^9, {3.632663468426959*^9, 3.632663476618519*^9}, {
+   3.632663616621996*^9, 3.6326636172289886`*^9}, {3.632666812025614*^9, 
+   3.6326668291776133`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{" ", 
+  RowBox[{"TableForm", "[", 
+   RowBox[{"uColorSquare", "[", 
+    RowBox[{"square", ",", " ", "solutionwords", ",", " ", "Red"}], "]"}], 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.6326635809605293`*^9, 3.632663605690755*^9}, {
+   3.6326655546558943`*^9, 3.632665565957293*^9}, {3.632665637717731*^9, 
+   3.632665649018931*^9}, 3.632665734874853*^9}],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {"\<\"b\"\>", 
+     StyleBox["\<\"r\"\>",
+      StripOnInput->False,
+      LineColor->RGBColor[1, 0, 0],
+      FrontFaceColor->RGBColor[1, 0, 0],
+      BackFaceColor->RGBColor[1, 0, 0],
+      GraphicsColor->RGBColor[1, 0, 0],
+      FontColor->RGBColor[1, 0, 0]], 
+     StyleBox["\<\"e\"\>",
+      StripOnInput->False,
+      LineColor->RGBColor[1, 0, 0],
+      FrontFaceColor->RGBColor[1, 0, 0],
+      BackFaceColor->RGBColor[1, 0, 0],
+      GraphicsColor->RGBColor[1, 0, 0],
+      FontColor->RGBColor[1, 0, 0]], 
+     StyleBox["\<\"a\"\>",
+      StripOnInput->False,
+      LineColor->RGBColor[1, 0, 0],
+      FrontFaceColor->RGBColor[1, 0, 0],
+      BackFaceColor->RGBColor[1, 0, 0],
+      GraphicsColor->RGBColor[1, 0, 0],
+      FontColor->RGBColor[1, 0, 0]], 
+     StyleBox["\<\"d\"\>",
+      StripOnInput->False,
+      LineColor->RGBColor[1, 0, 0],
+      FrontFaceColor->RGBColor[1, 0, 0],
+      BackFaceColor->RGBColor[1, 0, 0],
+      GraphicsColor->RGBColor[1, 0, 0],
+      FontColor->RGBColor[1, 0, 0]]},
+    {"\<\"m\"\>", "\<\"o\"\>", "\<\"u\"\>", 
+     StyleBox["\<\"s\"\>",
+      StripOnInput->False,
+      LineColor->RGBColor[1, 0, 0],
+      FrontFaceColor->RGBColor[1, 0, 0],
+      BackFaceColor->RGBColor[1, 0, 0],
+      GraphicsColor->RGBColor[1, 0, 0],
+      FontColor->RGBColor[1, 0, 0]], 
+     StyleBox["\<\"e\"\>",
+      StripOnInput->False,
+      LineColor->RGBColor[1, 0, 0],
+      FrontFaceColor->RGBColor[1, 0, 0],
+      BackFaceColor->RGBColor[1, 0, 0],
+      GraphicsColor->RGBColor[1, 0, 0],
+      FontColor->RGBColor[1, 0, 0]]},
+    {"\<\"s\"\>", 
+     StyleBox["\<\"t\"\>",
+      StripOnInput->False,
+      LineColor->RGBColor[1, 0, 0],
+      FrontFaceColor->RGBColor[1, 0, 0],
+      BackFaceColor->RGBColor[1, 0, 0],
+      GraphicsColor->RGBColor[1, 0, 0],
+      FontColor->RGBColor[1, 0, 0]], 
+     StyleBox["\<\"o\"\>",
+      StripOnInput->False,
+      LineColor->RGBColor[1, 0, 0],
+      FrontFaceColor->RGBColor[1, 0, 0],
+      BackFaceColor->RGBColor[1, 0, 0],
+      GraphicsColor->RGBColor[1, 0, 0],
+      FontColor->RGBColor[1, 0, 0]], 
+     StyleBox["\<\"v\"\>",
+      StripOnInput->False,
+      LineColor->RGBColor[1, 0, 0],
+      FrontFaceColor->RGBColor[1, 0, 0],
+      BackFaceColor->RGBColor[1, 0, 0],
+      GraphicsColor->RGBColor[1, 0, 0],
+      FontColor->RGBColor[1, 0, 0]], 
+     StyleBox["\<\"e\"\>",
+      StripOnInput->False,
+      LineColor->RGBColor[1, 0, 0],
+      FrontFaceColor->RGBColor[1, 0, 0],
+      BackFaceColor->RGBColor[1, 0, 0],
+      GraphicsColor->RGBColor[1, 0, 0],
+      FontColor->RGBColor[1, 0, 0]]},
+    {
+     StyleBox["\<\"f\"\>",
+      StripOnInput->False,
+      LineColor->RGBColor[1, 0, 0],
+      FrontFaceColor->RGBColor[1, 0, 0],
+      BackFaceColor->RGBColor[1, 0, 0],
+      GraphicsColor->RGBColor[1, 0, 0],
+      FontColor->RGBColor[1, 0, 0]], 
+     StyleBox["\<\"l\"\>",
+      StripOnInput->False,
+      LineColor->RGBColor[1, 0, 0],
+      FrontFaceColor->RGBColor[1, 0, 0],
+      BackFaceColor->RGBColor[1, 0, 0],
+      GraphicsColor->RGBColor[1, 0, 0],
+      FontColor->RGBColor[1, 0, 0]], 
+     StyleBox["\<\"o\"\>",
+      StripOnInput->False,
+      LineColor->RGBColor[1, 0, 0],
+      FrontFaceColor->RGBColor[1, 0, 0],
+      BackFaceColor->RGBColor[1, 0, 0],
+      GraphicsColor->RGBColor[1, 0, 0],
+      FontColor->RGBColor[1, 0, 0]], 
+     StyleBox["\<\"w\"\>",
+      StripOnInput->False,
+      LineColor->RGBColor[1, 0, 0],
+      FrontFaceColor->RGBColor[1, 0, 0],
+      BackFaceColor->RGBColor[1, 0, 0],
+      GraphicsColor->RGBColor[1, 0, 0],
+      FontColor->RGBColor[1, 0, 0]], 
+     StyleBox["\<\"r\"\>",
+      StripOnInput->False,
+      LineColor->RGBColor[1, 0, 0],
+      FrontFaceColor->RGBColor[1, 0, 0],
+      BackFaceColor->RGBColor[1, 0, 0],
+      GraphicsColor->RGBColor[1, 0, 0],
+      FontColor->RGBColor[1, 0, 0]]},
+    {"\<\"g\"\>", 
+     StyleBox["\<\"r\"\>",
+      StripOnInput->False,
+      LineColor->RGBColor[1, 0, 0],
+      FrontFaceColor->RGBColor[1, 0, 0],
+      BackFaceColor->RGBColor[1, 0, 0],
+      GraphicsColor->RGBColor[1, 0, 0],
+      FontColor->RGBColor[1, 0, 0]], "\<\"a\"\>", 
+     StyleBox["\<\"p\"\>",
+      StripOnInput->False,
+      LineColor->RGBColor[1, 0, 0],
+      FrontFaceColor->RGBColor[1, 0, 0],
+      BackFaceColor->RGBColor[1, 0, 0],
+      GraphicsColor->RGBColor[1, 0, 0],
+      FontColor->RGBColor[1, 0, 0]], "\<\"e\"\>"}
+   },
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}},
+   GridBoxSpacings->{"Columns" -> {
+       Offset[0.27999999999999997`], {
+        Offset[2.0999999999999996`]}, 
+       Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+       Offset[0.2], {
+        Offset[0.4]}, 
+       Offset[0.2]}, "RowsIndexed" -> {}}],
+  Function[BoxForm`e$, 
+   TableForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{{3.632665566249442*^9, 3.632665584759232*^9}, {
+   3.632665638561359*^9, 3.6326656498624983`*^9}, 3.632665735985174*^9}]
+}, Open  ]],
+
+Cell["More example of outputs of these functions are", "Text",
+ CellChangeTimes->{{3.632665488872073*^9, 3.6326654986469793`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"uFindInSquare", "[", 
+  RowBox[{"square", ",", " ", "\"\<read\>\"", ",", " ", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", " ", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "0"}], "}"}]}], "]"}]], "Input",
+ CellGroupingRules->{GroupTogetherGrouping, 10001.},
+ CellChangeTimes->{{3.63262211075167*^9, 3.632622151897728*^9}, {
+   3.632622407698415*^9, 3.6326224409324617`*^9}, {3.632625984044346*^9, 
+   3.6326259847343473`*^9}, {3.632627568964578*^9, 3.6326275991486206`*^9}, 
+   3.632628310845623*^9, 3.632628350721679*^9, {3.632665470737381*^9, 
+   3.6326654736406107`*^9}}],
+
+Cell[BoxData["True"], "Output",
+ CellChangeTimes->{3.632665474475335*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"uFindInSquare", "[", 
+  RowBox[{"square", ",", " ", "\"\<read\>\"", ",", " ", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", " ", "1"}], "}"}]}], "]"}]], "Input",
+ CellGroupingRules->{GroupTogetherGrouping, 10001.},
+ CellChangeTimes->{{3.63262211075167*^9, 3.632622151897728*^9}, {
+   3.632622407698415*^9, 3.6326224409324617`*^9}, {3.632625984044346*^9, 
+   3.6326259847343473`*^9}, {3.632627568964578*^9, 3.6326275991486206`*^9}, 
+   3.632628310845623*^9, 3.632628350721679*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"read\"\>", ",", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "0"}], "}"}]}], "}"}]], "Output",
+ CellGroupingRules->{GroupTogetherGrouping, 10001.},
+ CellChangeTimes->{{3.632622145356719*^9, 3.6326221565428114`*^9}, {
+   3.6326223142035055`*^9, 3.632622318033511*^9}, 3.632622360229906*^9, {
+   3.632622399852172*^9, 3.6326224409724617`*^9}, {3.6326224923206797`*^9, 
+   3.6326224976129827`*^9}, 3.6326259858643484`*^9, {3.632627600258622*^9, 
+   3.6326276168106456`*^9}, 3.6326281578694077`*^9, 3.632628310845623*^9, 
+   3.632628350721679*^9}],
+
+Cell[BoxData[
+ RowBox[{"uFindInSquare", "[", 
+  RowBox[{"square", ",", " ", "\"\<read\>\"", ",", " ", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", " ", "1"}], "}"}]}], "]"}]], "Input",
+ CellGroupingRules->{GroupTogetherGrouping, 10001.},
+ CellChangeTimes->{{3.63262211075167*^9, 3.632622151897728*^9}, {
+   3.632622407698415*^9, 3.6326224409324617`*^9}, {3.6326228298851414`*^9, 
+   3.6326228362161503`*^9}, {3.6326275730445843`*^9, 3.632627574284586*^9}, {
+   3.6326276227116537`*^9, 3.632627630412665*^9}, 3.632628310845623*^9, 
+   3.632628350721679*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", "}"}]], "Output",
+ CellGroupingRules->{GroupTogetherGrouping, 10001.},
+ CellChangeTimes->{
+  3.632622837666152*^9, 3.6326229080370398`*^9, 3.6326229725752115`*^9, {
+   3.632623102606855*^9, 3.6326231130319104`*^9}, 3.632623194218299*^9, 
+   3.6326233233197975`*^9, 3.632623376522127*^9, 3.6326236383990407`*^9, 
+   3.6326238539013443`*^9, {3.6326276254516573`*^9, 3.632627631482666*^9}, 
+   3.6326281614694123`*^9, 3.6326282054364743`*^9, 3.632628310845623*^9, 
+   3.632628350721679*^9}],
+
+Cell[BoxData[
+ RowBox[{"uCheckWord", "[", 
+  RowBox[{"square", ",", " ", "\"\<read\>\""}], "]"}]], "Input",
+ CellGroupingRules->{GroupTogetherGrouping, 10001.},
+ CellChangeTimes->{{3.6326225019622316`*^9, 3.6326225163643475`*^9}, 
+   3.632628310845623*^9, 3.632628350721679*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"read\"\>", ",", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "0"}], "}"}]}], "}"}]], "Output",
+ CellGroupingRules->{GroupTogetherGrouping, 10001.},
+ CellChangeTimes->{
+  3.632622516964349*^9, 3.6326226471393137`*^9, 3.632622722547204*^9, 
+   3.632622781639872*^9, 3.632623666724081*^9, 3.6326237348141766`*^9, {
+   3.6326238099252825`*^9, 3.6326238383783226`*^9}, 3.632628164369416*^9, 
+   3.6326282007054677`*^9, 3.632628310845623*^9, 3.632628350721679*^9}]
+}, Open  ]]
+}, Closed]]
+}, Open  ]]
+},
+WindowToolbars->"EditBar",
+WindowSize->{1600, 818},
+WindowMargins->{{-8, Automatic}, {Automatic, -8}},
+Magnification:>1.25 Inherited,
+FrontEndVersion->"10.0 for Microsoft Windows (64-bit) (December 4, 2014)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 272, 5, 59, "Subsection"],
+Cell[855, 29, 1187, 18, 63, "Text"],
+Cell[2045, 49, 849, 14, 137, "Text"],
+Cell[2897, 65, 339, 7, 63, "Text"],
+Cell[CellGroupData[{
+Cell[3261, 76, 241, 8, 49, "Subsubsection"],
+Cell[3505, 86, 533, 16, 77, "Text"],
+Cell[4041, 104, 732, 17, 88, "Text"],
+Cell[4776, 123, 1325, 38, 132, "Text"],
+Cell[6104, 163, 668, 20, 63, "Text"],
+Cell[6775, 185, 628, 11, 88, "Text"],
+Cell[7406, 198, 397, 7, 63, "Text"],
+Cell[7806, 207, 929, 19, 88, "Text"],
+Cell[8738, 228, 841, 13, 38, "Text"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[9616, 246, 255, 8, 40, "Subsubsection"],
+Cell[9874, 256, 343, 6, 63, "Text"],
+Cell[10220, 264, 771, 12, 88, "Text"],
+Cell[10994, 278, 1061, 24, 115, "Text"],
+Cell[12058, 304, 886, 20, 114, "Text"],
+Cell[12947, 326, 412, 7, 63, "Text"],
+Cell[13362, 335, 586, 14, 65, "Text"],
+Cell[13951, 351, 207, 4, 38, "Text"],
+Cell[14161, 357, 297, 5, 63, "Text"],
+Cell[14461, 364, 113, 1, 38, "Text"],
+Cell[CellGroupData[{
+Cell[14599, 369, 977, 26, 60, "Input"],
+Cell[15579, 397, 901, 20, 113, "Output"]
+}, Open  ]],
+Cell[16495, 420, 112, 1, 38, "Text"],
+Cell[16610, 423, 415, 9, 36, "Input"],
+Cell[17028, 434, 263, 5, 38, "Text"],
+Cell[CellGroupData[{
+Cell[17316, 443, 215, 4, 36, "Input"],
+Cell[17534, 449, 1744, 57, 60, "Output"]
+}, Open  ]],
+Cell[19293, 509, 311, 4, 38, "Text"],
+Cell[CellGroupData[{
+Cell[19629, 517, 380, 8, 36, "Input"],
+Cell[20012, 527, 5009, 140, 113, "Output"]
+}, Open  ]],
+Cell[25036, 670, 130, 1, 38, "Text"],
+Cell[25169, 673, 608, 12, 36, "Input",
+ CellGroupingRules->{GroupTogetherGrouping, 10001.}],
+Cell[25780, 687, 73, 1, 36, "Output"],
+Cell[CellGroupData[{
+Cell[25878, 692, 497, 9, 36, "Input",
+ CellGroupingRules->{GroupTogetherGrouping, 10001.}],
+Cell[26378, 703, 641, 13, 36, "Output",
+ CellGroupingRules->{GroupTogetherGrouping, 10001.}],
+Cell[27022, 718, 551, 10, 36, "Input",
+ CellGroupingRules->{GroupTogetherGrouping, 10001.}],
+Cell[27576, 730, 515, 9, 36, "Output",
+ CellGroupingRules->{GroupTogetherGrouping, 10001.}],
+Cell[28094, 741, 278, 5, 36, "Input",
+ CellGroupingRules->{GroupTogetherGrouping, 10001.}],
+Cell[28375, 748, 556, 12, 36, "Output",
+ CellGroupingRules->{GroupTogetherGrouping, 10001.}]
+}, Open  ]]
+}, Closed]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

@@ -1,0 +1,220 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 7.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[      8438,        211]
+NotebookOptionsPosition[      7898,        191]
+NotebookOutlinePosition[      8447,        210]
+CellTagsIndexPosition[      8404,        207]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[TextData[StyleBox["CsMath 371 Ernst/Ziegler\t                       \
+Simple Task 1\t                                             \tSpring 2015\n\n\
+Due: Wednesday at the beginning of class  ",
+ FontFamily->"Times New Roman",
+ FontSize->16,
+ FontWeight->"Bold"]], "Subsubsection",
+ CellChangeTimes->{{3.5046163277327614`*^9, 3.5046163394201117`*^9}, {
+  3.504616378482112*^9, 3.504616384482035*^9}, {3.536067365942828*^9, 
+  3.536067388151664*^9}, {3.5360678972902517`*^9, 3.536067920703896*^9}, {
+  3.5678100234188623`*^9, 3.5678100234788623`*^9}, {3.567810057068909*^9, 
+  3.567810058938912*^9}, {3.599588912573512*^9, 3.5995889335455117`*^9}, {
+  3.599867380917011*^9, 3.599867390248024*^9}, {3.631237082218007*^9, 
+  3.631237082788008*^9}},
+ TextAlignment->Left,
+ TextJustification->1.],
+
+Cell[TextData[{
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " is a programming language. It differs significantly from Java, but also \
+has many similarities. One of the similarities are the control structures \
+which allow a program developer to determine what statement(s) must be \
+executed next. In Java, you used selection (if-statements, switch) and loops \
+(while, for...) for many tasks.  \n\nThe objective of this Simple Task is for \
+you to explore simple control structurs in ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " in two steps: \na) find the syntax and semantic explanation for the \
+control structure in the Documentation Center  and \nb) modify the simple \
+(one-line) examples in the Documentation center to accomplish something \
+simple (the modifications are still one-liners). \n\nIn the virtual book read \
+the sections ",
+ StyleBox["Introduction",
+  FontSlant->"Italic"],
+ " -> R",
+ StyleBox["unning the Wolfram System",
+  FontSlant->"Italic"],
+ " ->  ",
+ StyleBox["Notebook Interface",
+  FontSlant->"Italic"],
+ " for information about how to get started,  ",
+ StyleBox["Introduction",
+  FontSlant->"Italic"],
+ " -> ",
+ StyleBox["Getting Information from the Wolfram System",
+  FontSlant->"Italic"],
+ " -> ",
+ StyleBox["Getting Information about Wolfram Language Objects ",
+  FontSlant->"Italic"],
+ "to ask the system for information ",
+ StyleBox["and ",
+  FontSlant->"Italic"],
+ "check out ",
+ StyleBox["Help",
+  FontWeight->"Bold",
+  FontSlant->"Italic"],
+ " ->",
+ StyleBox["Documentation Center",
+  FontWeight->"Bold",
+  FontSlant->"Italic"],
+ " in ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ ".\n\nCreate a ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " notebook which includes three pieces of information (listed below) for \
+each of the control structures ",
+ StyleBox["For,",
+  FontWeight->"Bold"],
+ " ",
+ StyleBox["While,  If,",
+  FontWeight->"Bold"],
+ " ",
+ StyleBox["Do, ",
+  FontWeight->"Bold"],
+ "and",
+ StyleBox[" Table ",
+  FontWeight->"Bold"],
+ "(the last two are loop constructs which do not have an exact equivalence in \
+Java) and bring a printout of the notebook to class to turn it in.\n\na) The \
+syntax/semantic explanation given in the Documentation Center (you may copy \
+info directly from the Documentation Center - there often is more than one \
+way to use a method, so",
+ StyleBox[" make sure you show/explain the syntax/semantics you use",
+  FontWeight->"Bold"],
+ "). \n\nb) Example ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " code using the control structure which accomplishes the following\n\ta) \
+For: Print the squares of the values from 13 to 21 (inclusive)\n\tb) While: \
+Print the the values from 18 to 23 (inclusive)\n\tc) If: initilize a variable \
+",
+ StyleBox["score ",
+  FontWeight->"Bold"],
+ "to a value; write an If statement which prints \[OpenCurlyDoubleQuote]below \
+208\[CloseCurlyDoubleQuote] if the value of the variable ",
+ StyleBox["score",
+  FontWeight->"Bold"],
+ " is less than 208 and otherwise prints \[OpenCurlyDoubleQuote]larger than \
+or equal to 208\[CloseCurlyDoubleQuote]  \n\td) Do: Print the cubes of all \
+the values from -4 to 7 (inclusive)\n\te) Table: Show the fourth power of all \
+values from 7 to 12 (inclusive) (Note: ",
+ StyleBox["no",
+  FontWeight->"Bold"],
+ " Print here...)\n\nc) The output of your code when executed by ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ ".  \nNOTE: for the ",
+ StyleBox["If",
+  FontWeight->"Bold"],
+ " statment you should show that your code is correct for values of ",
+ StyleBox["score ",
+  FontWeight->"Bold"],
+ "below 208 ",
+ StyleBox["and",
+  FontWeight->"Bold"],
+ " for values larger than or equal to 208. So you need to (show and) execute \
+the if-statement at least twice - see below:\nscore = 206;\nIf [.......\n   ]\
+\nscore = 208;\nIf [.......\n   ]\n\nSo you will have 5 sections to turn in - \
+each with 3 parts, the first with ",
+ StyleBox["For",
+  FontWeight->"Bold"],
+ ", the second with ",
+ StyleBox["While",
+  FontWeight->"Bold"],
+ ", the third with ",
+ StyleBox["If",
+  FontWeight->"Bold"],
+ ", the fourth with ",
+ StyleBox["Do",
+  FontWeight->"Bold"],
+ ", and the fifth with ",
+ StyleBox["Table",
+  FontWeight->"Bold"],
+ ".  Each piece of code should only contain that control structure.  "
+}], "Text",
+ CellChangeTimes->{{3.5046163879819903`*^9, 3.504616932612613*^9}, {
+   3.504616984893863*^9, 3.5046170075969315`*^9}, {3.536017609015625*^9, 
+   3.536017747328125*^9}, {3.536017783703125*^9, 3.536017910328125*^9}, {
+   3.536017958625*^9, 3.536018026703125*^9}, {3.536018058125*^9, 
+   3.536018103734375*^9}, {3.53601816271875*^9, 3.53601822134375*^9}, {
+   3.5360182988125*^9, 3.536018518984375*^9}, {3.536018923671875*^9, 
+   3.536018937265625*^9}, {3.53601922734375*^9, 3.53601925609375*^9}, {
+   3.536019375828125*^9, 3.53601940440625*^9}, {3.536019436890625*^9, 
+   3.53601944828125*^9}, {3.53601948328125*^9, 3.5360196623125*^9}, {
+   3.536067469960688*^9, 3.536067475608775*^9}, {3.53606752833766*^9, 
+   3.536067604010838*^9}, {3.5360676346914883`*^9, 3.5360676497518*^9}, {
+   3.536067724173401*^9, 3.536067824438497*^9}, {3.536772742046875*^9, 
+   3.536772752359375*^9}, {3.536772790953125*^9, 3.5367728601875*^9}, 
+   3.536772901703125*^9, {3.567810108888982*^9, 3.5678101191889963`*^9}, {
+   3.5678101766490765`*^9, 3.567810190919097*^9}, {3.567810381929364*^9, 
+   3.5678104194394164`*^9}, 3.56781050775954*^9, {3.5678105541696053`*^9, 
+   3.567810658319751*^9}, {3.5678106893997946`*^9, 3.567810689629795*^9}, 
+   3.5678108351167545`*^9, {3.5678108859568253`*^9, 3.567810890326832*^9}, {
+   3.5678112871856017`*^9, 3.5678113960057535`*^9}, {3.599588959342512*^9, 
+   3.599588979660512*^9}, {3.599589048872512*^9, 3.599589108281512*^9}, {
+   3.599589139139512*^9, 3.599589142868512*^9}, {3.599867271050856*^9, 
+   3.599867278701867*^9}, {3.5998673090659094`*^9, 3.599867341169955*^9}, {
+   3.599867400719039*^9, 3.5998674175620623`*^9}, {3.600124780614803*^9, 
+   3.60012483483589*^9}, {3.6001249096450076`*^9, 3.6001250234531875`*^9}, {
+   3.6001250692262597`*^9, 3.600125110285325*^9}, {3.6312371048920393`*^9, 
+   3.6312371688711295`*^9}, {3.63123744587952*^9, 3.6312374911255836`*^9}, {
+   3.6312377383129315`*^9, 3.6312377517859507`*^9}, {3.6312377844199967`*^9, 
+   3.6312378976001563`*^9}, {3.6312381365044928`*^9, 3.631238257571663*^9}, {
+   3.6312383376537757`*^9, 3.6312383466867886`*^9}, {3.6312384120268807`*^9, 
+   3.631238418137889*^9}, {3.6312388389819207`*^9, 3.631239042354348*^9}}]
+}, Open  ]]
+},
+WindowToolbars->"EditBar",
+WindowSize->{1217, 746},
+WindowMargins->{{Automatic, 66}, {7, Automatic}},
+PrivateNotebookOptions->{"VersionedStylesheet"->{"Default.nb"[8.] -> False}},
+Magnification:>FEPrivate`If[
+  FEPrivate`Equal[FEPrivate`$VersionNumber, 6.], 1.5, 1.5 Inherited],
+FrontEndVersion->"10.0 for Microsoft Windows (64-bit) (December 4, 2014)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[567, 22, 795, 14, 99, "Subsubsection"],
+Cell[1365, 38, 6517, 150, 1214, "Text"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
