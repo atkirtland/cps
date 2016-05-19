@@ -1,0 +1,204 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 7.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[      8330,        195]
+NotebookOptionsPosition[      7731,        173]
+NotebookOutlinePosition[      8301,        193]
+CellTagsIndexPosition[      8258,        190]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[TextData[StyleBox["CsMath 371 Ernst/Ziegler\t                       \
+Simple Task 3\t                         \tSpring 2015\n\nDue: Friday at the \
+beginning of class",
+ FontFamily->"Times New Roman",
+ FontSize->16,
+ FontWeight->"Bold"]], "Subsubsection",
+ CellChangeTimes->{{3.5046163277327614`*^9, 3.5046163394201117`*^9}, {
+   3.504616378482112*^9, 3.504616384482035*^9}, {3.536067365942828*^9, 
+   3.536067388151664*^9}, {3.5360678972902517`*^9, 3.536067920703896*^9}, {
+   3.5678100234188623`*^9, 3.5678100234788623`*^9}, {3.567810057068909*^9, 
+   3.567810058938912*^9}, {3.599588912573512*^9, 3.5995889335455117`*^9}, 
+   3.5998483007182493`*^9, {3.5998575298156967`*^9, 3.5998575440318213`*^9}, {
+   3.6003647163904333`*^9, 3.6003647219397507`*^9}, {3.6005668056841326`*^9, 
+   3.6005668126645317`*^9}, {3.631996193007218*^9, 3.6319961958735046`*^9}},
+ TextAlignment->Left,
+ TextJustification->1.],
+
+Cell[TextData[{
+ StyleBox["Loops, Lists, and Modules in ",
+  FontWeight->"Bold"],
+ StyleBox["Mathematica",
+  FontWeight->"Bold",
+  FontSlant->"Italic"],
+ StyleBox[":",
+  FontWeight->"Bold"],
+ "\nThe objective of this Simple Task is for you to implement some basic \
+functions involving loops and lists. Make sure that you use proper \
+formatting, local variables, and meaningful variables names. The problems \
+specify what numbers to assign to the variables for showing the execution of \
+your code. However, the code should also work for other (reasonable) \
+parameters.\n\nTurn in a print out of the following. Your print out must show \
+the function you wrote and the result ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " generates when the function is executed. \n\n1. Write a function which is \
+given two parameters: ",
+ StyleBox["start",
+  FontSlant->"Italic"],
+ " and ",
+ StyleBox["stop",
+  FontSlant->"Italic"],
+ ". Start and stop are both positive integers. The function must use a loop \
+to compute the sum of the digits of the integers from ",
+ StyleBox["start",
+  FontSlant->"Italic"],
+ " and to ",
+ StyleBox["stop",
+  FontSlant->"Italic"],
+ ". The function returns (",
+ StyleBox["not",
+  FontWeight->"Bold"],
+ " prints) a list containing the final sum and the mean over the integers.",
+ StyleBox[" ",
+  FontWeight->"Bold"],
+ "For a value of start of 22 and a value of stop of 27, the function computes \
+the sum as 2+2+2+3+ .. + 2+7 = 39, and the mean as 13/2 (= 39/6). Execute the \
+function with the values 13 for start and 21 for stop - but make sure that it \
+works in general.\n\n2. Write a function which is given a parameter ",
+ StyleBox["pointList",
+  FontSlant->"Italic"],
+ " which is a list of {x,y} -pairs (here you can assume that {x,y} are \
+coordinates in the plane ",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["\[DoubleStruckCapitalR]", "2"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ "). The function must use a loop and returns a new list which contains all \
+the elements of the ",
+ StyleBox["pointList",
+  FontSlant->"Italic"],
+ " which have a positive y-value. Execute the function with the list given \
+below - but make sure that it works in general.\n"
+}], "Text",
+ CellChangeTimes->{{3.5046163879819903`*^9, 3.504616932612613*^9}, {
+   3.504616984893863*^9, 3.5046170075969315`*^9}, {3.536017609015625*^9, 
+   3.536017747328125*^9}, {3.536017783703125*^9, 3.536017910328125*^9}, {
+   3.536017958625*^9, 3.536018026703125*^9}, {3.536018058125*^9, 
+   3.536018103734375*^9}, {3.53601816271875*^9, 3.53601822134375*^9}, {
+   3.5360182988125*^9, 3.536018518984375*^9}, {3.536018923671875*^9, 
+   3.536018937265625*^9}, {3.53601922734375*^9, 3.53601925609375*^9}, {
+   3.536019375828125*^9, 3.53601940440625*^9}, {3.536019436890625*^9, 
+   3.53601944828125*^9}, {3.53601948328125*^9, 3.5360196623125*^9}, {
+   3.536067469960688*^9, 3.536067475608775*^9}, {3.53606752833766*^9, 
+   3.536067604010838*^9}, {3.5360676346914883`*^9, 3.5360676497518*^9}, {
+   3.536067724173401*^9, 3.536067824438497*^9}, {3.536772742046875*^9, 
+   3.536772752359375*^9}, {3.536772790953125*^9, 3.5367728601875*^9}, 
+   3.536772901703125*^9, {3.567810108888982*^9, 3.5678101191889963`*^9}, {
+   3.5678101766490765`*^9, 3.567810190919097*^9}, {3.567810381929364*^9, 
+   3.5678104194394164`*^9}, 3.56781050775954*^9, {3.5678105541696053`*^9, 
+   3.567810658319751*^9}, {3.5678106893997946`*^9, 3.567810689629795*^9}, 
+   3.5678108351167545`*^9, {3.5678108859568253`*^9, 3.567810890326832*^9}, {
+   3.5678112871856017`*^9, 3.5678113960057535`*^9}, {3.599588959342512*^9, 
+   3.599588979660512*^9}, {3.599589048872512*^9, 3.599589108281512*^9}, {
+   3.599589139139512*^9, 3.599589142868512*^9}, {3.599857548674926*^9, 
+   3.599857716253962*^9}, {3.599857752016551*^9, 3.5998579259665318`*^9}, {
+   3.599866952293369*^9, 3.5998669704153943`*^9}, {3.599867182666732*^9, 
+   3.599867197709753*^9}, {3.599867514608962*^9, 3.5998676415414624`*^9}, {
+   3.600364732356346*^9, 3.600365228463722*^9}, {3.600370182684417*^9, 
+   3.6003702814509373`*^9}, {3.600370314437274*^9, 3.600370328415279*^9}, {
+   3.600423918255143*^9, 3.600424059561984*^9}, {3.600566845571414*^9, 
+   3.6005668487675967`*^9}, {3.6005932235574074`*^9, 3.600593273447261*^9}, {
+   3.6006046387375093`*^9, 3.600604923939027*^9}, {3.6006049816427965`*^9, 
+   3.600605073107942*^9}, 3.6006051199796286`*^9, {3.600611262950658*^9, 
+   3.600611293667658*^9}, {3.600611335486658*^9, 3.600611507146658*^9}, {
+   3.600611551098658*^9, 3.600611558347658*^9}, {3.600612103410676*^9, 
+   3.600612120228479*^9}, {3.600647421408311*^9, 3.600647424767503*^9}, {
+   3.6009625595651984`*^9, 3.600962559981222*^9}, {3.6319971923651304`*^9, 
+   3.63199724134513*^9}, {3.63199727831913*^9, 3.63199727905213*^9}, {
+   3.63199733404013*^9, 3.63199733778413*^9}, {3.63199737560513*^9, 
+   3.6319974347491302`*^9}, {3.631997646111528*^9, 3.6319977645743732`*^9}, {
+   3.6319978199769125`*^9, 3.6319978818300977`*^9}, {3.63200756950037*^9, 
+   3.632007569579054*^9}, 3.632007715753231*^9, {3.632007862222405*^9, 
+   3.632007974088992*^9}}],
+
+Cell[BoxData[
+ RowBox[{"lst", "=", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"1.8", ",", "3.1"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"-", "0.6"}], ",", 
+      RowBox[{"-", "0.4"}]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"3.9", ",", "1.4"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"2.9", ",", "2.3"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"-", "1.8"}], ",", 
+      RowBox[{"-", "1.5"}]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"2.", ",", 
+      RowBox[{"-", "0.9"}]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"1.8", ",", 
+      RowBox[{"-", "1.6"}]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"3.1", ",", 
+      RowBox[{"-", "0.4"}]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"3.6", ",", "0.5"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"-", "0.6"}], ",", "3.6"}], "}"}]}], "}"}]}]], "Input",
+ CellChangeTimes->{{3.600611481566658*^9, 3.6006114831626577`*^9}, {
+   3.6006115696026583`*^9, 3.600611624362658*^9}, 3.6319980460975227`*^9, 
+   3.6319982042633376`*^9, {3.631999243762277*^9, 3.6319993599848986`*^9}}]
+}, Open  ]]
+},
+WindowToolbars->"EditBar",
+WindowSize->{1203, 717},
+WindowMargins->{{59, Automatic}, {Automatic, 4}},
+PrivateNotebookOptions->{"VersionedStylesheet"->{"Default.nb"[8.] -> False}},
+ShowSelection->True,
+Magnification:>FEPrivate`If[
+  FEPrivate`Equal[FEPrivate`$VersionNumber, 6.], 1.5, 1.5 Inherited],
+FrontEndVersion->"10.0 for Microsoft Windows (64-bit) (December 4, 2014)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[567, 22, 910, 15, 99, "Subsubsection"],
+Cell[1480, 39, 5109, 95, 589, "Text"],
+Cell[6592, 136, 1123, 34, 75, "Input"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
