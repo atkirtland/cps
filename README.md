@@ -7,3 +7,5 @@ _Mathematica_ and did solved problems and made projects.
 
 This is a small repository to remember some of the old assignments. It would
 be cool to make this bigger, adding more old assignments and projects.
+
+Please follow the format of the existing files. Project folder should be Name & Name, in alphabetical order by last name, with inner folder the group's project folder (titled after the project). 
