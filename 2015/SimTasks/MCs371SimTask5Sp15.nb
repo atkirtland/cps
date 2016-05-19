@@ -1,0 +1,448 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     18666,        439]
+NotebookOptionsPosition[     17804,        406]
+NotebookOutlinePosition[     18149,        421]
+CellTagsIndexPosition[     18106,        418]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[TextData[StyleBox["CsMath 371 Ernst/Ziegler\t                       \
+Simple Task 5\t                         \tSpring 2015\n\nDue: Mondy at the \
+beginning of class",
+ FontFamily->"Times New Roman",
+ FontSize->16,
+ FontWeight->"Bold"]], "Subsubsection",
+ CellChangeTimes->{{3.5046163277327614`*^9, 3.5046163394201117`*^9}, {
+   3.504616378482112*^9, 3.504616384482035*^9}, {3.536067365942828*^9, 
+   3.536067388151664*^9}, {3.5360678972902517`*^9, 3.536067920703896*^9}, {
+   3.5678100234188623`*^9, 3.5678100234788623`*^9}, {3.567810057068909*^9, 
+   3.567810058938912*^9}, {3.599588912573512*^9, 3.5995889335455117`*^9}, 
+   3.5998483007182493`*^9, {3.5998575298156967`*^9, 3.5998575440318213`*^9}, {
+   3.6003647163904333`*^9, 3.6003647219397507`*^9}, {3.6005668056841326`*^9, 
+   3.6005668126645317`*^9}, {3.6009615602460403`*^9, 
+   3.6009615607670703`*^9}, {3.600965511569043*^9, 3.600965513525155*^9}, {
+   3.601161666504901*^9, 3.601161673947562*^9}, {3.601231624295272*^9, 
+   3.601231625151357*^9}, {3.633440191974578*^9, 3.6334402063342304`*^9}, {
+   3.6334403129065585`*^9, 3.633440313197575*^9}},
+ TextAlignment->Left,
+ TextJustification->1.],
+
+Cell[TextData[{
+ "\n\nTurn in a print out of the following. Your print out must show the \
+function you wrote and the result ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " generates when the function is executed (including the function call). \
+Your function should work in general not only for the required example.\n\n1. \
+ Write a function with is given a list of pairs {store, items_to_deliver}  \
+indicating some deliveries and the store to which they must be delivered. An \
+example list might be { { \[OpenCurlyDoubleQuote]WKU bookstore\
+\[CloseCurlyDoubleQuote], 786 }, {\[OpenCurlyDoubleQuote]Daily News\
+\[CloseCurlyDoubleQuote], 200}, {\[OpenCurlyDoubleQuote]WKU bookstore\
+\[CloseCurlyDoubleQuote], 15}, {\[OpenCurlyDoubleQuote]Spencers\
+\[CloseCurlyDoubleQuote], 233} }. The function determines and returns the \
+total number of items to be delivered of all the deliveries associated with a \
+store. For example ",
+ StyleBox["deliveries",
+  FontSlant->"Italic"],
+ "[lst, \[OpenCurlyDoubleQuote]WKU bookstore\[CloseCurlyDoubleQuote]] would \
+return 801, since two deliveries are made and 786 + 15 = 801. ",
+ StyleBox["deliveries ",
+  FontSlant->"Italic"],
+ "[lst, \[OpenCurlyDoubleQuote]Spencers\[CloseCurlyDoubleQuote]] would return \
+233, and ",
+ StyleBox["deliveries[lst, \[OpenCurlyDoubleQuote]Target\
+\[CloseCurlyDoubleQuote]]",
+  FontSlant->"Italic"],
+ " would return 0. Execute your function for all three of these examples."
+}], "Text",
+ CellChangeTimes->{{3.5046163879819903`*^9, 3.504616932612613*^9}, {
+   3.504616984893863*^9, 3.5046170075969315`*^9}, {3.536017609015625*^9, 
+   3.536017747328125*^9}, {3.536017783703125*^9, 3.536017910328125*^9}, {
+   3.536017958625*^9, 3.536018026703125*^9}, {3.536018058125*^9, 
+   3.536018103734375*^9}, {3.53601816271875*^9, 3.53601822134375*^9}, {
+   3.5360182988125*^9, 3.536018518984375*^9}, {3.536018923671875*^9, 
+   3.536018937265625*^9}, {3.53601922734375*^9, 3.53601925609375*^9}, {
+   3.536019375828125*^9, 3.53601940440625*^9}, {3.536019436890625*^9, 
+   3.53601944828125*^9}, {3.53601948328125*^9, 3.5360196623125*^9}, {
+   3.536067469960688*^9, 3.536067475608775*^9}, {3.53606752833766*^9, 
+   3.536067604010838*^9}, {3.5360676346914883`*^9, 3.5360676497518*^9}, {
+   3.536067724173401*^9, 3.536067824438497*^9}, {3.536772742046875*^9, 
+   3.536772752359375*^9}, {3.536772790953125*^9, 3.5367728601875*^9}, 
+   3.536772901703125*^9, {3.567810108888982*^9, 3.5678101191889963`*^9}, {
+   3.5678101766490765`*^9, 3.567810190919097*^9}, {3.567810381929364*^9, 
+   3.5678104194394164`*^9}, 3.56781050775954*^9, {3.5678105541696053`*^9, 
+   3.567810658319751*^9}, {3.5678106893997946`*^9, 3.567810689629795*^9}, 
+   3.5678108351167545`*^9, {3.5678108859568253`*^9, 3.567810890326832*^9}, {
+   3.5678112871856017`*^9, 3.5678113960057535`*^9}, {3.599588959342512*^9, 
+   3.599588979660512*^9}, {3.599589048872512*^9, 3.599589108281512*^9}, {
+   3.599589139139512*^9, 3.599589142868512*^9}, {3.599857548674926*^9, 
+   3.599857716253962*^9}, {3.599857752016551*^9, 3.5998579259665318`*^9}, {
+   3.599866952293369*^9, 3.5998669704153943`*^9}, {3.599867182666732*^9, 
+   3.599867197709753*^9}, {3.599867514608962*^9, 3.5998676415414624`*^9}, {
+   3.600364732356346*^9, 3.600365228463722*^9}, {3.600370182684417*^9, 
+   3.6003702814509373`*^9}, {3.600370314437274*^9, 3.600370328415279*^9}, {
+   3.600423918255143*^9, 3.600424059561984*^9}, {3.600566845571414*^9, 
+   3.6005668487675967`*^9}, {3.6005932235574074`*^9, 3.600593273447261*^9}, {
+   3.6006046387375093`*^9, 3.600604923939027*^9}, {3.6006049816427965`*^9, 
+   3.600605073107942*^9}, 3.6006051199796286`*^9, {3.600611262950658*^9, 
+   3.600611293667658*^9}, {3.600611335486658*^9, 3.600611507146658*^9}, {
+   3.600611551098658*^9, 3.600611558347658*^9}, {3.600612103410676*^9, 
+   3.600612120228479*^9}, {3.600647421408311*^9, 3.600647424767503*^9}, {
+   3.6009624634957037`*^9, 3.600962499170744*^9}, 3.6009625448833585`*^9, {
+   3.6009626996722116`*^9, 3.6009627472589335`*^9}, {3.600962893216282*^9, 
+   3.6009629134534397`*^9}, 3.6009629891377687`*^9, {3.6009631392573547`*^9, 
+   3.6009632423752527`*^9}, {3.6009632776532707`*^9, 
+   3.6009634168612328`*^9}, {3.6009634495651035`*^9, 3.600963451477213*^9}, {
+   3.600963482417982*^9, 3.600963485119137*^9}, {3.600963521659227*^9, 
+   3.600963527508561*^9}, {3.6009635743612413`*^9, 3.6009636253751593`*^9}, {
+   3.600963659236096*^9, 3.600963682981454*^9}, {3.6009639476355915`*^9, 
+   3.600963957615162*^9}, {3.6009640204897585`*^9, 3.600964030410326*^9}, {
+   3.60096418853437*^9, 3.6009641933186436`*^9}, {3.60096422647254*^9, 
+   3.6009642791945553`*^9}, {3.6009643200888944`*^9, 
+   3.6009644468081427`*^9}, {3.600964517613192*^9, 3.6009645470408754`*^9}, {
+   3.6009645822268877`*^9, 3.600964599076852*^9}, {3.600965025226226*^9, 
+   3.6009650258002586`*^9}, {3.6009651494333305`*^9, 
+   3.6009651653812428`*^9}, {3.6009654630892706`*^9, 3.600965492088929*^9}, {
+   3.600982910543213*^9, 3.600982940329829*^9}, {3.600982985084578*^9, 
+   3.600983020466158*^9}, {3.600983054238233*^9, 3.600983067108116*^9}, {
+   3.6010832829618573`*^9, 3.601083283158869*^9}, {3.601159866165628*^9, 
+   3.601159868572805*^9}, {3.601159939053672*^9, 3.6011599669958467`*^9}, {
+   3.601160331534987*^9, 3.601160631750807*^9}, {3.6011607608687*^9, 
+   3.601160907795512*^9}, 3.6012316332301655`*^9, {3.6012316801188536`*^9, 
+   3.6012318553073707`*^9}, {3.6015520802262945`*^9, 
+   3.6015521277650137`*^9}, {3.6015523095984144`*^9, 3.601552329880574*^9}, 
+   3.601682213333378*^9, {3.63344144618192*^9, 3.6334417052923584`*^9}, 
+   3.6334443701928883`*^9}],
+
+Cell[TextData[{
+ "2. FIND an error in a given pieces of code - by following the steps below. \
+ONLY FIXING THE CODE will not give you most of the credit.   Below are two \
+functions. The function ",
+ StyleBox["first",
+  FontSlant->"Italic"],
+ " calls the function ",
+ StyleBox["second.",
+  FontSlant->"Italic"],
+ "  The function ",
+ StyleBox["second",
+  FontSlant->"Italic"],
+ " sums up the single elements and adds to it the length of the sublists, so ",
+ StyleBox["second[{4, {3, 8}, 5} ] ",
+  FontSlant->"Italic"],
+ "is 11, since 4 + 2 (= length of sublist) + 5 = 11 and ",
+ StyleBox["second[{3}] ",
+  FontSlant->"Italic"],
+ "is 3. ",
+ StyleBox["first",
+  FontSlant->"Italic"],
+ " is a function which uses second on each element which is a list and adds \
+the return values of second together with the individual numbers if they are \
+not in a list.  So ",
+ StyleBox["first [ { 1,  3, {2, 3},  {4, {3, 8}, 5}}] ",
+  FontSlant->"Italic"],
+ " is 20, since 1 + 3 + 5 (= 2 + 3) + 11 (see above) = 20."
+}], "Text",
+ CellChangeTimes->{{3.6334417152963753`*^9, 3.633441839527978*^9}, {
+  3.6334418778626604`*^9, 3.633442220037331*^9}, {3.6334428108146105`*^9, 
+  3.6334428218566265`*^9}, {3.633442927162388*^9, 3.6334429417982254`*^9}, {
+  3.6334440624762707`*^9, 3.6334440632136393`*^9}, {3.633444150718874*^9, 
+  3.633444250803402*^9}, {3.633444290531446*^9, 3.633444291692668*^9}}],
+
+Cell[TextData[{
+ "a) WITHOUT running the functions, what is the expected output for \n  \
+second[part3] and first[test1].  ",
+ StyleBox["Clearly ",
+  FontWeight->"Bold"],
+ "explain your answer. \n  b) WITHOUT running the function - what is the \
+expected output for first [ test 2] ? ",
+ StyleBox["Clearly",
+  FontWeight->"Bold"],
+ " explain your answer.\n  c) WITHOUT running the function - what is the \
+expected output for first [ test 3] ? ",
+ StyleBox["Clearly",
+  FontWeight->"Bold"],
+ " explain your answer.\n  d) SAVE everything - best save it twice.Testrun  \
+second[part3], first[ test1] and first [ test 2 ], first [ test3]. Which are \
+correct/incorrect?\n  e) ",
+ StyleBox["Where",
+  FontWeight->"Bold"],
+ " do you add a print statement in the function ",
+ StyleBox["first",
+  FontSlant->"Italic"],
+ " to get a better understanding for why first [ test2 ] does not work \
+correctly and ",
+ StyleBox["what",
+  FontWeight->"Bold"],
+ " exactly is that print statement?\n  f) If you did NOT add a print \
+statement to the loop in e) which prints out the value i, do so now. ",
+ StyleBox["Where",
+  FontWeight->"Bold"],
+ " did you add it and exactly what is that print statement? Show the result \
+of running first [ test 2] with that print statement. \n  g) THINK - what \
+might cause the result you see?  Trace through the code -  one step at a time \
+to see what happens. Then ",
+ StyleBox["clearly",
+  FontWeight->"Bold"],
+ " explain how the incorrect result is created  for first [ test2 ] and for \
+first [ test3] \n  h) Suggest a fix for the problem - and test it. If it does \
+not work your answer to g might be wrong and you need to go back. \n  i)  Run \
+first [ test3 ] again - it should be fixed, too.   Show the result of first [ \
+test2] and first [ test3 ] and your corrected version of first.\n"
+}], "Text",
+ CellChangeTimes->{{3.633442947101528*^9, 3.633442979572988*^9}, {
+   3.6334430137032623`*^9, 3.6334436377606816`*^9}, {3.633444338821159*^9, 
+   3.6334443408383627`*^9}, 3.6334443807934647`*^9, {3.633464447953308*^9, 
+   3.6334644481133165`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"first", "[", "lst_", "]"}], " ", ":=", " ", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"sum", "=", "0"}], "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"For", "[", 
+      RowBox[{
+       RowBox[{"i", "=", "1"}], ",", " ", 
+       RowBox[{"i", "\[LessEqual]", " ", 
+        RowBox[{"Length", "[", "lst", "]"}]}], " ", ",", " ", 
+       RowBox[{"i", "++"}], ",", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"If", "[", 
+         RowBox[{
+          RowBox[{"SameQ", "[", 
+           RowBox[{
+            RowBox[{"Head", "[", 
+             RowBox[{"lst", "[", 
+              RowBox[{"[", "i", "]"}], "]"}], "]"}], ",", "List"}], "]"}], 
+          ",", "\[IndentingNewLine]", 
+          RowBox[{"(*", " ", "then", " ", "*)"}], "\[IndentingNewLine]", 
+          RowBox[{"sum", "=", 
+           RowBox[{"sum", "+", " ", 
+            RowBox[{"second", "[", 
+             RowBox[{"lst", "[", 
+              RowBox[{"[", "i", "]"}], "]"}], "]"}]}]}], ",", 
+          "\[IndentingNewLine]", 
+          RowBox[{"(*", " ", "else", "*)"}], "\[IndentingNewLine]", 
+          RowBox[{"sum", " ", "=", " ", 
+           RowBox[{"sum", " ", "+", " ", 
+            RowBox[{"lst", "[", 
+             RowBox[{"[", "i", "]"}], "]"}]}]}]}], "\[IndentingNewLine]", 
+         "]"}], ";"}]}], "\[IndentingNewLine]", "]"}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"Return", "[", "sum", "]"}]}]}], "\[IndentingNewLine]", 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.633440334944819*^9, 3.6334404626581755`*^9}, {
+  3.6334427307883663`*^9, 3.6334427465134544`*^9}, {3.6334427835643177`*^9, 
+  3.633442793606892*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"second", "[", "lstpieces_", "]"}], " ", ":=", " ", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"sum", "=", "0"}], "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"For", "[", 
+      RowBox[{
+       RowBox[{"i", "=", "1"}], ",", " ", 
+       RowBox[{"i", "\[LessEqual]", " ", 
+        RowBox[{"Length", "[", "lstpieces", "]"}]}], ",", " ", 
+       RowBox[{"i", "++"}], ",", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"If", "[", 
+         RowBox[{
+          RowBox[{"SameQ", "[", 
+           RowBox[{
+            RowBox[{"Head", "[", 
+             RowBox[{"lstpieces", "[", 
+              RowBox[{"[", "i", "]"}], "]"}], "]"}], ",", "List"}], "]"}], 
+          ",", "\[IndentingNewLine]", 
+          RowBox[{"(*", " ", "then", " ", "*)"}], "\[IndentingNewLine]", 
+          RowBox[{"sum", "=", 
+           RowBox[{"sum", "+", " ", 
+            RowBox[{"Length", "[", 
+             RowBox[{"lstpieces", "[", 
+              RowBox[{"[", "i", "]"}], "]"}], "]"}]}]}], ",", 
+          "\[IndentingNewLine]", 
+          RowBox[{"(*", " ", "else", "*)"}], "\[IndentingNewLine]", 
+          RowBox[{"sum", " ", "=", " ", 
+           RowBox[{"sum", " ", "+", " ", 
+            RowBox[{"lstpieces", "[", 
+             RowBox[{"[", "i", "]"}], "]"}]}]}]}], "\[IndentingNewLine]", 
+         "]"}], ";"}]}], "\[IndentingNewLine]", "]"}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"Return", "[", "sum", "]"}]}]}], "\[IndentingNewLine]", 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.633440334944819*^9, 3.6334405114575396`*^9}, {
+   3.633442592199114*^9, 3.6334426135321445`*^9}, {3.6334427245870113`*^9, 
+   3.6334427248100243`*^9}, 3.6334428682520914`*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"second", "[", "ex1", "]"}]], "Input",
+ CellChangeTimes->{{3.633442574915577*^9, 3.6334425778127427`*^9}}],
+
+Cell[BoxData["11"], "Output",
+ CellChangeTimes->{3.6334425786337895`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"second", "[", 
+  RowBox[{"{", "3", "}"}], "]"}]], "Input",
+ CellChangeTimes->{{3.6334425803368874`*^9, 3.633442583501068*^9}, 
+   3.6334428821967793`*^9}],
+
+Cell[BoxData["3"], "Output",
+ CellChangeTimes->{3.6334425843481035`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"first", "[", "ex2", "]"}]], "Input",
+ CellChangeTimes->{{3.6334426176831503`*^9, 3.6334426224202323`*^9}}],
+
+Cell[BoxData["20"], "Output",
+ CellChangeTimes->{3.633442660670271*^9, 3.6334427681164846`*^9, 
+  3.6334428753204956`*^9}]
+}, Open  ]],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"ex1", "=", 
+   RowBox[{"{", 
+    RowBox[{"4", ",", " ", 
+     RowBox[{"{", 
+      RowBox[{"3", ",", " ", "8"}], "}"}], ",", " ", "5"}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"ex2", "=", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", " ", "3", ",", " ", 
+     RowBox[{"{", 
+      RowBox[{"2", ",", " ", "3"}], "}"}], ",", " ", 
+     RowBox[{"{", 
+      RowBox[{"4", ",", " ", 
+       RowBox[{"{", 
+        RowBox[{"3", ",", " ", "8"}], "}"}], ",", " ", "5"}], "}"}]}], 
+    "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"part3", "=", 
+   RowBox[{"{", 
+    RowBox[{"6", ",", "  ", 
+     RowBox[{"{", 
+      RowBox[{"6", ",", " ", "4", ",", " ", "3"}], "}"}], ",", " ", "6", ",", 
+     " ", "4"}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"test1", "=", 
+   RowBox[{"{", " ", 
+    RowBox[{"1", ",", " ", "2", ",", " ", 
+     RowBox[{"{", 
+      RowBox[{"3", ",", " ", "2"}], "}"}], ",", " ", 
+     RowBox[{"{", 
+      RowBox[{"4", ",", " ", 
+       RowBox[{"{", 
+        RowBox[{"3", ",", " ", "8"}], "}"}], ",", " ", "5"}], "}"}], ",", " ", 
+     RowBox[{"{", 
+      RowBox[{"6", ",", " ", 
+       RowBox[{"{", 
+        RowBox[{"6", ",", " ", "4", ",", " ", "3"}], "}"}], ",", " ", "6", 
+       ",", " ", "4"}], "}"}]}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"test2", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"6", ",", " ", 
+       RowBox[{"{", 
+        RowBox[{"6", ",", " ", "4", ",", " ", "3"}], "}"}], ",", " ", "6", 
+       ",", " ", "4"}], "}"}], ",", " ", "1", ",", " ", "2", ",", " ", 
+     RowBox[{"{", 
+      RowBox[{"3", ",", " ", "2"}], "}"}], ",", " ", 
+     RowBox[{"{", 
+      RowBox[{"4", ",", " ", 
+       RowBox[{"{", 
+        RowBox[{"3", ",", " ", "2"}], "}"}], ",", " ", "5"}], "}"}]}], " ", 
+    "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"test3", "=", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", " ", "3", ",", " ", 
+     RowBox[{"{", 
+      RowBox[{"2", ",", " ", "3"}], "}"}], ",", " ", 
+     RowBox[{"{", 
+      RowBox[{"4", ",", " ", 
+       RowBox[{"{", 
+        RowBox[{"3", ",", " ", "8"}], "}"}], ",", " ", "5"}], "}"}], ",", " ", 
+     RowBox[{"{", "3", "}"}], ",", " ", "1"}], "}"}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.633440521299553*^9, 3.6334405509142447`*^9}, {
+  3.6334406095196157`*^9, 3.63344066312571*^9}, {3.6334422460103674`*^9, 
+  3.633442255105503*^9}, {3.6334425339679747`*^9, 3.633442571485381*^9}, {
+  3.6334426329068327`*^9, 3.6334426344449205`*^9}, {3.633442846460845*^9, 
+  3.63344288961779*^9}, {3.633442985733997*^9, 3.633443006967877*^9}, {
+  3.6334639917414255`*^9, 3.6334639919244356`*^9}}]
+}, Open  ]]
+},
+WindowSize->{976, 698},
+WindowMargins->{{300, Automatic}, {Automatic, 0}},
+FrontEndVersion->"10.0 for Microsoft Windows (64-bit) (December 4, 2014)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 1161, 19, 71, "Subsubsection"],
+Cell[1744, 43, 5628, 86, 201, "Text"],
+Cell[7375, 131, 1380, 32, 106, "Text"],
+Cell[8758, 165, 2079, 44, 277, "Text"],
+Cell[10840, 211, 1683, 41, 232, "Input"],
+Cell[12526, 254, 1735, 41, 232, "Input"],
+Cell[CellGroupData[{
+Cell[14286, 299, 129, 2, 31, "Input"],
+Cell[14418, 303, 73, 1, 31, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[14528, 309, 178, 4, 31, "Input"],
+Cell[14709, 315, 72, 1, 31, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[14818, 321, 130, 2, 31, "Input"],
+Cell[14951, 325, 122, 2, 31, "Output"]
+}, Open  ]],
+Cell[15088, 330, 2700, 73, 132, "Input"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
